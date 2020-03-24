@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 
 import style from "../css/menu.module.scss"
-import { Link } from "gatsby"
-import { Image } from "react-bootstrap"
+import { Link,  } from "gatsby"
 
 const LINKS = {
   home: {
@@ -23,6 +22,7 @@ export default class Menu extends Component {
     return (
       <div
         onMouseEnter={() => this.setState({ openMenu: true })}
+        onClick={() => this.setState({ openMenu: true })}
         className={style.navTogglerContainer}
       >
         <div className={style.menuBlock}>
@@ -54,33 +54,31 @@ export default class Menu extends Component {
     return (
       <>
         <div>
-        {this._renderMenuTitle()}
-  
-        {this._renderMenuToggler()}
+          {this._renderMenuTitle()}
+
+          {this._renderMenuToggler()}
         </div>
         {openMenu && (
           <div
             onMouseLeave={() => this.setState({ openMenu: false })}
             className={style.menu}
           >
-            <Link to={LINKS.home.landing}>
-              <p>Hi</p>
-            </Link>
-            <Link to="/">
-              <p>Hi</p>
-            </Link>
+            <div className={style.linkContainer} >
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+            </div>
+            <div className={style.linkContainer}>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+            </div>
+            <div className={style.linkContainer}>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+            </div>
+            <div className={style.linkContainer}>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+            </div>
+            <div className={style.linkContainer}>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.courses}>Courses</Link>
+            </div>
 
-            <Link to="/">
-              <p>Hi</p>
-            </Link>
-
-            <Link to="/">
-              <p>Hi</p>
-            </Link>
-
-            <Link to={LINKS.courses}>
-              <p>Hi</p>
-            </Link>
           </div>
         )}
       </>

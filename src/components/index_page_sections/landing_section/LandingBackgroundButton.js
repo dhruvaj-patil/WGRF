@@ -1,6 +1,6 @@
 import React from 'react'
 
-import style from "../../css/landing.module.scss"
+import style from "../../../css/landing.module.scss"
 
 
 export default function LandingBackgroundButton({overText, underText, }) {

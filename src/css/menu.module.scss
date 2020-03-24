@@ -1,4 +1,7 @@
 
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway&display=swap');
+
+$black: #37474f;
 .container {
     height: 140px;
     width: 100%;
@@ -12,26 +15,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 10vh;
     width: 250px;
     background-color: red;
-    clip-path: polygon(0 0%, 100% 0, 80% 100%, 0 100%);
+    clip-path: polygon(0 0%, 100% 0, 85% 100%, 0 100%);
     color: white;
 }
 
 .title {
     margin-left: -40px;
     margin-top: 25px;
-    font-size: 42px;
+    font-size: 2.5em;
 }
 .navTogglerContainer  {
-    height: 100px;
+    height: 10vh;
     width: 140px;
     background-color: red;
     position: fixed;
     right: 0px;
     top: 0px;
-    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0, 100% 100%, 0% 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +51,7 @@
 }
 
 .menu {
-     clip-path: polygon(46% 0, 100% 0, 100% 99%, 45% 100%, 0 51%);
+     clip-path: polygon(45% 0, 100% 0, 100% 100%, 45% 100%, 0 50%);
     background-color: red;
     width: 30vw;
     height: 75vh;
@@ -58,7 +61,8 @@
     
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    padding: 7em;
     flex-direction: column;
     z-index: 99;
 }
@@ -77,4 +81,41 @@ hr:nth-of-type(2) {
 
 hr:nth-of-type(3) {
     width: 25px;
+}
+
+
+.linkContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a {
+    color: white;
+    font-size: 2.0em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: $black;
+}
+
+
+@media (max-width: 600px) {
+
+    .menu {
+    -webkit-clip-path: unset;
+    clip-path: unset;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    }
 }

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo";
-import { LadingSection } from "../components/index_page_sections/ladingSection";
+import { LadingSection } from "../components/index_page_sections/landing_section/ladingSection";
 
 
 const IndexPage = () => (
