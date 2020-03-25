@@ -1,8 +1,16 @@
 
+<<<<<<< HEAD
 
 
 html {
   font-family: sans-serif;
+=======
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway&display=swap');
+
+html { 
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -43,6 +51,11 @@ template {
   display: none;
 }
 a {
+<<<<<<< HEAD
+=======
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -64,7 +77,11 @@ dfn {
   font-style: italic;
 }
 h1 {
+<<<<<<< HEAD
   font-size: 2em;
+=======
+  font-size: 7em;
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
   margin: 0.67em 0;
 }
 mark {
@@ -233,7 +250,11 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+=======
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -250,7 +271,11 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+=======
+  font-family:'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -267,7 +292,11 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+=======
+  font-family:'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -284,7 +313,11 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+=======
+  font-family:'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -301,7 +334,11 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+=======
+  font-family:'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -318,7 +355,11 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+=======
+  font-family:'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
@@ -388,6 +429,11 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+<<<<<<< HEAD
+=======
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
 }
 figure {
   margin-left: 0;
@@ -513,6 +559,12 @@ th {
 }
 li {
   margin-bottom: calc(1.45rem / 2);
+<<<<<<< HEAD
+=======
+
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
 }
 ol li {
   padding-left: 0;

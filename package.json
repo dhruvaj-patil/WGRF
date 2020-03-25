@@ -7,7 +7,10 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "gatsby": "^2.19.45",
+<<<<<<< HEAD
     "gatsby-cli": "^2.11.1",
+=======
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-offline": "^3.0.41",
@@ -16,8 +19,11 @@
     "gatsby-plugin-sharp": "^2.4.13",
     "gatsby-source-filesystem": "^2.1.56",
     "gatsby-transformer-sharp": "^2.3.19",
+<<<<<<< HEAD
     "git": "^0.1.5",
     "global": "^4.4.0",
+=======
+>>>>>>> 4af5c209a45f0e31a9515547477e02e437c73c76
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
