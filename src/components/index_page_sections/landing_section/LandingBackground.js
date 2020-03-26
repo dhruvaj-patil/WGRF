@@ -9,7 +9,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import LandingBackgroundButton from "./LandingBackgroundButton"
 
-const LandingBackground = ({ title, subtitle, buttonData }) => {
+const LandingBackground = () => {
   // duotone: {
   //   highlight: "#838383",
   //   shadow: "#192550",
@@ -43,26 +43,6 @@ const LandingBackground = ({ title, subtitle, buttonData }) => {
           fluid={data.placeholderImage.childImageSharp.fluid}
           alt="fill murray"
         ></Img>
-        <div className={style.landingContainer}>
-          <div>
-            <h1 className={style.landingTitle}>{title}</h1>
-          </div>
-
-          <div>
-            <h4 style={{ color: "white" }}>{subtitle}</h4>
-          </div>
-          <div className={style.buttonContainer}>
-            {buttonData.map((data, index) => {
-              return (
-                <LandingBackgroundButton
-                  overText={data.overText}
-                  underText={data.underText}
-                  key={index}
-                ></LandingBackgroundButton>
-              )
-            })}
-          </div>
-        </div>
       </div>
     </Background>
   )
