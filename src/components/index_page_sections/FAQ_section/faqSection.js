@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import style from "../../../css/faq.module.scss"
+
 export class FaqSection extends Component {
   state = {
     accordionData: this.props.accordionData,
@@ -15,7 +16,7 @@ export class FaqSection extends Component {
 
         {accordionData.map((data, i) => {
           return (
-            <div className={style.accordionContainer}>
+            <div key={i} className={style.accordionContainer}>
               {this._accordionComponent(data, i)}
             </div>
           )
@@ -24,33 +25,27 @@ export class FaqSection extends Component {
     )
   }
 
-
-  _openAccordion = (index) => {
+  _openAccordion = index => {
     console.log(index)
-    let accordionChanged = this.state.accordionData;
+    let accordionChanged = this.state.accordionData
 
     accordionChanged[index].opened = !this.state.accordionData[index].opened
 
-    console.log("changed data ===>", accordionChanged)
-
     this.setState({
-      accordionData: accordionChanged
-    }, console.log("changed state ==>", this.state.accordionData))
+      accordionData: accordionChanged,
+    })
   }
 
   _accordionComponent = (data, index) => {
-   console.log("index ==>", index)
     return (
       <div
         className={style.accordion}
-        onClick={() =>
-         this. _openAccordion(index)
-        }
+        onClick={() => this._openAccordion(index)}
       >
         <div className="accordion-item">
           <div style={{ display: "flex" }}>
             <a>{data.title}</a>
-            <span >
+            <span>
               <i
                 className={`${style.icon} ${style.iconArrow} ${
                   data.opened ? style.active : ""

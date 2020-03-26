@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { LandingSection } from "../components/index_page_sections/landing_section/landingSection"
 import FaqSection from "../components/index_page_sections/FAQ_section/faqSection"
+import SEO from "../components/seo"
 
 const LANDING_BUTTON_DATA = [
   {
