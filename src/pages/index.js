@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import { LandingSection } from "../components/index_page_sections/landing_section/landingSection"
 import FaqSection from "../components/index_page_sections/FAQ_section/faqSection"
 import SEO from "../components/seo"
+import LocationSection from "../components/index_page_sections/location_section/locationSection"
 
 const LANDING_BUTTON_DATA = [
   {
@@ -57,7 +58,7 @@ const IndexPage = () => (
       buttonData={LANDING_BUTTON_DATA}
     ></LandingSection>
 
-
+    <LocationSection></LocationSection>
     <FaqSection accordionData={ACCORDION_DATA}></FaqSection>
     <Link to="/courses/">Go to page 2</Link>
   </Layout>
