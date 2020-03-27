@@ -6,6 +6,7 @@ import { Link,  } from "gatsby"
 const LINKS = {
   home: {
     landing: "/",
+    location: "/",
   },
   courses: "courses",
 }
@@ -67,13 +68,13 @@ export default class Menu extends Component {
               <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>About Us</Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Location</Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>FAQ</Link>
             </div>
             <div className={style.linkContainer}>
               <Link onClick={() => this.setState({openMenu: false})} to={LINKS.courses}>Courses</Link>
