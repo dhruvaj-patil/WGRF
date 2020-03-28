@@ -1,0 +1,59 @@
+
+
+//Courses Page Css
+.coursecontainer{
+    z-index: 65;
+    height: 1000px;
+    background: transparent url(../images/bg_img4.jpg) no-repeat center top;
+}
+
+.courseimage{
+	clip-path: polygon(6% 0, 89% 0%, 68% 119%, 0 100%);
+    position: absolute;
+    top: 46%;
+    left: -6%;
+}
+
+.design{
+	z-index: 119;
+    width: 298px;
+	height: 225px;
+	position: relative;
+    top: 228%;
+    right: -59%;
+	background-color: #ff1744;
+	clip-path: polygon(29% 1%, 100% 0%, 75% 100%, 0 100%);
+}
+
+.carouselIndicators {
+	ol{
+		top:825%
+	}
+
+	li{
+		background-color: #FF1744;
+		width: 20px;
+		height: 20px;
+		min-height: 0px;
+		margin: 2px;
+		border:1px solid black;
+	}
+}
+
+.carousel{
+	position: relative;
+    top: 45% !important;
+    left: -40%;
+    height: 282%;
+}
+
+.carouselItem{
+	p{
+	font-size: 36px;
+    color: #FF1744;
+    text-indent: -2px;
+    text-transform: uppercase;
+    line-height: 36px;
+    font-weight: 800;
+	}
+}
