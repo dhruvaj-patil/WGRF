@@ -11,15 +11,15 @@ export default class LocationSection extends React.Component {
   }
 
   componentDidMount() {
-    // setInterval(() => {
-    //     this.setState({ showTravel: !this.state.showTravel })
-    //   }, 10000)
+    setInterval(() => {
+        this.setState({ showTravel: !this.state.showTravel })
+      }, 8000)
   }
 
   render() {
     const { showTravel } = this.state
     return (
-      <div style={{ width: "100%", height: "100vh", display: "flex" }}>
+      <div className={style.faqContainer}>
         <div className={style.containerLeft}>
           <div style={{ flex: 1 }}>
             <h2 style={{ textAlign: "center" }}>Location</h2>

@@ -5,4 +5,12 @@ $color-black: #37474f;
 
 
 $margin-1: 50px;
-$padding-1: 50px
+$padding-1: 50px;
+
+//  (landscape phones, 576px and up)
+$sm-devices: 768px;
+// Medium devices (tablets, 768px and up)
+$md-devices: 992px;
+// Large devices (desktops, 992px and up)
+$lg-devices: 1200px;
+// Extra large devices (large desktops, 1200px and up)

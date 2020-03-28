@@ -1,5 +1,12 @@
 @import "./base.scss";
 
+.faqContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
 .imageContainer {
   flex: 1;
   -webkit-clip-path: polygon(100% 0, 100% 90%, 95% 100%, 0% 100%, 0 0);
@@ -51,6 +58,10 @@
     &.active {
       background-color: red !important;
     }
+
+    h2 {
+      font-size: 2.62671rem;
+    }
   }
 
   /* Animation Effect - effectFadeIn */
@@ -86,6 +97,7 @@
     }
 
     h3 {
+      font-size: 1.38316rem;
       color: red;
     }
 
@@ -95,8 +107,9 @@
       color: red;
       letter-spacing: 1.1px;
 
-      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;   
+      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI,
+        Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+        sans-serif;
     }
   }
 
@@ -107,15 +120,67 @@
 }
 
 .containerLeft::after {
-  bottom: -18%;
+  // bottom: -18%;
   height: 20vh;
   width: 30vh;
   background-color: red;
   position: absolute;
-  top: -10;
-  right: 35%;
+  top: -15px;
+  left: 50.5vw;
   z-index: 1;
   content: " ";
   -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+@media (max-width: $sm-devices) {
+  .faqContainer {
+    height: auto;
+    flex-direction: column;
+
+    .containerLeft {
+      flex: 1 1;
+      padding: 10px;
+      box-sizing: border-box;
+      order: 2;
+
+      h2 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      .dataContainer {
+        li {
+          line-height: unset;
+        }
+      }
+    }
+
+    .containerLeft::after {
+      content: none;
+    }
+
+    .containerRight {
+      -webkit-clip-path: none;
+      clip-path: none;
+      height: auto;
+      background-color: transparent;
+      height: 50vh;
+
+      .imageContainer {
+        -webkit-clip-path: none;
+        clip-path: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $lg-devices) {
+  .faqContainer {
+  .containerLeft::after {
+    // bottom: -18%;
+    height: 15vh;
+    width: 15vh;
+  }
+}
 }
