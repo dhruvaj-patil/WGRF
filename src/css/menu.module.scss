@@ -1,5 +1,6 @@
 
 // @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway&display=swap');
+@import "./base.scss";
 
 $black: #37474f;
 .container {
@@ -17,7 +18,7 @@ $black: #37474f;
     align-items: center;
     height: 10vh;
     width: 250px;
-    background-color: red;
+    background-color: $color-red;
     clip-path: polygon(0 0%, 100% 0, 85% 100%, 0 100%);
     color: white;
 }
@@ -30,7 +31,7 @@ $black: #37474f;
 .navTogglerContainer  {
     height: 10vh;
     width: 140px;
-    background-color: red;
+    background-color: $color-red;
     position: fixed;
     right: 0px;
     top: 0px;
@@ -52,7 +53,7 @@ $black: #37474f;
 
 .menu {
      clip-path: polygon(45% 0, 100% 0, 100% 100%, 45% 100%, 0 50%);
-    background-color: red;
+    background-color: $color-red;
     width: 30vw;
     height: 75vh;
     position: fixed;

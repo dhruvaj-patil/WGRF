@@ -58,7 +58,7 @@
 
 .accordion a:hover {
   cursor: pointer;
-  color: red;
+  color: $color-red;
 }
 
 .accordion a:hover::after {
@@ -66,8 +66,8 @@
 }
 
 .accordion a.active {
-  color: red;
-  border-bottom: 1px solid red;
+  color: $color-red;
+  border-bottom: 1px solid $color-red;
 }
 
 .accordion .content {
