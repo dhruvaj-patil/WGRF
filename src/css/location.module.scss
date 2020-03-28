@@ -39,7 +39,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex: 1
+    flex: 1;
   }
 
   .indicator {
@@ -85,8 +85,18 @@
       color: #37474f;
     }
 
-    h3{
+    h3 {
       color: red;
+    }
+
+    a {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: red;
+      letter-spacing: 1.1px;
+
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;   
     }
   }
 

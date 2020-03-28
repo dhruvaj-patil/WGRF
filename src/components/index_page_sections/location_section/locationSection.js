@@ -83,17 +83,15 @@ export default class LocationSection extends React.Component {
                 <p>
                   For Bookings Contact <b>Ketan</b> : {" "}Phone no{" "}-{" "}
                   <a
-                    style={{ color: "red", letterSpacing: 1 }}
                     href="tel:9423012632 "
                   >
-                    9423012632
+                    942-301-2632
                   </a>
                {" | "}WhatsApp{" "}-{" "}
                   <a
                     href="tel: 9545432929"
-                    style={{ color: "red", letterSpacing: 1 }}
                   >
-                    9545432929
+                    954-543-2929
                   </a>
                 </p>
               </div>
