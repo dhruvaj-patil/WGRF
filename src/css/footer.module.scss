@@ -1,0 +1,99 @@
+@import "../css//base.scss";
+
+.siteFooter {
+  padding: $padding-1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-black;
+  color: $color-white;
+  margin-top: 50px;
+
+  h3 {
+    color: $color-red;
+  }
+
+  hr {
+    height: 1px;
+    width: 95vw;
+  }
+
+  .contentContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+
+    .alignContent{
+        text-align: left;
+     }
+
+    .aboutContainer {
+      flex: 1;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .linkContianer {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      padding: 1rem;
+
+      a {
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      a:hover {
+        color: $color-blue-gray;
+      }
+    }
+  }
+
+  .legalsContainer {
+    flex: 1;
+    flex-direction: row;
+    display: flex;
+
+
+    .copyRightsContainer {
+      flex: 1;
+
+      p{
+        text-align: center;
+      }
+    a {
+      text-transform: uppercase;
+      cursor: pointer;
+      color: $color-red;
+    }
+
+    a:hover {
+      color: $color-blue-gray;
+    }
+    }
+
+    .socialLinksContainer {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: $md-devices) {
+  .siteFooter {
+    padding: $padding-2;
+
+    h3 {
+      text-align: center;
+    }
+
+    .contentContainer {
+      flex-direction: column;
+
+    .alignContent{
+       text-align: center;
+    }
+
+    }
+  }
+}
