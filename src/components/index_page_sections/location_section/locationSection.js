@@ -19,7 +19,7 @@ export default class LocationSection extends React.Component {
   render() {
     const { showTravel } = this.state
     return (
-      <div className={style.faqContainer}>
+      <div className={style.locationContainer}>
         <div className={style.containerLeft}>
           <div style={{ flex: 1 }}>
             <h2 style={{ textAlign: "center" }}>Location</h2>
