@@ -11,7 +11,7 @@ export class FaqSection extends Component {
     return (
       <div className={style.faqContainer}>
         <div>
-          <h3 className={style.faqTitle}>Frequently Asked Questions</h3>
+          <h2 className={style.faqTitle}>Frequently Asked Questions</h2>
         </div>
 
         {accordionData.map((data, i) => {
