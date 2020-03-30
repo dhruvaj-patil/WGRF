@@ -18,9 +18,9 @@ const LandingBackground = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "bg_img1.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "bg_img3.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800, grayscale: true) {
+          fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid
           }
         }

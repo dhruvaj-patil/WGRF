@@ -2,7 +2,6 @@
 // @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway&display=swap');
 @import "./base.scss";
 
-$black: #37474f;
 .container {
     height: 140px;
     width: 100%;
@@ -20,7 +19,7 @@ $black: #37474f;
     width: 250px;
     background-color: $color-red;
     clip-path: polygon(0 0%, 100% 0, 85% 100%, 0 100%);
-    color: white;
+    color: $color-white;
 }
 
 .title {
@@ -69,7 +68,7 @@ $black: #37474f;
 }
 
 hr {
-    background: white;
+    background: $color-white;
     height: 2px;
     margin: 0px;
     width: 45px;
@@ -92,7 +91,7 @@ hr:nth-of-type(3) {
     align-items: center;
 
     a {
-        color: white;
+        color: $color-white;
         font-size: 2.0em;
         font-weight: bold;
         text-transform: uppercase;
@@ -106,11 +105,11 @@ hr:nth-of-type(3) {
 
 a:hover {
     text-decoration: none;
-    color: $black;
+    color: $color-black;
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: $md-devices) {
 
     .menu {
     -webkit-clip-path: unset;

@@ -116,27 +116,33 @@
   mask-image: url(../images/down-arrow.svg);
 }
 
-@media (max-width: 600px) {
+@media (max-width: $md-devices) {
   .faqContainer {
     padding: 0px;
-  }
-  h2 {
     margin-top: 50px;
-  }
-  .accordionContainer {
-    margin-top: 25px;
-    width: 90%;
-    padding: 10px;
+
+    h3{
+      color: $color-red;
+    }
+
+    .accordionContainer {
+      margin-top: 25px;
+      width: 90%;
+      padding: 10px;
+    }
+  
+    .accordion a {
+      border-bottom: 0px;
+      font-size: 1rem;
+      padding: 1rem;
+      color: $color-black;
+    }
+  
+    .accordion .content {
+      border-bottom: 0px;
+      border-top: 1px solid #e5e5e5;
+    }
   }
 
-  .accordion a {
-    border-bottom: 0px;
-    font-size: 1rem;
-    padding: 1rem
-  }
 
-  .accordion .content {
-    border-bottom: 0px;
-    border-top: 1px solid #e5e5e5;
-  }
 }
