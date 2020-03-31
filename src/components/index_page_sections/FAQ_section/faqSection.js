@@ -47,7 +47,7 @@ export class FaqSection extends Component {
             <a>{data.title}</a>
             <span>
               <i
-                className={`${style.icon} ${style.iconArrow} ${
+                className={`icon ${style.iconArrow} ${
                   data.opened ? style.active : ""
                 }`}
               ></i>

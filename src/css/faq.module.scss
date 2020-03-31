@@ -74,7 +74,7 @@
   opacity: 0;
   padding: 0 1rem;
   max-height: 0;
-//   border-bottom: 1px solid #e5e5e5;
+  //   border-bottom: 1px solid #e5e5e5;
   overflow: hidden;
   clear: both;
   -webkit-transition: all 0.2s ease 0.15s;
@@ -96,24 +96,15 @@
   transition: all 0.35s ease 0.15s;
 }
 
-.icon {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  transition: 0.12s;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  transform: rotate(-90deg);
-
-  &.active {
-    transform: rotate(0deg);
-  }
-}
 
 .icon-arrow {
   background: $color-red;
   -webkit-mask-image: url(../images/down-arrow.svg);
   mask-image: url(../images/down-arrow.svg);
+  transform: rotate(-90deg);
+  &.active {
+    transform: rotate(0deg);
+  }
 }
 
 @media (max-width: $md-devices) {
@@ -121,7 +112,7 @@
     padding: 0px;
     margin-top: 50px;
 
-    h3{
+    h3 {
       color: $color-red;
     }
 
@@ -130,19 +121,17 @@
       width: 90%;
       padding: 10px;
     }
-  
+
     .accordion a {
       border-bottom: 0px;
       font-size: 1rem;
       padding: 1rem;
       color: $color-black;
     }
-  
+
     .accordion .content {
       border-bottom: 0px;
       border-top: 1px solid #e5e5e5;
     }
   }
-
-
 }

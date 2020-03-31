@@ -1,13 +1,17 @@
 @import "../css//base.scss";
 
 .siteFooter {
-  padding: $padding-1;
+  padding: $padding-1 $padding-1 0 $padding-1;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   background-color: $color-black;
   color: $color-white;
   margin-top: 50px;
+
+  a{
+    cursor: pointer;
+  }
 
   h3 {
     color: $color-red;
@@ -23,9 +27,9 @@
     display: flex;
     flex-direction: row;
 
-    .alignContent{
-        text-align: left;
-     }
+    .alignContent {
+      text-align: left;
+    }
 
     .aboutContainer {
       flex: 1;
@@ -41,7 +45,6 @@
 
       a {
         text-transform: uppercase;
-        cursor: pointer;
       }
 
       a:hover {
@@ -55,26 +58,55 @@
     flex-direction: row;
     display: flex;
 
-
     .copyRightsContainer {
       flex: 1;
 
-      p{
+      p {
         text-align: center;
       }
-    a {
-      text-transform: uppercase;
-      cursor: pointer;
-      color: $color-red;
-    }
+      a {
+        text-transform: uppercase;
+        cursor: pointer;
+        color:$color-blue-gray;
+        font-weight: bold;
+    letter-spacing: 2px;
+      }
 
-    a:hover {
-      color: $color-blue-gray;
-    }
+      a:hover {
+        color: $color-red;
+      }
     }
 
     .socialLinksContainer {
       flex: 1;
+      display: flex;
+    justify-content: center;
+
+
+    .iconContainer {
+      margin: 0 0.5rem;
+
+      .icon-fb {
+        background: $color-white;
+        -webkit-mask-image: url(../images/facebook-f-brands.svg);
+        mask-image: url(../images/facebook-f-brands.svg);
+        height: 1.3rem;
+        width: 1.3rem;
+      }
+
+      .icon-insta{
+        background: $color-white;
+        -webkit-mask-image: url(../images/instagram-brands.svg);
+        mask-image: url(../images/instagram-brands.svg);
+        height: 1.3rem;
+        width: 1.3rem;
+      }
+      i:hover {
+        background-color: $color-red;
+      }
+
+    }
+      
     }
   }
 }
@@ -90,10 +122,9 @@
     .contentContainer {
       flex-direction: column;
 
-    .alignContent{
-       text-align: center;
-    }
-
+      .alignContent {
+        text-align: center;
+      }
     }
   }
 }

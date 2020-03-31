@@ -9,22 +9,22 @@ export class FooterSection extends Component {
         <div className={style.contentContainer}>
           <div className={style.aboutContainer}>
             <h3>About WGRF</h3>
-            <p style={{textIndent: "1rem"}}>
+            <p style={{ textIndent: "1rem" }}>
               WGRF is a not-for-profit foundation having a goal of creating
               awareness of nature, its conservation protecting natural habitat.
               We are committed towards creating social awareness towards our
               environment by hosting trail and mountain running marathons and
               races.
             </p>
-            <p  style={{textIndent: "1rem"}}>
-                  Our stage is the Sahyadri mountain range of Western Ghats, in
+            <p style={{ textIndent: "1rem" }}>
+              Our stage is the Sahyadri mountain range of Western Ghats, in
               Maharashtra. The funds that will be generated through our trail
               running and mountain running marathons will go towards protecting
               and conserving the mountains and forest trails of the Western
               Ghats.
             </p>
-            <p style={{textIndent: "1rem"}}>
-                   The funds acquired through current and future events will be
+            <p style={{ textIndent: "1rem" }}>
+              The funds acquired through current and future events will be
               utilised for the conservation of forests controlled by Maharashtra
               State Forest Department, and conservation of the protected forts &
               monuments of Maharashtra State Archeology Department.
@@ -37,28 +37,28 @@ export class FooterSection extends Component {
               <p className={style.alignContent}>
                 <a>SRT Ultra</a>
               </p>
-              <p  className={style.alignContent}>
+              <p className={style.alignContent}>
                 <a>Sinhagad Epic Trail</a>
               </p>
             </div>
             <div style={{ flex: 1 }}>
               <h3>Quick Links</h3>
-              <p  className={style.alignContent}>
+              <p className={style.alignContent}>
                 <a>Home</a>
               </p>
-              <p  className={style.alignContent}>
+              <p className={style.alignContent}>
                 <a>Courses</a>
               </p>
-              <p  className={style.alignContent}>
+              <p className={style.alignContent}>
                 <a>Location</a>
               </p>
-              <p  className={style.alignContent}>
+              <p className={style.alignContent}>
                 <a>Gallery</a>
               </p>
-              <p  className={style.alignContent}>
+              <p className={style.alignContent}>
                 <a>FAQ</a>
               </p>
-              <p  className={style.alignContent}>
+              <p className={style.alignContent}>
                 <a>Get In Touch</a>
               </p>
             </div>
@@ -67,10 +67,22 @@ export class FooterSection extends Component {
         <hr></hr>
         <div className={style.legalsContainer}>
           <div className={style.copyRightsContainer}>
-            <p>Copyright &copy; 2019 All Rights Reserved by <a href="http://exientmedia.com/">Exient Media</a>.</p>
+            <p>
+              Copyright &copy; 2019 All Rights Reserved by{" "}
+              <a href="http://exientmedia.com/">Exient Media</a>.
+            </p>
           </div>
           <div className={style.socialLinksContainer}>
-            <p>Social Links</p>
+          <div className={style.iconContainer}>
+            <a>            
+              <i className={`icon ${style.iconFb}`}></i>
+            </a>
+          </div>
+          <div className={style.iconContainer}>
+            <a>            
+              <i className={`icon ${style.iconInsta}`}></i>
+            </a>
+          </div>
           </div>
         </div>
       </footer>
