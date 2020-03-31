@@ -2,58 +2,197 @@
 
 //Courses Page Css
 .coursecontainer{
-    z-index: 65;
-    height: 1000px;
-    background: transparent url(../images/bg_img4.jpg) no-repeat center top;
+	width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    position: relative;
 }
 
 .courseimage{
 	clip-path: polygon(6% 0, 89% 0%, 68% 119%, 0 100%);
-    position: absolute;
-    top: 46%;
-    left: -6%;
+	position: relative;
+	left:-6%;
 }
 
 .design{
-	z-index: 119;
-    width: 298px;
-	height: 225px;
-	position: relative;
-    top: 228%;
+	width: 298px;
+    height: 225px;
+    display: inline-flex;
+    position: relative;
+    top: -28%;
     right: -59%;
-	background-color: #ff1744;
-	clip-path: polygon(29% 1%, 100% 0%, 75% 100%, 0 100%);
+    background-color: #ff1744;
+    clip-path: polygon(29% 1%, 100% 0%, 75% 100%, 0 100%);
 }
 
-.carouselIndicators {
-	ol{
-		top:825%
-	}
 
-	li{
-		background-color: #FF1744;
-		width: 20px;
-		height: 20px;
-		min-height: 0px;
-		margin: 2px;
-		border:1px solid black;
-	}
+.contentContainer{
+	width: auto;
+	height: 500px;
+	padding: 50px 25px;
 }
 
-.carousel{
-	position: relative;
-    top: 45% !important;
-    left: -40%;
-    height: 282%;
-}
-
-.carouselItem{
-	p{
-	font-size: 36px;
+.contentHeading{
+	z-index: 73;
+    width: 435px;
+    min-height: 41px;
+    background-color: transparent;
+    font-size: 36px;
     color: #FF1744;
     text-indent: -2px;
     text-transform: uppercase;
     line-height: 36px;
+    font-family: '__Montserrat_5';
     font-weight: 800;
-	}
+    margin-left: 1px;
+    position: relative;
+}
+
+.contentLine{
+	z-index: 96;
+    width: 82px;
+    height: 6px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.contentDescription{
+    z-index: 77;
+    width: 500px;
+    background-color: transparent;
+    font-size: 14px;
+    color: #242424;
+    line-height: 18px;
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    margin-left: 1px;
+    margin-top: 53px;
+    position: relative;
+}
+
+.indicatorContainer {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .indicator {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(248, 201, 201);
+    margin: 0 5px;
+
+    &.active {
+      background-color: #FF1744 !important;
+    }
+
+    h2 {
+      font-size: 2.62671rem;
+    }
+  }
+
+  /* Animation Effect - effectFadeIn */
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+  //InverseCourse Page
+
+  .inversecourseimage{
+	clip-path: polygon(10% 0, 100% 0, 100% 100%, 35% 99%);
+
+}
+
+.inversedesign{
+	width: 298px;
+    height: 225px;
+    display: inline-flex;
+    position: relative;
+    top: -28%;
+    right: -15%;
+    background-color: #ff1744;
+	clip-path: polygon(0 0, 73% 0, 100% 100%, 27% 100%);
+}
+
+
+.inversecontentContainer{
+	width: auto;
+	height: 500px;
+	padding: 50px 25px;
+}
+
+.inversecontentHeading{
+	z-index: 73;
+    min-height: 41px;
+    background-color: transparent;
+    font-size: 36px;
+    color: #FF1744;
+    text-indent: -2px;
+    text-transform: uppercase;
+    line-height: 36px;
+    font-family: '__Montserrat_5';
+    font-weight: 800;
+    margin-left: 1px;
+    position: relative;
+}
+
+.inversecontentDescription{
+    z-index: 77;
+    background-color: transparent;
+    font-size: 14px;
+    color: #242424;
+    line-height: 18px;
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    margin-left: 1px;
+    margin-top: 53px;
+    position: relative;
+}
+
+
+//content
+section{
+	position:absolute;
+	left:20%;
+	transform: translate(-50,-50);
+	height: 400px;
+	width:1200px;
+	background: #FF1744;
+	box-shadow: 0 25px 30px rgba(0,0,0,.5);
+	display: flex;
+}
+
+.leftContent{
+	width: 50%;
+	height: 100%;
+	background: white;
+	box-sizing: border-box;
+}
+
+.rightContent{
+	width: calc(50% + 100px);
+	height: 100%;
+	background: #FF1744;
+	box-sizing: border-box;
+	border-left:100px solid #fff;
+	border-bottom:400px solid transparent;
+
 }
