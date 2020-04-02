@@ -24,7 +24,8 @@ export class LandingSection extends Component {
                 <h4 style={{ color: "white" }}>{subtitle}</h4>
               </div>
               <div className={style.buttonContainer}>
-                {buttonData.map((data, index) => {
+                {buttonData &&
+                buttonData.map((data, index) => {
                   return (
                     <LandingBackgroundButton
                       overText={data.overText}

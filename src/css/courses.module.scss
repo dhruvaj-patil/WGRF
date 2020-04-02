@@ -1,4 +1,4 @@
-
+@import "./base.scss";
 
 //Courses Page Css
 .coursecontainer{
@@ -7,12 +7,45 @@
     display: flex;
     flex-direction: row;
     position: relative;
+    min-height: 100vh;
 }
+
+.containerLeft{
+  flex: 1 1;
+  // margin-top: $margin-1;
+  padding: $padding-1;
+  box-sizing: border-box;
+}
+
+.containerRight {
+  flex: 1;
+  background-color: $color-red;
+  /* height: 100vh; */
+  -webkit-clip-path: polygon(100% 0, 100% 78%, 100% 100%, 0 100%, 22% 0);
+  clip-path: polygon(100% 0, 100% 78%, 100% 100%, 0 100%, 22% 0);
+  overflow: hidden;
+}
+
+.containerLeft::after {
+  // bottom: -18%;
+  height: 20vh;
+  width: 30vh;
+  background-color: $color-red;
+  position: absolute;
+  top: -15px;
+  left: 50.5vw;
+  z-index: 1;
+  content: " ";
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
 
 .courseimage{
 	clip-path: polygon(6% 0, 89% 0%, 68% 119%, 0 100%);
 	position: relative;
-	left:-6%;
+  left:-6%;
+  height: 100%;
 }
 
 .design{
@@ -170,29 +203,166 @@
 
 //content
 section{
-	position:absolute;
-	left:20%;
-	transform: translate(-50,-50);
-	height: 400px;
-	width:1200px;
+      margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+	height: 100vh;
+
 	background: #FF1744;
 	box-shadow: 0 25px 30px rgba(0,0,0,.5);
 	display: flex;
 }
 
 .leftContent{
-	width: 50%;
-	height: 100%;
-	background: white;
-	box-sizing: border-box;
+  padding:50px;
+  width: 55%;
+  height: 100%;
+  background: white;
+  box-sizing: border-box;
+  clip-path: polygon(100% 0, 0 0, 0 100%, 75% 100%);
+}
+
+.inverse{
+  margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    background: unset;
+	height: 100vh;
+	box-shadow: 0 25px 30px rgba(0,0,0,.5);
+	display: flex;
+}
+
+.inverseleftContent{
+  padding:50px;
+  width: 55%;
+  height: 100%;
+  background: #FF1744;
+  box-sizing: border-box;
+  clip-path: polygon(100% 0, 0 0, 0 100%, 75% 100%)!important;
+}
+
+.inverserightContent{
+  padding:50px;
+  width: 50%;
+  height: 100%;
+  background: white;
+  box-sizing: border-box;
 }
 
 .rightContent{
-	width: calc(50% + 100px);
-	height: 100%;
-	background: #FF1744;
-	box-sizing: border-box;
-	border-left:100px solid #fff;
-	border-bottom:400px solid transparent;
+  padding:50px;
+	width: 50%;
+    height: 100%;
+    background: #FF1744;
+    box-sizing: border-box;
 
+}
+
+
+@media (max-width: $md-devices) {
+  section{
+    height: auto;
+    flex-direction: column;
+
+    .leftContent{
+      flex: 1 1;
+      box-sizing: border-box;
+      order: 2;
+      clip-path: none;
+      width: 100%;
+    }
+
+    .leftContent::after {
+      content: none;
+    }
+
+    .rightContent{
+      -webkit-clip-path: none;
+      clip-path: none;
+      height: auto;
+      background-color: transparent;
+      height: 100%;
+      width: 100%
+    }
+  }
+
+  .inverse{
+    height: auto;
+    flex-direction: column;
+
+    .inverseleftContent{
+      flex: 1 1;
+      box-sizing: border-box;
+      order: 2;
+      width: 100%;
+      clip-path: unset!important;
+    }
+
+    .inverseleftContent::after {
+      content: none;
+    }
+
+    .inverserightContent{
+      -webkit-clip-path: none;
+      clip-path: none;
+      background-color: transparent;
+      height: 100%;
+      width: 100%
+    }
+  }
+
+
+  .courseContainer {
+    height: auto;
+    flex-direction: column;
+
+    .containerLeft {
+      flex: 1 1;
+      padding: 10px;
+      box-sizing: border-box;
+      order: 2;
+    }
+
+    .containerLeft::after {
+      content: none;
+    }
+
+    .containerRight {
+      -webkit-clip-path: none;
+      clip-path: none;
+      height: auto;
+      background-color: transparent;
+      height: 50vh;
+    }
+  }
+}
+
+@media (max-width: $lg-devices) {
+  .locationContainer {
+  .containerLeft::after {
+    // bottom: -18%;
+    height: 15vh;
+    width: 15vh;
+  }
+}
+}
+
+
+.heading{
+  h3{
+    justify-content: center;
+    text-align: center;
+    }
+
+  h2{
+    justify-content: center;
+    text-align: center;
+    color: #ff1744;
+  }
+
+}
+
+.headingBlock{
+background-color: black;
+opacity: 0.3;
 }
