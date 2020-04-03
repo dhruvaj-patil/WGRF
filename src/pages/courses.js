@@ -1,11 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
-import ImageGallery from 'react-image-gallery';
-import 'react-image-gallery/styles/scss/image-gallery.scss'
-import Layout from "../components/layout"
 import SEO from "../components/seo"
-import style from "../css/courses.module.scss"
-import { Carousel, Row, Col, Container } from "react-bootstrap"
+import WGRFSection from "../components/index_page_sections/Courses_section/WGRFSection";
+import SRTUltra from "../components/index_page_sections/Courses_section/SRTUltra";
+import Layout from "../components/layout"
+import style from '../css/courses.module.scss'
+import InfoDiagonalSection from '../components/index_page_sections/Courses_section/InfoDiagonalSection'
+import { LandingSection } from "../components/index_page_sections/landing_section/landingSection"
 
 const images = [
   {
@@ -28,130 +28,44 @@ export default class Courses extends React.Component{
     this.state = {
       showDesc: true,
     }
+    this.toggle = this.toggle.bind(this);
   }
 
   componentDidMount() {
     setInterval(() => {
-        this.setState({ showDesc: !this.state.showDesc })
-      }, 8000)
+      this.setState({ showDesc: !this.state.showDesc })
+    }, 8000)
+  }
+
+  toggle(){
+      this.setState({ showDesc: !this.state.showDesc })
   }
   
   
   render(){
     const { showDesc } = this.state
     return(
-      <div>
-  <Layout>
-    <SEO title="Page two" />
-    <div className={style.coursecontainer}>
-      <Row>
-        <Col className={"mt-5"}>
-          <img className={style.courseimage} src={require("../images/bg_img4.jpg")} />
-          <div className={style.design}></div>
+      <Layout>
+<SEO title="Courses Page" />
+<LandingSection
+      title="Courses"
+      subtitle="Course Details"
+    ></LandingSection>
+    <div className={style.heading}>
+    <h2 className={"m-0"}>WGRF EVENT</h2>
+    <h3>Course Details</h3>
+    <WGRFSection images={images} toggle={this.toggle} showDesc={showDesc}/>
+    <InfoDiagonalSection inverse={true}/>
+    </div>
 
-        </Col>
-        <Col className={"mt-5"}>
-          <div style={{ textAlign: "center" }} className={style.contentContainer}>
-            <div className={style.contentHeading}>{showDesc?"Hello":"Gallery"}
-                <div className={style.contentDescription}>
-                  {showDesc && 
-                  (
-                  <div>
-                  Lorem Ipsum
-                Lorem Ipsum
-                Lorem Ipsum
-                Lorem Ipsum
-                   </div>)
-                  }
-                  {!showDesc && (
-                  <div>
-                      <ImageGallery showPlayButton={false} items={images}/>
-                  </div>
-                  )
-                  }
-              </div>
-            </div>
-          </div>
-          <div className={style.indicatorContainer}>
-              <div
-                onClick={() => this.setState({ showDesc: true })}
-                className={`${style.indicator} ${
-                  showDesc ? style.active : ""
-                }`}
-              ></div>
-              <div
-                onClick={() => this.setState({ showDesc: false })}
-                className={`${style.indicator} ${
-                  !showDesc ? style.active : ""
-                }`}
-              ></div>
-            </div>
-        </Col>
-      </Row>
-</div>
-  </Layout >
-
-<Layout>
-<div className={style.inversecoursecontainer}>
-  <Row>
-    <Col className={"mt-5"}>
-      <div style={{ textAlign: "center" }} className={style.inversecontentContainer}>
-        <div className={style.inversecontentHeading}>{showDesc?"Hello":"Gallery"}
-            <div className={style.inversecontentDescription}>
-              {!showDesc && 
-              (
-              <div>
-              Lorem Ipsum
-            Lorem Ipsum
-            Lorem Ipsum
-            Lorem Ipsum
-               </div>)
-              }
-              {showDesc && (
-              <div>
-                  <ImageGallery showPlayButton={false} items={images}/>
-              </div>
-              )
-              }
-          </div>
-        </div>
-      </div>
-      <div style={{display:'inline-flex',float:'right'}} className={style.indicatorContainer}>
-          <div
-            onClick={() => this.setState({ showDesc: true })}
-            className={`${style.indicator} ${
-              showDesc ? style.active : ""
-            }`}
-          ></div>
-          <div
-            onClick={() => this.setState({ showDesc: false })}
-            className={`${style.indicator} ${
-              !showDesc ? style.active : ""
-            }`}
-          ></div>
-        </div>
-    </Col>
-    <Col className={"mt-5"}>
-      <img className={style.inversecourseimage} src={require("../images/bg_img4.jpg")} />
-      <div className={style.inversedesign}></div>
-    </Col>
-  </Row>
-</div>
+    <div className={style.heading}>
+    <h2 className={"m-0"}>SRT ULTRA EVENT</h2>
+    <h3>Course Details</h3>
+    <SRTUltra images={images}  toggle={()=>this.toggle()} showDesc={showDesc}/> 
+    <InfoDiagonalSection inverse={false}/>
+    </div>
 </Layout>
 
-<Layout>
-  
-<div>
-  <section>
-    <div className={style.leftContent}></div>
-    <div className={style.rightContent}></div>
-  </section>
-
-</div>
-</Layout>
-
-
-</div>
   )
 }
 }

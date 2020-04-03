@@ -33,7 +33,7 @@ export default class LocationSection extends React.Component {
                   showTravel ? style.effectFadeIn : ""
                 }`}
               >
-                <h3>Travel</h3>
+                <h3>What We Give</h3>
                 <ul>
                   <li>
                     <b>BUS</b>: Direct. There is an hourly bus service direct
