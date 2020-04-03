@@ -50,7 +50,7 @@ const ACCORDION_DATA = [
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="WGRF" />
 
     <LandingSection
       title="WGRF"
