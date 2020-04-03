@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import { LandingSection } from "../components/index_page_sections/landing_section/landingSection"
+import { LandingSection } from "../components/common_components/landing_section/landingSection"
 import FaqSection from "../components/index_page_sections/FAQ_section/faqSection"
 import SEO from "../components/seo"
 import LocationSection from "../components/index_page_sections/location_section/locationSection"

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { Background } from "react-parallax"
 
@@ -9,13 +9,14 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import LandingBackgroundButton from "./LandingBackgroundButton"
 
-const LandingBackground = () => {
+const LandingBackground = (contentHeight = "100vh", image) => {
   // duotone: {
   //   highlight: "#838383",
   //   shadow: "#192550",
   //   opacity: 30
   // }
 
+console.log("height ==> ", contentHeight.landingBackgroundHeight)
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "bg_img3.jpg" }) {
@@ -30,14 +31,13 @@ const LandingBackground = () => {
 
   return (
     <Background
-      className={style.parallaxContentContainer}
-      contentClassName={style.parallaxContentContainer}
-    >
-      <div>
+   
+     >
+      <div  style={{height: contentHeight.landingBackgroundHeight}}>
         <Img
           style={{
             width: "100vw",
-            height: "100vh",
+            height:"100vh" ,
             zIndex: -1,
           }}
           fluid={data.placeholderImage.childImageSharp.fluid}

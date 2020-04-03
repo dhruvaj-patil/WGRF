@@ -10,12 +10,15 @@ export class LandingSection extends Component {
  
 
   render() {
-    const {title, subtitle, buttonData} = this.props;
+
+    const {title, subtitle, buttonData, landingBackgroundHeight} = this.props;
+    console.log(" ilandingBackgroundHeight in section =====", landingBackgroundHeight)
     return (
       <>
-        <Parallax strength={500}>
+        <Parallax strength={500} style={{height: landingBackgroundHeight}}>
           <>
-            <div className={style.landingContainer}>
+            <div className={style.landingContainer}
+            >
               <div>
                 <h1 className={style.landingTitle}>{title}</h1>
               </div>
@@ -37,6 +40,7 @@ export class LandingSection extends Component {
               </div>
             </div>
             <LandingBackground
+            landingBackgroundHeight={landingBackgroundHeight}
  
             ></LandingBackground>
           </>
