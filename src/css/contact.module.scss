@@ -1,0 +1,413 @@
+@import "./base.scss";
+
+// Image Related Variables
+$gutter: 2.4rem;
+$font-size-base: 1.6rem;
+$tile-img-size: 9rem;
+$tile-img-border: $gutter / 4;
+$square-diagonal-ratio: 1.414213562; // sqrt(2)
+// Computed vars
+$tile-img-size-total: $tile-img-size * $square-diagonal-ratio;
+$tile-img-rotation: 45deg;
+$ease-bump: cubic-bezier(0.99, -0.2, 0.01, 1.2);
+
+// Text Related Variables
+$tile-metas-height: $tile-img-size-total / 6;
+
+$font-size-small: 1.4rem;
+
+$font-size-big: 2rem;
+
+$tile-title-height: (
+  $tile-img-size-total / 2 - $tile-metas-height - 2 * $gutter / 4
+);
+
+$tile-body-height: $tile-img-size-total / 2;
+$tile-button-height: $tile-img-size-total / 4;
+
+@mixin triangle($orientation, $color, $width, $height: $width / 2) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $orientation == "left" {
+    border-width: $width / 2 $height $width / 2 0;
+    border-color: transparent $color transparent transparent;
+  } @else if $orientation == "right" {
+    border-width: $width / 2 0 $width / 2 $height;
+    border-color: transparent transparent transparent $color;
+  } @else if $orientation == "top" {
+    border-width: 0 $width / 2 $height $width / 2;
+    border-color: transparent transparent $color transparent;
+  } @else if $orientation == "bottom" {
+    border-width: $height $width / 2 0 $width / 2;
+    border-color: $color transparent transparent transparent;
+  } @else if $orientation == "top-left" {
+    border-width: $height * 2 $width 0 0;
+    border-color: $color transparent transparent transparent;
+  } @else if $orientation == "top-right" {
+    border-width: 0 $width $height * 2 0;
+    border-color: transparent $color transparent transparent;
+  } @else if $orientation == "bottom-left" {
+    border-width: $height * 2 0 0 $width;
+    border-color: transparent transparent transparent $color;
+  } @else if $orientation == "bottom-right" {
+    border-width: 0 0 $height * 2 $width;
+    border-color: transparent transparent $color transparent;
+  } @else {
+    @error '@mixin triangle(): unknown $orientation `#{$orientation}`';
+  }
+}
+
+.contact {
+  width: 100%;
+  height: 100vh;
+  background-color: $color-white;
+  overflow: hidden;
+  padding-bottom: 200px;
+
+
+
+  .contactContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tiles,
+  .tile__title,
+  .tile__body,
+  .meta,
+  .tile__btn {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+  }
+
+
+
+  .tile {
+    margin: 0 $gutter;
+    padding: $gutter / 2;
+    display: flex;
+    font-size: $font-size-base;
+    max-width: 50vw;
+    // max-height: $tile-img-size-total;
+    cursor: pointer;
+    min-width: 50rem;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      border: none;
+      display: block;
+      content: "";
+      width: 30rem;
+      height: 30rem;
+      position: absolute;
+      top: $tile-img-size-total / 2;
+      left: $tile-img-size-total / 2;
+      background-color: #ddd;
+      opacity: 0;
+      transform: translate3d(-50%, -50%, 0) rotateZ(0) scale(0);
+      transition: all 0.5s $ease-bump;
+      transition-delay: 0.25s;
+    }
+
+    &.active {
+        &::before {
+            opacity: 1;
+            transform: translate3d(-50%, -50%, 0) rotateZ($tile-img-rotation)
+              scale(1);
+          }
+    }
+    // &:hover,
+    // &:focus {
+    //   &::before {
+    //     opacity: 1;
+    //     transform: translate3d(-50%, -50%, 0) rotateZ($tile-img-rotation)
+    //       scale(1);
+    //   }
+    // }
+  }
+
+  .tile__img {
+    flex-basis: $tile-img-size-total;
+    min-width: $tile-img-size-total;
+    max-height: $tile-img-size-total;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > .img-wrapper {
+      width: $tile-img-size / 2;
+      height: $tile-img-size / 2;
+      border: $tile-img-border solid $color-red;
+      transform: rotateZ($tile-img-rotation);
+      overflow: hidden;
+      position: relative;
+      transition: all 0.25s $ease-bump;
+      z-index: 10;
+
+
+      &.active {
+        width: $tile-img-size;
+        height: $tile-img-size;
+      }
+    //   .tile:hover &,
+    //   .tile:focus & {
+    //     width: $tile-img-size;
+    //     height: $tile-img-size;
+    //   }
+
+      > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        max-width: $tile-img-size-total;
+        transform-origin: 50% 50%;
+        transform: translate3d(-50%, -50%, 0) rotateZ(-$tile-img-rotation)
+          scale(0.85);
+        transition: all 0.25s $ease-bump;
+
+        &.active & {
+            transform: translate3d(-50%, -50%, 0) rotateZ(-$tile-img-rotation)
+            scale(1);
+        }
+        // .tile:hover & {
+        //   transform: translate3d(-50%, -50%, 0) rotateZ(-$tile-img-rotation)
+        //     scale(1);
+        // }
+      }
+    }
+  }
+
+  .tile__content {
+    flex-grow: 1;
+  }
+
+  .tile__title,
+  .tile__body,
+  .tile__btn {
+    position: relative;
+    background-color: $color-red;
+    color: $color-white;
+    margin: 0;
+    padding-left: $gutter / 4;
+    padding-right: $gutter / 4;
+  }
+
+  .tile__metas {
+    height: $tile-metas-height;
+    line-height: $tile-metas-height;
+    font-size: $font-size-small;
+    transform: translateX(
+      $gutter * $square-diagonal-ratio / 4 + $tile-metas-height +
+        $tile-img-size-total / -2
+    );
+    margin-bottom: $gutter / 4;
+
+    .meta {
+      position: relative;
+      display: inline-block;
+      background: $color-black;
+      padding-left: $gutter / 8;
+      padding-right: $gutter / 8;
+      margin-right: $tile-metas-height + $gutter / 8;
+      color: white;
+      transform: translate3d($tile-metas-height, $tile-metas-height, 0);
+      opacity: 0;
+      transition: all 0.25s $ease-bump;
+      transition-delay: 0.25s;
+
+      &:nth-child(2) {
+        transition-delay: 0.25s + 0.125s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.25s + 0.125s * 2;
+      }
+
+
+      &.active {
+        opacity: 1;
+        transform: translate3d(0, 0, 0); 
+      }
+
+    //   .tile:hover &,
+    //   .tile:focus & {
+    //     opacity: 1;
+    //     transform: translate3d(0, 0, 0);
+    //   }
+
+      &::before {
+        left: -$tile-metas-height;
+        @include triangle("top-right", $color-black, $tile-metas-height);
+      }
+
+      &::after {
+        right: -$tile-metas-height;
+        @include triangle("bottom-left", $color-black, $tile-metas-height);
+      }
+    }
+  }
+
+  .tile__title {
+    display: inline-block;
+    height: $tile-title-height;
+    line-height: $tile-title-height;
+    font-size: $font-size-big;
+    font-weight: 600;
+    margin-right: $tile-title-height;
+    transform: translateX(-$tile-img-size-total / 4);
+    transition: all 0.25s $ease-bump;
+    margin-left: $gutter / $square-diagonal-ratio / 4;
+
+
+    &.active {
+        transform: translateX(0);
+    }
+    // .tile:hover &,
+    // .tile:focus & {
+    //   transform: translateX(0);
+    // }
+
+    &::before {
+      left: -$tile-title-height;
+      @include triangle("top-right", $color-red, $tile-title-height);
+    }
+
+    &::after {
+      right: -$tile-title-height;
+      @include triangle("bottom-left", $color-red, $tile-title-height);
+    }
+  }
+
+  .tile__body {
+    height: $tile-body-height;
+    margin-top: $gutter / 4;
+    margin-bottom: $gutter / 4;
+    margin-left: $gutter * $square-diagonal-ratio / 4;
+    margin-right: $tile-body-height;
+    padding-top: $gutter / 4;
+    padding-bottom: $gutter / 4;
+    font-size: $font-size-small;
+    font-style: italic;
+    opacity: 0;
+    transform: translate3d(-$tile-body-height, -$tile-body-height, 0);
+    transition: all 0.25s $ease-bump;
+    transition-delay: 0.25s;
+
+
+    &.active {
+        opacity: 1 ;
+        transform: translate3d(0, 0, 0);
+    }
+
+    // &::before {
+    //     left: -($tile-body-height / 2);
+    //     @include triangle("left", $color-red, $tile-body-height);
+    //   }
+    // .tile:hover &,
+    // .tile:focus & {
+      
+    // }
+
+    &::before {
+      left: -($tile-body-height / 2);
+      @include triangle("left", $color-red, $tile-body-height);
+    }
+
+    &::after {
+      right: -$tile-body-height;
+      @include triangle("top-left", $color-red, $tile-body-height);
+    }
+  }
+
+  .tile__btn {
+    display: inline-block;
+    height: $tile-button-height;
+    margin-left: $tile-button-height + 2 * $gutter / 4;
+    line-height: $tile-button-height;
+    background: $color-black;
+    text-decoration: none;
+    font-size: $font-size-small;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    transform: translate3d(
+      -$tile-button-height * 2 - $gutter / 8,
+      -$tile-body-height - $gutter / 4,
+      0
+    );
+    transition: all 0.25s $ease-bump;
+    transition-delay: 0.125s;
+
+
+    &.active{
+        transform: translate3d(0, 0, 0);
+    }
+    // MOved data from title hover to .active class
+    // .tile:hover &,
+    // .tile:focus & {
+     
+    // }
+
+    &::before {
+      left: -$tile-button-height;
+      @include triangle(
+        "bottom-right",
+        $color-black,
+        $tile-button-height
+      );
+      transition: all 0.25s;
+      transition-delay: 0.125s;
+
+      &.active &{
+        @include triangle("top-right", $color-black, $tile-button-height);
+      }
+
+    //   .tile:hover &,
+    //   .tile:focus & {
+    //     @include triangle("top-right", $color-black, $tile-button-height);
+    //   }
+    }
+    &::after {
+      right: -$tile-button-height;
+      @include triangle("top-left", $color-black, $tile-button-height);
+    }
+
+    // &:hover,
+    // &:focus {
+    // }
+  }
+}
+
+@media (max-width: $lg-devices) {
+.contact {
+  .contactContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+
+}
+
+
+@media (max-width: $md-devices) {
+  .contact {
+
+
+  }
+
+}
