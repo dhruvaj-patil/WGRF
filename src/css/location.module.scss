@@ -43,6 +43,7 @@
   padding: $padding-1;
   box-sizing: border-box;
 
+
   .indicatorContainer {
     display: flex;
     flex-direction: row;
@@ -94,7 +95,7 @@
     padding: 1rem;
 
     li {
-      line-height: 50px;
+      line-height: 25px;
       color: #37474f;
     }
 
@@ -113,6 +114,15 @@
         Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
         sans-serif;
     }
+
+
+
+  .registerCamp {
+    li {
+      margin-bottom: 5px;
+      line-height: 25px;
+    }
+  }
   }
 
   .effectFadeIn {
@@ -135,7 +145,6 @@
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
-
 .containerRight::after {
   // bottom: -18%;
   height: 20vh;
@@ -150,12 +159,11 @@
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
-.inverseContainerRight{
+.inverseContainerRight {
   flex: 1;
   overflow: hidden;
-  padding:"20px";
-  
-  
+  padding: "20px";
+
   .indicatorContainer {
     display: flex;
     flex-direction: row;
@@ -179,7 +187,7 @@
   }
 }
 
-.inverseContainerRight::after{
+.inverseContainerRight::after {
   height: 20vh;
   width: 30vh;
   background-color: $color-red;
@@ -216,7 +224,7 @@
       }
     }
 
-    .inverseContainerRight::after{
+    .inverseContainerRight::after {
       content: none;
     }
 
@@ -241,14 +249,14 @@
 
 @media (max-width: $lg-devices) {
   .locationContainer {
-  .containerLeft::after {
-    // bottom: -18%;
-    height: 15vh;
-    width: 15vh;
+    .containerLeft::after {
+      // bottom: -18%;
+      height: 15vh;
+      width: 15vh;
+    }
   }
 }
-}
 
-.inverseLeft{
+.inverseLeft {
   clip-path: polygon(0px 0px, 100% -12%, 70% 100%, 0% 100%);
 }

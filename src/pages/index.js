@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import LocationSection from "../components/index_page_sections/location_section/locationSection"
 import GallerySection from "../components/index_page_sections/gallery_section/gallerySection"
 import ContactSection from "../components/index_page_sections/contact_section/contactSection"
+import ParallaxComponent from "../components/common_components/parallaxComponent/parallaxComponent"
 
 const LANDING_BUTTON_DATA = [
   {
@@ -19,34 +20,37 @@ const LANDING_BUTTON_DATA = [
   },
 ]
 
-
-
 const ACCORDION_DATA = [
   {
-    title: 'Why is the moon sometimes out during the day?',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
-    opened: false
+    title: "Why is the moon sometimes out during the day?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
+    opened: false,
   },
   {
-    title: 'Why is the moon sometimes out during the day?',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
-    opened: false
+    title: "Why is the moon sometimes out during the day?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
+    opened: false,
   },
   {
-    title: 'Why is the moon sometimes out during the day?',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
-    opened: false
+    title: "Why is the moon sometimes out during the day?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
+    opened: false,
   },
   {
-    title: 'Why is the moon sometimes out during the day?',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
-    opened: false
+    title: "Why is the moon sometimes out during the day?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
+    opened: false,
   },
   {
-    title: 'Why is the moon sometimes out during the day?',
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
-    opened: false
-  }
+    title: "Why is the moon sometimes out during the day?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit,asdasd asd asd asd  asd qwdqw x qwqwd  qwdq cx qw xqwdqe dqwdqwdewvrefcqwdqwqwdqwdqwdasdwqqd",
+    opened: false,
+  },
 ]
 
 const IndexPage = () => (
@@ -62,7 +66,9 @@ const IndexPage = () => (
     <LocationSection></LocationSection>
 
     <GallerySection></GallerySection>
-
+    <ParallaxComponent
+      bgImg={require("../images/bg_img1.jpg")}
+    ></ParallaxComponent>
     <FaqSection accordionData={ACCORDION_DATA}></FaqSection>
     {/* <Link to="/courses/">Go to page 2</Link> */}
     <ContactSection></ContactSection>

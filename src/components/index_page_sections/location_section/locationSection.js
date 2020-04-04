@@ -6,14 +6,14 @@ export default class LocationSection extends React.Component {
   constructor(props) {
     super()
     this.state = {
-      showTravel: true,
+      showTravel: false,
     }
   }
 
   componentDidMount() {
-    setInterval(() => {
-        this.setState({ showTravel: !this.state.showTravel })
-      }, 8000)
+    // setInterval(() => {
+    //     this.setState({ showTravel: !this.state.showTravel })
+    //   }, 8000)
   }
 
   render() {
@@ -33,7 +33,7 @@ export default class LocationSection extends React.Component {
                   showTravel ? style.effectFadeIn : ""
                 }`}
               >
-                <h3>What We Give</h3>
+                <h3>How to Reach</h3>
                 <ul>
                   <li>
                     <b>BUS</b>: Direct. There is an hourly bus service direct
@@ -75,25 +75,48 @@ export default class LocationSection extends React.Component {
                 }`}
               >
                 <h3>Accomodation</h3>
-                <p>
-                  Host Hotel Kondhana Guesthouse is providing low cost
-                  accommodation as well as camping per individual as well as
-                  groups.
-                </p>
-                <p>
-                  For Bookings Contact <b>Ketan</b> : {" "}Phone no{" "}-{" "}
-                  <a
-                    href="tel:9423012632 "
-                  >
-                    942-301-2632
-                  </a>
-               {" | "}WhatsApp{" "}-{" "}
-                  <a
-                    href="tel: 9545432929"
-                  >
-                    954-543-2929
-                  </a>
-                </p>
+                <div>
+                  <div>
+                    <p>
+                      Host Hotel Kondhana Guesthouse is providing low cost
+                      accommodation as well as camping per individual as well as
+                      groups.
+                    </p>
+                    <p>
+                      For Bookings Contact <b>Ketan</b> : Phone no -{" "}
+                      <a href="tel:9423012632 ">942-301-2632</a>
+                      {" | "}WhatsApp -{" "}
+                      <a href="tel: 9545432929">954-543-2929</a>
+                    </p>
+                  </div>
+                  <div className={style.registerCamp}>
+                    <h4>Registering</h4>
+                    <ol>
+                      <li>Register for one of the marathon categories.</li>
+                      <li>Before checkout find camping section.</li>
+                      <li>Select camping facility per night.</li>
+                      <li>You will be charged accordingly at checkout.</li>
+                      <li>
+                        Print out the entire ticket and produce on campsite when
+                        you reach.
+                      </li>
+                      <li>1 ticket is valid only for 1 person.</li>
+                      <li>
+                        If you are accompanied by a friend, then write us a note
+                        about the same.
+                      </li>
+                      <li>
+                        You will pay extra person's charges on campsite in cash.
+                      </li>
+                      <li>Carry a valid ID proof with you.</li>
+                      <li>
+                        Clean your personal camping area before you leave.
+                      </li>
+                    </ol>
+
+                    <a href="">Head Over to Rules and Regulations for our camping rules</a>
+                  </div>
+                </div>
               </div>
             )}
             <div className={style.indicatorContainer}>

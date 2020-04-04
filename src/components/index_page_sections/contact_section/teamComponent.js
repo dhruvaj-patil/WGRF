@@ -6,11 +6,13 @@ export class TeamComponent extends Component {
     this.state = {
       isActive: false,
     }
+    console.log("props are ==>", this.props)
   }
 
   render() {
       const {isActive} = this.state
-      const {title, skills, desc, faceBookLink, img} = this.props;
+      const { name, skills, desc, fbLink, img} = this.props.playerData;
+      console.log("href att ==>", fbLink)
     return (
       <>
         <article
@@ -35,12 +37,12 @@ export class TeamComponent extends Component {
               {/* <span className={`${style.meta} ${isActive ? style.active : ''}`}>#2 meta</span>
               <span className={`${style.meta} ${isActive ? style.active : ''}`}>#3 meta</span> */}
             </div>
-            <h3 className={`${style.tile__title} ${isActive ? style.active : ''} `}>{title}</h3>
+            <h3 className={`${style.tile__title} ${isActive ? style.active : ''} `}>{name}</h3>
             <div className={`${style.tile__body} ${isActive ? style.active : ''}`}>
               {desc}
             </div>
-            <a href={faceBookLink} className={`${style.tile__btn} ${isActive ? style.active : ''}`}>
-              Get in touch!
+            <a href={fbLink} target="_blank" className={`${style.tile__btn} ${isActive ? style.active : ''}`}>
+              Message me on Facebook !
             </a>
           </div>
         </article>

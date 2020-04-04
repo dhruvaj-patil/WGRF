@@ -2,28 +2,48 @@
 
 // Image Related Variables
 $gutter: 2.4rem;
+$gutter-md: 1.2rem;
+
 $font-size-base: 1.6rem;
+$font-size-base-md: 0.8rem;
+
 $tile-img-size: 9rem;
+$tile-img-size-md: 4.5rem;
+
 $tile-img-border: $gutter / 4;
+$tile-img-border-md: $gutter-md / 4;
+
 $square-diagonal-ratio: 1.414213562; // sqrt(2)
 // Computed vars
 $tile-img-size-total: $tile-img-size * $square-diagonal-ratio;
+$tile-img-size-total-md: $tile-img-size-md * $square-diagonal-ratio;
+
 $tile-img-rotation: 45deg;
 $ease-bump: cubic-bezier(0.99, -0.2, 0.01, 1.2);
 
 // Text Related Variables
 $tile-metas-height: $tile-img-size-total / 6;
+$tile-metas-height-md: $tile-img-size-total-md / 6;
 
 $font-size-small: 1.4rem;
+$font-size-small-md: 0.7rem;
 
 $font-size-big: 2rem;
+$font-size-big-md: 1rem;
 
 $tile-title-height: (
   $tile-img-size-total / 2 - $tile-metas-height - 2 * $gutter / 4
 );
 
+$tile-title-height-md: (
+  $tile-img-size-total-md / 2 - $tile-metas-height-md - 2 * $gutter-md / 4
+);
+
 $tile-body-height: $tile-img-size-total / 2;
+$tile-body-height-md: $tile-img-size-total-md / 2;
+
 $tile-button-height: $tile-img-size-total / 4;
+$tile-button-height-md: $tile-img-size-total-md / 4;
 
 @mixin triangle($orientation, $color, $width, $height: $width / 2) {
   width: 0;
@@ -61,16 +81,16 @@ $tile-button-height: $tile-img-size-total / 4;
 
 .contact {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   background-color: $color-white;
   overflow: hidden;
   padding-bottom: 200px;
-
-
+  padding: 50px;
 
   .contactContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .tiles,
@@ -92,8 +112,6 @@ $tile-button-height: $tile-img-size-total / 4;
     }
   }
 
-
-
   .tile {
     margin: 0 $gutter;
     padding: $gutter / 2;
@@ -102,9 +120,10 @@ $tile-button-height: $tile-img-size-total / 4;
     max-width: 50vw;
     // max-height: $tile-img-size-total;
     cursor: pointer;
-    min-width: 50rem;
+    min-width: 40rem;
     position: relative;
     overflow: hidden;
+    flex: 1 0 21%;
 
     &::before {
       border: none;
@@ -123,11 +142,11 @@ $tile-button-height: $tile-img-size-total / 4;
     }
 
     &.active {
-        &::before {
-            opacity: 1;
-            transform: translate3d(-50%, -50%, 0) rotateZ($tile-img-rotation)
-              scale(1);
-          }
+      &::before {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0) rotateZ($tile-img-rotation)
+          scale(1);
+      }
     }
     // &:hover,
     // &:focus {
@@ -157,16 +176,15 @@ $tile-button-height: $tile-img-size-total / 4;
       transition: all 0.25s $ease-bump;
       z-index: 10;
 
-
       &.active {
         width: $tile-img-size;
         height: $tile-img-size;
       }
-    //   .tile:hover &,
-    //   .tile:focus & {
-    //     width: $tile-img-size;
-    //     height: $tile-img-size;
-    //   }
+      //   .tile:hover &,
+      //   .tile:focus & {
+      //     width: $tile-img-size;
+      //     height: $tile-img-size;
+      //   }
 
       > img {
         position: absolute;
@@ -180,7 +198,7 @@ $tile-button-height: $tile-img-size-total / 4;
         transition: all 0.25s $ease-bump;
 
         &.active & {
-            transform: translate3d(-50%, -50%, 0) rotateZ(-$tile-img-rotation)
+          transform: translate3d(-50%, -50%, 0) rotateZ(-$tile-img-rotation)
             scale(1);
         }
         // .tile:hover & {
@@ -236,17 +254,16 @@ $tile-button-height: $tile-img-size-total / 4;
         transition-delay: 0.25s + 0.125s * 2;
       }
 
-
       &.active {
         opacity: 1;
-        transform: translate3d(0, 0, 0); 
+        transform: translate3d(0, 0, 0);
       }
 
-    //   .tile:hover &,
-    //   .tile:focus & {
-    //     opacity: 1;
-    //     transform: translate3d(0, 0, 0);
-    //   }
+      //   .tile:hover &,
+      //   .tile:focus & {
+      //     opacity: 1;
+      //     transform: translate3d(0, 0, 0);
+      //   }
 
       &::before {
         left: -$tile-metas-height;
@@ -271,9 +288,8 @@ $tile-button-height: $tile-img-size-total / 4;
     transition: all 0.25s $ease-bump;
     margin-left: $gutter / $square-diagonal-ratio / 4;
 
-
     &.active {
-        transform: translateX(0);
+      transform: translateX(0);
     }
     // .tile:hover &,
     // .tile:focus & {
@@ -306,10 +322,9 @@ $tile-button-height: $tile-img-size-total / 4;
     transition: all 0.25s $ease-bump;
     transition-delay: 0.25s;
 
-
     &.active {
-        opacity: 1 ;
-        transform: translate3d(0, 0, 0);
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
 
     // &::before {
@@ -318,7 +333,7 @@ $tile-button-height: $tile-img-size-total / 4;
     //   }
     // .tile:hover &,
     // .tile:focus & {
-      
+
     // }
 
     &::before {
@@ -351,34 +366,29 @@ $tile-button-height: $tile-img-size-total / 4;
     transition: all 0.25s $ease-bump;
     transition-delay: 0.125s;
 
-
-    &.active{
-        transform: translate3d(0, 0, 0);
+    &.active {
+      transform: translate3d(0, 0, 0);
     }
     // MOved data from title hover to .active class
     // .tile:hover &,
     // .tile:focus & {
-     
+
     // }
 
     &::before {
       left: -$tile-button-height;
-      @include triangle(
-        "bottom-right",
-        $color-black,
-        $tile-button-height
-      );
+      @include triangle("bottom-right", $color-black, $tile-button-height);
       transition: all 0.25s;
       transition-delay: 0.125s;
 
-      &.active &{
+      &.active & {
         @include triangle("top-right", $color-black, $tile-button-height);
       }
 
-    //   .tile:hover &,
-    //   .tile:focus & {
-    //     @include triangle("top-right", $color-black, $tile-button-height);
-    //   }
+      //   .tile:hover &,
+      //   .tile:focus & {
+      //     @include triangle("top-right", $color-black, $tile-button-height);
+      //   }
     }
     &::after {
       right: -$tile-button-height;
@@ -392,22 +402,225 @@ $tile-button-height: $tile-img-size-total / 4;
 }
 
 @media (max-width: $lg-devices) {
-.contact {
-  .contactContainer {
-    display: flex;
-    flex-direction: column;
+  .contact {
+    .contactContainer {
+      display: flex;
+      flex-direction: column;
+    }
   }
-
 }
-
-
-}
-
 
 @media (max-width: $md-devices) {
   .contact {
+    .tile {
+      margin: $gutter-md 0;
+      padding: $gutter-md / 2 0;
+      font-size: $font-size-base-md;
 
+      &::before {
+        border: none;
+        display: block;
+        content: "";
+        width: 15rem;
+        height: 15rem;
+        position: absolute;
+        top: $tile-img-size-total-md / 2;
+        left: $tile-img-size-total-md / 2;
+      }
+    }
 
+    // .tile__img {
+    //   min-width: 5.72792rem;
+
+    //   > .img-wrapper {
+    //     &.active {
+    //       width: 5rem;
+    //       height: 5rem;
+    //     }
+    //   }
+    // }
+
+    .tile__img {
+      flex-basis: $tile-img-size-total-md;
+      min-width: $tile-img-size-total-md;
+      max-height: $tile-img-size-total-md;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > .img-wrapper {
+        width: $tile-img-size-md / 2;
+        height: $tile-img-size-md / 2;
+        border: $tile-img-border-md solid $color-red;
+
+        &.active {
+          width: $tile-img-size-md;
+          height: $tile-img-size-md;
+        }
+
+        > img {
+          max-width: $tile-img-size-total-md;
+        }
+      }
+    }
+
+    .tile__title,
+    .tile__body,
+    .tile__btn {
+      padding-left: $gutter-md / 4;
+      padding-right: $gutter-md / 4;
+    }
+
+    .tile__metas {
+      height: $tile-metas-height-md;
+      line-height: $tile-metas-height-md;
+      font-size: $font-size-small-md;
+      transform: translateX(
+        $gutter-md * $square-diagonal-ratio / 4 + $tile-metas-height-md +
+          $tile-img-size-total-md / -2
+      );
+      margin-bottom: $gutter-md / 4;
+
+      .meta {
+        padding-left: $gutter-md / 8;
+        padding-right: $gutter-md / 8;
+        margin-right: $tile-metas-height-md + $gutter-md / 8;
+
+        transform: translate3d($tile-metas-height-md, $tile-metas-height-md, 0);
+
+        //   .tile:hover &,
+        //   .tile:focus & {
+        //     opacity: 1;
+        //     transform: translate3d(0, 0, 0);
+        //   }
+
+        &::before {
+          left: -$tile-metas-height-md;
+          @include triangle("top-right", $color-black, $tile-metas-height-md);
+        }
+
+        &::after {
+          right: -$tile-metas-height-md;
+          @include triangle("bottom-left", $color-black, $tile-metas-height-md);
+        }
+      }
+    }
+
+    .tile__title {
+      display: inline-block;
+      height: $tile-title-height-md;
+      line-height: $tile-title-height-md;
+      font-size: $font-size-big-md;
+      margin-right: $tile-title-height-md;
+      transform: translateX(-$tile-img-size-total-md / 4);
+      margin-left: $gutter-md / $square-diagonal-ratio / 4;
+
+      &::before {
+        left: -$tile-title-height-md;
+        @include triangle("top-right", $color-red, $tile-title-height-md);
+      }
+
+      &::after {
+        right: -$tile-title-height-md;
+        @include triangle("bottom-left", $color-red, $tile-title-height-md);
+      }
+    }
+
+    .tile__body {
+      height: 5.18198rem;
+      // height: $tile-body-height-md;
+      margin-top: $gutter-md / 4;
+      margin-bottom: $gutter-md / 4;
+      margin-left: $gutter-md * $square-diagonal-ratio / 4;
+      margin-right: $tile-body-height-md;
+      padding-top: $gutter-md / 4;
+      padding-bottom: $gutter-md / 4;
+      // font-size: $font-size-small-md;
+
+      font-size: 0.8rem;
+
+      transform: translate3d(-$tile-body-height-md, -$tile-body-height-md, 0);
+
+      &.active {
+        width: 50vw;
+      }
+      &::before {
+        // left: -($tile-body-height-md / 2);
+        // @include triangle("left", $color-red, $tile-body-height-md);
+        left: -1.59099rem;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2.59099rem 1.59099rem 2.59099rem 0;
+        border-color: transparent #ff1744 transparent transparent;
+      }
+
+      &::after {
+        // right: -$tile-body-height-md;
+        // @include triangle("top-left", $color-red, $tile-body-height-md);
+        right: -3.18198rem;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5.18198rem 3.18198rem 0 0;
+        border-color: #ff1744 transparent transparent transparent;
+      }
+    }
+
+    .tile__btn {
+      display: inline-block;
+      height: $tile-button-height-md;
+      margin-left: $tile-button-height-md + 2 * $gutter-md / 4;
+      line-height: $tile-button-height-md;
+      background: $color-black;
+      text-decoration: none;
+      font-size: $font-size-small-md;
+      font-style: italic;
+      top: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      transform: translate3d(
+        -$tile-button-height-md * 2 - $gutter-md / 8,
+        -$tile-body-height - $gutter-md / 4,
+        0
+      );
+      transition: all 0.25s $ease-bump;
+      transition-delay: 0.125s;
+
+      &.active {
+        transform: translate3d(0, 0, 0);
+        top: 0px;
+      }
+      // MOved data from title hover to .active class
+      // .tile:hover &,
+      // .tile:focus & {
+
+      // }
+
+      &::before {
+        left: -$tile-button-height-md;
+        @include triangle("bottom-right", $color-black, $tile-button-height-md);
+        transition: all 0.25s;
+        transition-delay: 0.125s;
+
+        &.active & {
+          @include triangle("top-right", $color-black, $tile-button-height-md);
+       
+        }
+
+        //   .tile:hover &,
+        //   .tile:focus & {
+        //     @include triangle("top-right", $color-black, $tile-button-height-md);
+        //   }
+      }
+      &::after {
+        right: -$tile-button-height-md;
+        @include triangle("top-left", $color-black, $tile-button-height-md);
+      }
+
+      // &:hover,
+      // &:focus {
+      // }
+    }
   }
-
 }
