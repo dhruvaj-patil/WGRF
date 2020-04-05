@@ -11,7 +11,7 @@ export class LandingSection extends Component {
 
   render() {
 
-    const {title, subtitle, buttonData, landingBackgroundHeight} = this.props;
+    const {title, subtitle, buttonData, landingBackgroundHeight,textStyle} = this.props;
     console.log(" ilandingBackgroundHeight in section =====", landingBackgroundHeight)
     return (
       <>
@@ -20,7 +20,7 @@ export class LandingSection extends Component {
             <div className={style.landingContainer}
             >
               <div>
-                <h1 className={style.landingTitle}>{title}</h1>
+                <h1 style={textStyle} className={style.landingTitle}>{title}</h1>
               </div>
 
               <div>

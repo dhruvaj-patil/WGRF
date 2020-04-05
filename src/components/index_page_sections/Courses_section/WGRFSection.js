@@ -5,11 +5,12 @@ import style from "../../../css//courses.module.scss"
 import container from '../../../css//location.module.scss'
 import { Row, Col } from "react-bootstrap"
 import InfoDiagonalSection from "./InfoDiagonalSection";
+import ParallaxComponent from "../../common_components/parallaxComponent/parallaxComponent"
 
  const WGRFSection = (props)=>(
 
 
-    <div className={container.locationContainer}>
+    <div className={`${container.locationContainer} ${container.inverseLocationContainer}`}>
     <div className={container.containerLeft}>
       <div style={{ flex: 1 }}>
         <h2 style={{ textAlign: "center" }}>WGRF</h2>
@@ -85,11 +86,15 @@ import InfoDiagonalSection from "./InfoDiagonalSection";
     </div>
     <div className={container.containerRight}>
       <div className={container.imageContainer}>
-        <img
+       <ParallaxComponent
+      bgImg={require("../../../images/bg_img1.jpg")}
+      helper={style.parallexHelper}
+    ></ParallaxComponent>
+        {/* <img
           src={require("../../../images/bg_img4.jpg")}
           width="100%"
           height="100%"
-        ></img>
+        ></img> */}
 
       </div>
     </div>

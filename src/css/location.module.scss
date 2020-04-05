@@ -11,7 +11,7 @@
 .imageContainer {
   flex: 1;
   -webkit-clip-path: polygon(100% 0, 100% 90%, 95% 100%, 0% 100%, 0 0);
-  clip-path: polygon(100% 0, 100% 90%, 95% 100%, 0% 100%, 0 0);
+  clip-path: polygon(100% 0, 100% 90%, 100% 100%, 0% 100%, 0 0);
   height: 100%;
 }
 
@@ -201,6 +201,11 @@
 }
 
 @media (max-width: $md-devices) {
+
+  .inverseLocationContainer{
+    flex-direction: column-reverse!important;
+  }
+
   .locationContainer {
     height: auto;
     flex-direction: column;
@@ -232,6 +237,9 @@
       content: none;
     }
 
+    .containerRight::after {
+    display: none;
+    }
     .containerRight {
       -webkit-clip-path: none;
       clip-path: none;

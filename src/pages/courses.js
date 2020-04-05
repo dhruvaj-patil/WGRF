@@ -50,6 +50,7 @@ export default class Courses extends React.Component {
           title="Marathons"
           subtitle={`Sinhagad Running Trail | Sinhagad Epic Trail`} 
           landingBackgroundHeight="50vh"
+          textStyle={{fontSize:"8em"}}
         ></LandingSection>
 
         <div className={style.heading}>
