@@ -67,6 +67,7 @@ const IndexPage = () => (
 
     <GallerySection></GallerySection>
     <ParallaxComponent
+      height="500px"
       bgImg={require("../images/bg_img1.jpg")}
     ></ParallaxComponent>
     <FaqSection accordionData={ACCORDION_DATA}></FaqSection>

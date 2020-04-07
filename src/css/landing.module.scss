@@ -29,6 +29,21 @@
   color: $color-red;
 }
 
+.courseTitle {
+ 
+  font-size: 5.5em;
+
+  color: $color-red;
+}
+
+.landingSubTitle {
+  color: white;
+}
+
+.courseSubTitle {
+  color: white;
+  // font-size: 0.9rem;
+}
 /* Common button styles */
 .button {
   float: left;
@@ -128,11 +143,18 @@
 
 @media (max-width: 600px) {
   .landingTitle {
-    font-size: 7em;
+    font-size: 6em;
+  }
+
+  .courseTitle {
+    font-size: 4rem;
+  }
+
+  .courseSubTitle {
+    font-size: 0.9rem;
   }
 
   .buttonContainer {
-
-	flex-direction: column;
+    flex-direction: column;
   }
 }

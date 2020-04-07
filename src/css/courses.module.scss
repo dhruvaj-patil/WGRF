@@ -1,16 +1,16 @@
 @import "./base.scss";
 
 //Courses Page Css
-.coursecontainer{
-	width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    min-height: 100vh;
+.coursecontainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 100vh;
 }
 
-.containerLeft{
+.containerLeft {
   flex: 1 1;
   // margin-top: $margin-1;
   padding: $padding-1;
@@ -40,181 +40,175 @@
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
-
-.courseimage{
-	clip-path: polygon(6% 0, 89% 0%, 68% 119%, 0 100%);
-	position: relative;
-  left:-6%;
+.courseimage {
+  clip-path: polygon(6% 0, 89% 0%, 68% 119%, 0 100%);
+  position: relative;
+  left: -6%;
   height: 100%;
 }
 
-.design{
-	width: 298px;
-    height: 225px;
-    display: inline-flex;
-    position: relative;
-    top: -28%;
-    right: -59%;
-    background-color: #ff1744;
-    clip-path: polygon(29% 1%, 100% 0%, 75% 100%, 0 100%);
+.design {
+  width: 298px;
+  height: 225px;
+  display: inline-flex;
+  position: relative;
+  top: -28%;
+  right: -59%;
+  background-color: $color-red;
+  clip-path: polygon(29% 1%, 100% 0%, 75% 100%, 0 100%);
 }
 
-
-.contentContainer{
-	width: auto;
-	height: 500px;
-	padding: 50px 25px;
+.contentContainer {
+  width: auto;
+  height: 500px;
+  padding: 50px 25px;
 }
 
-.contentHeading{
-	z-index: 73;
-    width: 435px;
-    min-height: 41px;
-    background-color: transparent;
-    font-size: 36px;
-    color: #FF1744;
-    text-indent: -2px;
-    text-transform: uppercase;
-    line-height: 36px;
-    font-family: '__Montserrat_5';
-    font-weight: 800;
-    margin-left: 1px;
-    position: relative;
+.contentHeading {
+  z-index: 73;
+  width: 435px;
+  min-height: 41px;
+  background-color: transparent;
+  font-size: 36px;
+  color: $color-red;
+  text-indent: -2px;
+  text-transform: uppercase;
+  line-height: 36px;
+  font-family: "__Montserrat_5";
+  font-weight: 800;
+  margin-left: 1px;
+  position: relative;
 }
 
-.contentLine{
-	z-index: 96;
-    width: 82px;
-    height: 6px;
-    margin-top: 10px;
-    position: relative;
+.contentLine {
+  z-index: 96;
+  width: 82px;
+  height: 6px;
+  margin-top: 10px;
+  position: relative;
 }
 
-.contentDescription{
-    z-index: 77;
-    width: 500px;
-    background-color: transparent;
-    font-size: 14px;
-    color: #242424;
-    line-height: 18px;
-    font-family: lato, sans-serif;
-    font-weight: 400;
-    margin-left: 1px;
-    margin-top: 53px;
-    position: relative;
+.contentDescription {
+  z-index: 77;
+  width: 500px;
+  background-color: transparent;
+  font-size: 14px;
+  color: #242424;
+  line-height: 18px;
+  font-family: lato, sans-serif;
+  font-weight: 400;
+  margin-left: 1px;
+  margin-top: 53px;
+  position: relative;
 }
 
 .indicatorContainer {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.indicator {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(248, 201, 201);
+  margin: 0 5px;
+
+  &.active {
+    background-color: $color-red !important;
   }
 
-  .indicator {
-    height: 20px;
-    width: 20px;
-    background-color: rgb(248, 201, 201);
-    margin: 0 5px;
+  h2 {
+    font-size: 2.62671rem;
+  }
+}
 
-    &.active {
-      background-color: #FF1744 !important;
-    }
-
-    h2 {
-      font-size: 2.62671rem;
-    }
+/* Animation Effect - effectFadeIn */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
 
-  /* Animation Effect - effectFadeIn */
-  @-webkit-keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
+  100% {
+    opacity: 1;
+  }
+}
 
-    100% {
-      opacity: 1;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
+  100% {
+    opacity: 1;
   }
-
-
-  //InverseCourse Page
-
-  .inversecourseimage{
-	clip-path: polygon(10% 0, 100% 0, 100% 100%, 35% 99%);
-
 }
 
-.inversedesign{
-	width: 298px;
-    height: 225px;
-    display: inline-flex;
-    position: relative;
-    top: -28%;
-    right: -15%;
-    background-color: #ff1744;
-	clip-path: polygon(0 0, 73% 0, 100% 100%, 27% 100%);
+//InverseCourse Page
+
+.inversecourseimage {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 35% 99%);
 }
 
-
-.inversecontentContainer{
-	width: auto;
-	height: 500px;
-	padding: 50px 25px;
+.inversedesign {
+  width: 298px;
+  height: 225px;
+  display: inline-flex;
+  position: relative;
+  top: -28%;
+  right: -15%;
+  background-color: $color-red;
+  clip-path: polygon(0 0, 73% 0, 100% 100%, 27% 100%);
 }
 
-.inversecontentHeading{
-	z-index: 73;
-    min-height: 41px;
-    background-color: transparent;
-    font-size: 36px;
-    color: #FF1744;
-    text-indent: -2px;
-    text-transform: uppercase;
-    line-height: 36px;
-    font-family: '__Montserrat_5';
-    font-weight: 800;
-    margin-left: 1px;
-    position: relative;
+.inversecontentContainer {
+  width: auto;
+  height: 500px;
+  padding: 50px 25px;
 }
 
-.inversecontentDescription{
-    z-index: 77;
-    background-color: transparent;
-    font-size: 14px;
-    color: #242424;
-    line-height: 18px;
-    font-family: lato, sans-serif;
-    font-weight: 400;
-    margin-left: 1px;
-    margin-top: 53px;
-    position: relative;
+.inversecontentHeading {
+  z-index: 73;
+  min-height: 41px;
+  background-color: transparent;
+  font-size: 36px;
+  color: $color-red;
+  text-indent: -2px;
+  text-transform: uppercase;
+  line-height: 36px;
+  font-family: "__Montserrat_5";
+  font-weight: 800;
+  margin-left: 1px;
+  position: relative;
 }
 
+.inversecontentDescription {
+  z-index: 77;
+  background-color: transparent;
+  font-size: 14px;
+  color: #242424;
+  line-height: 18px;
+  font-family: lato, sans-serif;
+  font-weight: 400;
+  margin-left: 1px;
+  margin-top: 53px;
+  position: relative;
+}
 
 //content
-section{
-      margin: 0 auto;
-    float: none;
-    margin-bottom: 10px;
-	height: 100vh;
+section {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  height: 100vh;
 
-	background: #FF1744;
-	box-shadow: 0 25px 30px rgba(0,0,0,.5);
-	display: flex;
+  background: $color-red;
+  box-shadow: 0 25px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
 }
 
-.leftContent{
-  padding:50px;
+.leftContent {
+  padding: 50px;
   width: 55%;
   height: 100%;
   background: white;
@@ -222,49 +216,47 @@ section{
   clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
 }
 
-.inverse{
+.inverse {
   margin: 0 auto;
-    float: none;
-    margin-bottom: 10px;
-    background: unset;
-	height: 100vh;
-	box-shadow: 0 25px 30px rgba(0,0,0,.5);
-	display: flex;
+  float: none;
+  margin-bottom: 10px;
+  background: unset;
+  height: 100vh;
+  box-shadow: 0 25px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
 }
 
-.inverseleftContent{
-  padding:50px;
+.inverseleftContent {
+  padding: 50px;
   width: 55%;
   height: 100%;
-  background: #FF1744;
+  background: $color-red;
   box-sizing: border-box;
-  clip-path: polygon(100% 0, 0 0, 0 100%, 75% 100%)!important;
+  clip-path: polygon(100% 0, 0 0, 0 100%, 75% 100%) !important;
 }
 
-.inverserightContent{
-  padding:50px;
+.inverserightContent {
+  padding: 50px;
   width: 50%;
   height: 100%;
   background: white;
   box-sizing: border-box;
 }
 
-.rightContent{
-  padding:50px;
-	width: 50%;
-    height: 100%;
-    background: #FF1744;
-    box-sizing: border-box;
-
+.rightContent {
+  padding: 50px;
+  width: 50%;
+  height: 100%;
+  background: $color-red;
+  box-sizing: border-box;
 }
 
-
 @media (max-width: $md-devices) {
-  section{
+  section {
     height: auto;
     flex-direction: column;
 
-    .leftContent{
+    .leftContent {
       flex: 1 1;
       box-sizing: border-box;
       order: 2;
@@ -276,41 +268,40 @@ section{
       content: none;
     }
 
-    .rightContent{
+    .rightContent {
       -webkit-clip-path: none;
       clip-path: none;
       height: auto;
       background-color: transparent;
       height: 100%;
-      width: 100%
+      width: 100%;
     }
   }
 
-  .inverse{
+  .inverse {
     height: auto;
     flex-direction: column;
 
-    .inverseleftContent{
+    .inverseleftContent {
       flex: 1 1;
       box-sizing: border-box;
       order: 2;
       width: 100%;
-      clip-path: unset!important;
+      clip-path: unset !important;
     }
 
     .inverseleftContent::after {
       content: none;
     }
 
-    .inverserightContent{
+    .inverserightContent {
       -webkit-clip-path: none;
       clip-path: none;
       background-color: transparent;
       height: 100%;
-      width: 100%
+      width: 100%;
     }
   }
-
 
   .courseContainer {
     height: auto;
@@ -339,35 +330,121 @@ section{
 
 @media (max-width: $lg-devices) {
   .locationContainer {
-  .containerLeft::after {
-    // bottom: -18%;
-    height: 15vh;
-    width: 15vh;
+    .containerLeft::after {
+      // bottom: -18%;
+      height: 15vh;
+      width: 15vh;
+    }
   }
 }
-}
 
-
-.heading{
-  h3{
+.heading {
+  h3 {
     justify-content: center;
     text-align: center;
+  }
+
+  h2 {
+    justify-content: center;
+    text-align: center;
+    color: $color-red;
+  }
+
+  .buttonTabsContainer{ display: flex;
+     margin-bottom: 25px ;
+    padding: 0 $padding-1;
+  
+
+  .buttonTabs {
+    padding: 1rem 4rem;
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
+    margin: 0 25px;
+    border: 2px solid $color-red;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-delay: 0s;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+    transition-timing-function: ease-in-out;
+
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+      margin: 0;
     }
 
-  h2{
-    justify-content: center;
-    text-align: center;
-    color: #ff1744;
+    &.active {
+      background-color: $color-red;
+
+      h3 {
+        color: white !important;
+      }
+    }
   }
 
+  .buttonTabs:hover {
+    background-color: $color-red;
+    cursor: pointer;
+
+    h3 {
+      color: white !important;
+    }
+  }
+}
 }
 
-.headingBlock{
-background-color: black;
-opacity: 0.3;
+.headingBlock {
+  background-color: black;
+  opacity: 0.3;
 }
 
-.parallexHelper{
+.parallexHelper {
   width: 100%;
   height: 100%;
 }
+
+.overlayImage {
+  height: auto;
+  width: 40%;
+  /* margin: auto; */
+  position: absolute;
+  top: 50%;
+  left: 57%;
+}
+
+.detailsContainer{
+  padding: $padding-1
+}
+
+@media (max-width: $md-devices) {
+  .heading {
+    .buttonTabsContainer{
+      padding: 0 $padding-2;
+    .buttonTabs {
+      padding: 1em 0.6rem;
+    }
+  }
+  }
+
+  .overlayImage {
+    height: auto;
+    width: 80%;
+    position: absolute;
+    top: 10%;
+    margin: auto;
+    left: 10vw;
+  }
+
+  .detailsContainer{
+    padding: $padding-2;
+  }
+}
+
+// height: auto;
+// width: 40%;
+// position: absolute;
+// top: 10%;
+// margin: auto;
+// left: 30vw;
