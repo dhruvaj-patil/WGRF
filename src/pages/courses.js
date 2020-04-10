@@ -7,6 +7,7 @@ import style from "../css/courses.module.scss"
 import InfoDiagonalSection from "../components/index_page_sections/Courses_section/InfoDiagonalSection"
 import { LandingSection } from "../components/common_components/landing_section/landingSection"
 import SetSection from "../components/index_page_sections/Courses_section/SET_section/setSection"
+import ParallaxComponent from "../components/common_components/parallaxComponent/parallaxComponent"
 
 const images = [
   {
@@ -188,13 +189,37 @@ export default class Courses extends React.Component {
           <InfoDiagonalSection inverse={true} />
         </div>
 
+<ParallaxComponent bgImg={require("../images/bg_img3.jpg")} height="40vh"></ParallaxComponent>
         <div className={style.heading}>
           {/* <h2 className={"m-0"}>SRT ULTRA EVENT</h2> */}
-          <h3>Course Details</h3>
+
+          <div className={style.heading}>
+            <h2 className={"m-0"}>SRT ULTRA </h2>
+            <div className={style.detailsContainer}>
+              <h3>Marathon Details</h3>
+              <p>
+                The beautiful route of the Sinhagad Epic Trail race is a point
+                to point route, without any loops. Runners will experience new
+                surroundings and a variety of technical as well as normal
+                terrain in the course of the race. The race will be conducted
+                within the limits of Sinhagad Ghera.
+              </p>
+              <p>
+                All the 3 categories is that all of the races will be held in
+                month of June, and that there will rain, and wind during the
+                race timings. So be prepared to get wet, muddy, and dirty in the
+                forest trails.
+              </p>
+              <p>You can participate in the following races:</p>
+            </div>
+          </div>
           <SRTUltra
-            images={images}
-            toggle={() => this.toggle()}
-            showDesc={showDesc}
+            bgImage={require("../images/bg_img4.jpg")}
+            title={RACES_DATA[2].title}
+            data={RACES_DATA[2].data}
+            map_link={RACES_DATA[2].map_link}
+            post_notes={RACES_DATA[2].post_notes}
+            overlayImage={require("../images/map_1.png")}
           />
           <InfoDiagonalSection inverse={false} />
         </div>

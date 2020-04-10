@@ -202,53 +202,74 @@ section {
   margin-bottom: 10px;
   height: 100vh;
 
-  background: $color-red;
-  box-shadow: 0 25px 30px rgba(0, 0, 0, 0.5);
+  // background: $color-black;
+  // box-shadow: 0 25px 30px rgba(0, 0, 0, 0.5);
   display: flex;
+
+  li {
+    list-style: none;
+  }
 }
 
 .leftContent {
-  padding: 50px;
-  width: 55%;
+  // padding: 50px;
+  // width: 55%;
+  flex: 1;
   height: 100%;
   background: white;
-  box-sizing: border-box;
-  clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+  // clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
 }
 
 .inverse {
   margin: 0 auto;
   float: none;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   background: unset;
   height: 100vh;
-  box-shadow: 0 25px 30px rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 25px 30px rgba(0, 0, 0, 0.5);
   display: flex;
 }
 
 .inverseleftContent {
-  padding: 50px;
-  width: 55%;
+  // padding: 50px;
+  // width: 55%;
+  flex: 1;
   height: 100%;
-  background: $color-red;
+  background: $color-black;
+  color: $color-white;
   box-sizing: border-box;
   clip-path: polygon(100% 0, 0 0, 0 100%, 75% 100%) !important;
 }
 
 .inverserightContent {
-  padding: 50px;
-  width: 50%;
+  // padding: 50px;
+  // width: 50%;
+  flex: 1;
   height: 100%;
   background: white;
+  color: $color-black !important;
   box-sizing: border-box;
 }
 
 .rightContent {
-  padding: 50px;
-  width: 50%;
+  // padding: 50px;
+  // width: 50%;
+  flex: 1;
   height: 100%;
-  background: $color-red;
+  background: $color-black;
   box-sizing: border-box;
+  clip-path: polygon(100% 0, 100% 90%, 100% 100%, 20% 100%, 0% 0%);
+
+  .rightContentData {
+    padding: 50px;
+    color: black;
+    text-align: end;
+    /* padding-left: 50px; */
+    /* text-align: -webkit-right; */
+    direction: rtl;
+
+    color: $color-white;
+  }
 }
 
 @media (max-width: $md-devices) {
@@ -328,6 +349,47 @@ section {
   }
 }
 
+.srtContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 100vh;
+  flex: 1 1;
+
+  .srtContainerLeft {
+    flex: 1 1;
+    // padding: 50px;
+    box-sizing: border-box;
+    -moz-animation-direction: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+    -webkit-clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+
+    .srtParallaxContainer {
+      // width: "100vw",
+      height: 100vh;
+      background-color: $color-white;
+      flex: 1;
+      opacity: 0.7;
+    }
+
+    .overlayImage {
+      height: auto;
+      width: 40%;
+      /* margin: auto; */
+      position: absolute;
+      top: 50%;
+      left: 0%;
+    }
+  }
+
+  .srtContainerRight {
+    flex: 1 1;
+    overflow: hidden;
+    padding: 0px;
+  }
+}
+
 @media (max-width: $lg-devices) {
   .locationContainer {
     .containerLeft::after {
@@ -350,49 +412,49 @@ section {
     color: $color-red;
   }
 
-  .buttonTabsContainer{ display: flex;
-     margin-bottom: 25px ;
+  .buttonTabsContainer {
+    display: flex;
+    margin-bottom: 25px;
     padding: 0 $padding-1;
-  
 
-  .buttonTabs {
-    padding: 1rem 4rem;
-    -webkit-clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
-    clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
-    margin: 0 25px;
-    border: 2px solid $color-red;
-    -webkit-transition-duration: 0.3s;
-    -webkit-transition-delay: 0s;
-    -webkit-transition-timing-function: ease-in-out;
-    transition-duration: 0.3s;
-    transition-delay: 0s;
-    transition-timing-function: ease-in-out;
+    .buttonTabs {
+      padding: 1rem 4rem;
+      -webkit-clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
+      clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
+      margin: 0 25px;
+      border: 2px solid $color-red;
+      -webkit-transition-duration: 0.3s;
+      -webkit-transition-delay: 0s;
+      -webkit-transition-timing-function: ease-in-out;
+      transition-duration: 0.3s;
+      transition-delay: 0s;
+      transition-timing-function: ease-in-out;
 
-    h3 {
-      text-align: center;
-      text-transform: uppercase;
-      color: black;
-      margin: 0;
+      h3 {
+        text-align: center;
+        text-transform: uppercase;
+        color: black;
+        margin: 0;
+      }
+
+      &.active {
+        background-color: $color-red;
+
+        h3 {
+          color: white !important;
+        }
+      }
     }
 
-    &.active {
+    .buttonTabs:hover {
       background-color: $color-red;
+      cursor: pointer;
 
       h3 {
         color: white !important;
       }
     }
   }
-
-  .buttonTabs:hover {
-    background-color: $color-red;
-    cursor: pointer;
-
-    h3 {
-      color: white !important;
-    }
-  }
-}
 }
 
 .headingBlock {
@@ -414,18 +476,18 @@ section {
   left: 57%;
 }
 
-.detailsContainer{
-  padding: $padding-1
+.detailsContainer {
+  padding: $padding-1;
 }
 
 @media (max-width: $md-devices) {
   .heading {
-    .buttonTabsContainer{
+    .buttonTabsContainer {
       padding: 0 $padding-2;
-    .buttonTabs {
-      padding: 1em 0.6rem;
+      .buttonTabs {
+        padding: 1em 0.6rem;
+      }
     }
-  }
   }
 
   .overlayImage {
@@ -437,14 +499,62 @@ section {
     left: 10vw;
   }
 
-  .detailsContainer{
+  .detailsContainer {
     padding: $padding-2;
   }
 }
 
-// height: auto;
-// width: 40%;
-// position: absolute;
-// top: 10%;
-// margin: auto;
-// left: 30vw;
+.paddingContainer {
+  padding: $padding-1;
+}
+
+@media (max-width: 600px) {
+  .paddingContainer {
+    padding: $padding-2 !important;
+  }
+}
+
+@media (max-width: $md-devices) {
+  .srtContainer {
+    flex-direction: column;
+
+    .srtContainerLeft {
+      clip-path: none;
+
+      .srtParallaxContainer {
+        // width: "100vw",
+        height: 30vh;
+      }
+
+      .overlayImage {
+        height: auto;
+        width: 80%;
+        margin: auto;
+        position: absolute;
+        top: 5%;
+        left: 10vw;
+      }
+    }
+  }
+
+  .rightContent {
+    .rightContentData {
+      padding: 50px;
+      color: black;
+      text-align: start;
+      direction: ltr;
+      color: $color-white;
+      background-color: $color-black;
+    }
+
+    //   .srtContainerRight {
+
+    //   }
+  }
+}
+
+// ----------------------- PHOTO BOX -----------------------
+// padding: 0px;
+// webkit-clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+// clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+// ----------------------- PHOTO BOX -----------------------

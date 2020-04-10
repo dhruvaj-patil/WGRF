@@ -41,7 +41,7 @@
 .containerLeft {
   flex: 1 1;
   // margin-top: $margin-1;
-  padding: $padding-1;
+  // padding: $padding-1;
   box-sizing: border-box;
 
 
@@ -163,7 +163,7 @@
 .inverseContainerRight {
   flex: 1;
   overflow: hidden;
-  padding: "20px";
+  // padding: "20px";
 
   .indicatorContainer {
     display: flex;
@@ -265,5 +265,10 @@
 }
 
 .inverseLeft {
-  clip-path: polygon(0px 0px, 100% -12%, 70% 100%, 0% 100%);
+  // clip-path: polygon(0px 0px, 100% -12%, 70% 100%, 0% 100%);
+  -moz-animation-direction: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+
+
+  
 }

@@ -15,14 +15,14 @@ const WGRFSection = ({
   map_link,
 }) => (
   <div
-    className={`${container.locationContainer} ${container.inverseLocationContainer}`}
+    className={`${container.locationContainer}`}
   >
     <div className={container.containerLeft}>
       <div style={{ flex: 1 }}>
         <h2 style={{ textAlign: "center" }}>{title}</h2>
       </div>
       <div style={{ flex: 9, justifyContent: "center", alignItems: "center" }}>
-        <div className={`${style.dataContainer} ${style.effectFadeIn}`}>
+        <div className={`${container.dataContainer} ${container.effectFadeIn} ${style.paddingContainer}`}>
           <h3>Details</h3>
           <ul>
             <li>
@@ -54,6 +54,7 @@ const WGRFSection = ({
         </div>
       </div>
     </div>
+    
     <div className={container.containerRight}>
       <ParallaxComponent height="100vh" bgImg={bgImage}>
         <div
