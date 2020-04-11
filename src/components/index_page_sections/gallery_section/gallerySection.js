@@ -1,41 +1,56 @@
 import React, { Component } from "react"
-import style from "../../../css/gallery.module.scss";
+import style from "../../../css/gallery.module.scss"
 
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
-export default class GallerySection extends Component {
-  render() {
-    return (
-      <>
-        <div className={style.galleryContainer}>
-          <h2 className={style.heading}>
-            Gallery
-          </h2>
+const GallerySection = () => {
+  const query = useStaticQuery(graphql`
+    query MyQuery {
+      allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
+        edges {
+          node {
+            base
+            childImageSharp {
+              fluid(quality: 70) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
 
-          <div className={style.gallery}>
+  const images = query.allFile.edges
 
-            <div className={style.galleryItem}>
-                <img src={require("../../../images/bg_img1.jpg")} className={style.galleryImage}></img>
-            </div>
-            <div className={style.galleryItem}>
-                <img src={require("../../../images/bg_img1.jpg")} className={style.galleryImage}></img>
-            </div>
-            <div className={style.galleryItem}>
-                <img src={require("../../../images/bg_img1.jpg")} className={style.galleryImage}></img>
-            </div>
-            <div className={style.galleryItem}>
-                <img src={require("../../../images/bg_img1.jpg")} className={style.galleryImage}></img>
-            </div>
-            <div className={style.galleryItem}>
-                <img src={require("../../../images/bg_img1.jpg")} className={style.galleryImage}></img>
-            </div>
-            <div className={style.galleryItem}>
-                <img src={require("../../../images/bg_img1.jpg")} className={style.galleryImage}></img>
-            </div>
+  return (
+    <>
+      <div className={style.galleryContainer}>
+        <h2 className={style.heading}>Gallery</h2>
 
-          </div>
+        <div className={style.gallery}>
+          {images.map((node, index) => {
+            return (
+              <RenderGalleryItem
+                img={node.node.childImageSharp.fluid}
+                name={node.node.base}
+                key={index + node.node.base}
+              ></RenderGalleryItem>
+            )
+          })}
         </div>
-      </>
-    )
-  }
+      </div>
+    </>
+  )
 }
 
+const RenderGalleryItem = ({ img, name }) => {
+  return (
+    <div className={style.galleryItem}>
+      <Img fluid={img} className={style.galleryImage} alt={name}></Img>
+    </div>
+  )
+}
+
+export default GallerySection

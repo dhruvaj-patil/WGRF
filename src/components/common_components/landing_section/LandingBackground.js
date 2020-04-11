@@ -41,7 +41,7 @@ console.log("height ==> ", contentHeight.landingBackgroundHeight)
             zIndex: -1,
           }}
           fluid={data.placeholderImage.childImageSharp.fluid}
-          alt="fill murray"
+          alt="Welcome to WGRF Website"
         ></Img>
       </div>
     </Background>
