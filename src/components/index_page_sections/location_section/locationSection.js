@@ -11,9 +11,9 @@ export default class LocationSection extends React.Component {
   }
 
   componentDidMount() {
-    // setInterval(() => {
-    //     this.setState({ showTravel: !this.state.showTravel })
-    //   }, 8000)
+    setInterval(() => {
+        this.setState({ showTravel: !this.state.showTravel })
+      }, 8000)
   }
 
   render() {

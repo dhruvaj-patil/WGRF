@@ -51,6 +51,13 @@ export class SRTUltraSection extends Component {
     }
   }
 
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ activeSRTNo: (this.state.activeSRTNo + 1)%3 }, console.log(this.state))
+    }, 8000)
+  }
+
   _renderActiveSRTDiv = () => {
     const { activeSRTNo } = this.state
     switch (activeSRTNo) {

@@ -64,6 +64,12 @@ export class SETSection extends Component {
     }
   }
 
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ activeSETNo: (this.state.activeSETNo+1)%4 }, console.log(this.state))
+    }, 8000)
+  }
+
   _renderActiveSETDiv = () => {
     const { activeSETNo } = this.state
     switch (activeSETNo) {
