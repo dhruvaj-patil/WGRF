@@ -11,7 +11,7 @@ export class LandingSection extends Component {
 
   render() {
 
-    const {title, subtitle, buttonData, landingBackgroundHeight, titleStyle, ofCourses} = this.props;
+    const {title, subtitle, buttonData, landingBackgroundHeight, titleStyle, ofCourses, link} = this.props;
     console.log("subtitleStyle ==>", titleStyle)
     return (
       <>
@@ -34,6 +34,7 @@ export class LandingSection extends Component {
                       overText={data.overText}
                       underText={data.underText}
                       key={index}
+                      link={data.link}
                     ></LandingBackgroundButton>
                   )
                 })}

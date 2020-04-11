@@ -19,7 +19,7 @@ const LandingBackground = (contentHeight = "100vh", image) => {
 console.log("height ==> ", contentHeight.landingBackgroundHeight)
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "bg_img3.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "parallax/WGRF.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 800) {
             ...GatsbyImageSharpFluid

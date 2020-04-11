@@ -7,7 +7,7 @@ import ParallaxComponent from "../../common_components/parallaxComponent/paralla
 import { Overlay } from "react-bootstrap"
 import LandingBackgroundButton from "../../common_components/landing_section/LandingBackgroundButton"
 
-const SETSection = ({
+const SETComponent = ({
   title,
   bgImage,
   overlayImage,
@@ -89,4 +89,4 @@ const SETSection = ({
   </div>
 )
 
-export default SETSection
+export default SETComponent

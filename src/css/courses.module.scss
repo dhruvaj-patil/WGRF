@@ -199,7 +199,7 @@
 section {
   margin: 0 auto;
   float: none;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   height: 100vh;
 
   // background: $color-black;
@@ -272,6 +272,227 @@ section {
   }
 }
 
+.srtContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 100vh;
+  flex: 1 1;
+
+  .srtContainerLeft {
+    flex: 1 1;
+    // padding: 50px;
+    box-sizing: border-box;
+    // -moz-animation-direction: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+    -webkit-clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+
+    .srtParallaxContainer {
+      // width: "100vw",
+      height: 100vh;
+      background-color: $color-white;
+      flex: 1;
+      opacity: 0.7;
+    }
+
+    .overlayImage {
+      height: auto;
+      width: 40%;
+      /* margin: auto; */
+      position: absolute;
+      top: 50%;
+      left: 0%;
+    }
+  }
+
+  .srtContainerRight::before {
+    // bottom: -18%;
+    height: 20vh;
+    width: 30vh;
+    background-color: $color-red;
+    position: absolute;
+    top: -15px;
+    left: 35vw;
+    z-index: 1;
+    content: " ";
+    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+  }
+
+  .srtContainerRight {
+    flex: 1 1;
+    overflow: hidden;
+    padding: 0px;
+  }
+}
+
+.heading {
+  h3 {
+    justify-content: center;
+    text-align: center;
+  }
+
+  h2 {
+    justify-content: center;
+    text-align: center;
+    color: $color-red;
+  }
+
+  .buttonTabsContainer {
+    display: flex;
+    margin-bottom: 25px;
+    padding: 0 $padding-1;
+
+    .buttonTabs {
+      padding: 1rem 4rem;
+      -webkit-clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
+      clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
+      margin: 0 25px;
+      border: 2px solid $color-red;
+      -webkit-transition-duration: 0.3s;
+      -webkit-transition-delay: 0s;
+      -webkit-transition-timing-function: ease-in-out;
+      transition-duration: 0.3s;
+      transition-delay: 0s;
+      transition-timing-function: ease-in-out;
+
+      h3 {
+        text-align: center;
+        text-transform: uppercase;
+        color: black;
+        margin: 0;
+      }
+
+      .buttonTabsInverse {
+        justify-content: flex-end;
+      }
+
+      &.active {
+        background-color: $color-red;
+
+        h3 {
+          color: white !important;
+        }
+      }
+    }
+
+    .buttonTabs:hover {
+      background-color: $color-red;
+      cursor: pointer;
+
+      h3 {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.headingBlock {
+  background-color: black;
+  opacity: 0.3;
+}
+
+.parallexHelper {
+  width: 100%;
+  height: 100%;
+}
+
+.overlayImage {
+  height: auto;
+  width: 40%;
+  /* margin: auto; */
+  position: absolute;
+  top: 50%;
+  left: 57%;
+}
+
+.detailsContainer {
+  padding: $padding-1;
+}
+
+.paddingContainer {
+  padding: $padding-1;
+}
+
+@media (max-width: 600px) {
+  .paddingContainer {
+    padding: $padding-2 !important;
+  }
+}
+
+@media (max-width: $md-devices) {
+  .heading {
+    .buttonTabsContainer {
+      padding: 0 $padding-2;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .buttonTabs {
+        padding: 1em 0.6rem;
+        margin-bottom: 25px;
+      }
+    }
+    .buttonTabsInverse {
+      justify-content: space-evenly;
+    }
+  }
+
+  .overlayImage {
+    height: auto;
+    width: 80%;
+    position: absolute;
+    top: 10%;
+    margin: auto;
+    left: 10vw;
+  }
+
+  .detailsContainer {
+    padding: $padding-2;
+  }
+}
+
+@media (max-width: $md-devices) {
+  .srtContainer {
+    flex-direction: column;
+
+    .srtContainerRight::before {
+      content: unset;
+    }
+    .srtContainerLeft {
+      clip-path: none;
+
+      .srtParallaxContainer {
+        // width: "100vw",
+        height: 30vh;
+      }
+
+      .overlayImage {
+        height: auto;
+        width: 80%;
+        margin: auto;
+        position: absolute;
+        top: 5%;
+        left: 10vw;
+      }
+    }
+  }
+
+  .rightContent {
+    .rightContentData {
+      padding: 50px;
+      color: black;
+      text-align: start;
+      direction: ltr;
+      color: $color-white;
+      background-color: $color-black;
+    }
+
+    //   .srtContainerRight {
+
+    //   }
+  }
+}
 @media (max-width: $md-devices) {
   section {
     height: auto;
@@ -349,47 +570,6 @@ section {
   }
 }
 
-.srtContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  min-height: 100vh;
-  flex: 1 1;
-
-  .srtContainerLeft {
-    flex: 1 1;
-    // padding: 50px;
-    box-sizing: border-box;
-    // -moz-animation-direction: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
-    -webkit-clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
-    clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
-
-    .srtParallaxContainer {
-      // width: "100vw",
-      height: 100vh;
-      background-color: $color-white;
-      flex: 1;
-      opacity: 0.7;
-    }
-
-    .overlayImage {
-      height: auto;
-      width: 40%;
-      /* margin: auto; */
-      position: absolute;
-      top: 50%;
-      left: 0%;
-    }
-  }
-
-  .srtContainerRight {
-    flex: 1 1;
-    overflow: hidden;
-    padding: 0px;
-  }
-}
-
 @media (max-width: $lg-devices) {
   .locationContainer {
     .containerLeft::after {
@@ -399,175 +579,6 @@ section {
     }
   }
 }
-
-.heading {
-  h3 {
-    justify-content: center;
-    text-align: center;
-  }
-
-  h2 {
-    justify-content: center;
-    text-align: center;
-    color: $color-red;
-  }
-
-  .buttonTabsContainer {
-    display: flex;
-    margin-bottom: 25px;
-    padding: 0 $padding-1;
-
-    .buttonTabs {
-      padding: 1rem 4rem;
-      -webkit-clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
-      clip-path: polygon(25% 0%, 100% 0%, 77% 100%, 0% 100%);
-      margin: 0 25px;
-      border: 2px solid $color-red;
-      -webkit-transition-duration: 0.3s;
-      -webkit-transition-delay: 0s;
-      -webkit-transition-timing-function: ease-in-out;
-      transition-duration: 0.3s;
-      transition-delay: 0s;
-      transition-timing-function: ease-in-out;
-
-      h3 {
-        text-align: center;
-        text-transform: uppercase;
-        color: black;
-        margin: 0;
-      }
-
-      .buttonTabsInverse{
-        justify-content: flex-end;
-      }
-
-      &.active {
-        background-color: $color-red;
-
-        h3 {
-          color: white !important;
-        }
-      }
-    }
-
-    .buttonTabs:hover {
-      background-color: $color-red;
-      cursor: pointer;
-
-      h3 {
-        color: white !important;
-      }
-    }
-  }
-}
-
-.headingBlock {
-  background-color: black;
-  opacity: 0.3;
-}
-
-.parallexHelper {
-  width: 100%;
-  height: 100%;
-}
-
-.overlayImage {
-  height: auto;
-  width: 40%;
-  /* margin: auto; */
-  position: absolute;
-  top: 50%;
-  left: 57%;
-}
-
-.detailsContainer {
-  padding: $padding-1;
-}
-
-@media (max-width: $md-devices) {
-  .heading {
-    .buttonTabsContainer {
-      padding: 0 $padding-2;
-      flex-wrap: wrap;
-      justify-content: space-around;
-
-      .buttonTabs {
-        padding: 1em 0.6rem;
-        margin-bottom: 25px;
-      }
-
-
-    }
-    .buttonTabsInverse{
-      justify-content: space-evenly;
-    }
-  }
-
-  .overlayImage {
-    height: auto;
-    width: 80%;
-    position: absolute;
-    top: 10%;
-    margin: auto;
-    left: 10vw;
-  }
-
-  .detailsContainer {
-    padding: $padding-2;
-  }
-}
-
-.paddingContainer {
-  padding: $padding-1;
-}
-
-@media (max-width: 600px) {
-  .paddingContainer {
-    padding: $padding-2 !important;
-  }
-}
-
-@media (max-width: $md-devices) {
-  .srtContainer {
-    flex-direction: column;
-
-    .srtContainerLeft {
-      clip-path: none;
-
-      .srtParallaxContainer {
-        // width: "100vw",
-        height: 30vh;
-      }
-
-      .overlayImage {
-        height: auto;
-        width: 80%;
-        margin: auto;
-        position: absolute;
-        top: 5%;
-        left: 10vw;
-      }
-    }
-
-    
-  }
-
-  .rightContent {
-    .rightContentData {
-      padding: 50px;
-      color: black;
-      text-align: start;
-      direction: ltr;
-      color: $color-white;
-      background-color: $color-black;
-    }
-
-    //   .srtContainerRight {
-
-    //   }
-  }
-}
-
 // ----------------------- PHOTO BOX -----------------------
 // padding: 0px;
 // webkit-clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);

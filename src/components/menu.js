@@ -8,7 +8,7 @@ const LINKS = {
     landing: "/",
     location: "/",
   },
-  marathon: "courses",
+  marathons: "marathons",
 }
 
 export default class Menu extends Component {
@@ -68,7 +68,10 @@ export default class Menu extends Component {
               <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>About Us</Link>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>SET Marathon</Link>
+            </div>
+            <div className={style.linkContainer}>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>SRT Marathon</Link>
             </div>
             <div className={style.linkContainer}>
               <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Location</Link>
@@ -77,10 +80,10 @@ export default class Menu extends Component {
               <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>FAQ</Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Get In Touch</Link>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.marathons}>Gallery</Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.courses}>Marathons</Link>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.marathons}>Contact Us</Link>
             </div>
 
           </div>
