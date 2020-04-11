@@ -1,30 +1,67 @@
 import React from "react"
 import SEO from "../components/seo"
-import WGRFSection from "../components/index_page_sections/Courses_section/WGRFSection"
 import SRTUltra from "../components/index_page_sections/Courses_section/SRTUltra"
 import Layout from "../components/layout"
 import style from "../css/courses.module.scss"
 import InfoDiagonalSection from "../components/index_page_sections/Courses_section/InfoDiagonalSection"
 import { LandingSection } from "../components/common_components/landing_section/landingSection"
-import SetSection from "../components/index_page_sections/Courses_section/SET_section/setSection"
 import ParallaxComponent from "../components/common_components/parallaxComponent/parallaxComponent"
+import SETSection from "../components/index_page_sections/Courses_section/SETSection"
 
-const images = [
+
+const SET_DATA = [
   {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
+    title: "11 K.M.",
+    data: {
+      start_end_time: "6:15 am - 9:15 am",
+      max_time: "3 Hours",
+      ascent_descent: " 790~ metres - 780~ metres",
+      high_low_point: "1296 metres - 739 metres",
+      total_distance: "11 Km",
+      aid_stations: "1",
+    },
   },
   {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
+    title: "25 K.M.",
+    data: {
+      start_end_time: "6:10 am - 12:10 pm",
+      max_time: "6 Hours",
+      ascent_descent: " 1280~ metres - 1270~ metres",
+      high_low_point: "1296 metres - 739 metres",
+      total_distance: "22 Km",
+      aid_stations: "3",
+
+      post_notes: "UTMB Points: 1"
+    },
   },
   {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
+    title: "32 K.M.",
+    data: {
+      start_end_time: "6:05 am -2:05 pm",
+      max_time: "8 Hours",
+      ascent_descent: " 1560~ metres - 1560~ metres",
+      high_low_point: "1296 metres - 975 metres",
+      total_distance: "32 Km",
+      aid_stations: "4",
+
+      post_notes: "UTMB Points: 2"
+    },
+  },
+  {
+    title: "42 K.M.",
+    data: {
+      start_end_time: "6:00 am - 5:00 pm",
+      max_time: "11 Hours",
+      ascent_descent: " 2380~ metres - 2380~ metres",
+      high_low_point: "1296 metres - 674 metres",
+      total_distance: "42 Km",
+      aid_stations: "4",
+      post_notes: "UTMB Points: 2"
+    },
   },
 ]
 
-const RACES_DATA = [
+const SRT_DATA = [
   {
     title: "11 K.M.",
     data: {
@@ -68,44 +105,99 @@ export default class Courses extends React.Component {
     super()
     this.state = {
       showDesc: true,
-      activeNo: 0,
+      activeSETNo: 0,
+      activeSRTNo: 0
     }
     this.toggle = this.toggle.bind(this)
   }
 
-  _renderActiveDiv = () => {
-    const { activeNo } = this.state
-    switch (activeNo) {
+  _renderActiveSETDiv = () => {
+    const { activeSETNo } = this.state
+    switch (activeSETNo) {
       case 0:
         return (
-          <WGRFSection
+          <SETSection
             bgImage={require("../images/bg_img4.jpg")}
-            title={RACES_DATA[0].title}
-            data={RACES_DATA[0].data}
-            map_link={RACES_DATA[0].map_link}
+            title={SET_DATA[0].title}
+            data={SET_DATA[0].data}
+            map_link={SET_DATA[0].map_link}
             overlayImage={require("../images/map_1.png")}
           />
         )
 
       case 1:
         return (
-          <WGRFSection
+          <SETSection
             bgImage={require("../images/bg_img4.jpg")}
-            title={RACES_DATA[1].title}
-            data={RACES_DATA[1].data}
-            map_link={RACES_DATA[1].map_link}
+            title={SET_DATA[1].title}
+            data={SET_DATA[1].data}
+            map_link={SET_DATA[1].map_link}
             overlayImage={require("../images/map_1.png")}
           />
         )
 
       case 2:
         return (
-          <WGRFSection
+          <SETSection
             bgImage={require("../images/bg_img4.jpg")}
-            title={RACES_DATA[2].title}
-            data={RACES_DATA[2].data}
-            map_link={RACES_DATA[2].map_link}
-            post_notes={RACES_DATA[2].post_notes}
+            title={SET_DATA[2].title}
+            data={SET_DATA[2].data}
+            map_link={SET_DATA[2].map_link}
+            post_notes={SET_DATA[2].post_notes}
+            overlayImage={require("../images/map_1.png")}
+          />
+        )
+      case 3:
+        return (
+          <SETSection
+            bgImage={require("../images/bg_img4.jpg")}
+            title={SET_DATA[3].title}
+            data={SET_DATA[3].data}
+            map_link={SET_DATA[3].map_link}
+            post_notes={SET_DATA[3].post_notes}
+            overlayImage={require("../images/map_1.png")}
+          />
+      )
+
+      default:
+        break
+    }
+  }
+
+  _renderActiveSRTDiv = () => {
+
+    const { activeSRTNo } = this.state
+    switch (activeSRTNo) {
+      case 0:
+        return (
+          <SRTUltra
+            bgImage={require("../images/bg_img4.jpg")}
+            title={SRT_DATA[0].title}
+            data={SRT_DATA[0].data}
+            map_link={SRT_DATA[0].map_link}
+            overlayImage={require("../images/map_1.png")}
+          />
+        )
+
+      case 1:
+        return (
+          <SRTUltra
+            bgImage={require("../images/bg_img4.jpg")}
+            title={SRT_DATA[1].title}
+            data={SRT_DATA[1].data}
+            map_link={SRT_DATA[1].map_link}
+            overlayImage={require("../images/map_1.png")}
+          />
+        )
+
+      case 2:
+        return (
+          <SRTUltra
+            bgImage={require("../images/bg_img4.jpg")}
+            title={SRT_DATA[2].title}
+            data={SRT_DATA[2].data}
+            map_link={SRT_DATA[2].map_link}
+            post_notes={SRT_DATA[2].post_notes}
             overlayImage={require("../images/map_1.png")}
           />
         )
@@ -113,6 +205,7 @@ export default class Courses extends React.Component {
       default:
         break
     }
+
   }
 
   componentDidMount() {
@@ -126,7 +219,7 @@ export default class Courses extends React.Component {
   }
 
   render() {
-    const { showDesc, activeNo } = this.state
+    const { activeSRTNo, activeSETNo } = this.state
     return (
       <Layout>
         <SEO title="Marathons" />
@@ -158,38 +251,49 @@ export default class Courses extends React.Component {
           </div>
           <div className={style.buttonTabsContainer}>
             <div
-              onClick={() => this.setState({ activeNo: 0 })}
+              onClick={() => this.setState({ activeSETNo: 0 })}
               className={`${style.buttonTabs} ${
-                activeNo == 0 ? style.active : ""
+                activeSETNo === 0 ? style.active : ""
               }`}
             >
               <h3>11 km</h3>
             </div>
 
             <div
-              onClick={() => this.setState({ activeNo: 1 })}
+              onClick={() => this.setState({ activeSETNo: 1 })}
               className={`${style.buttonTabs} ${
-                activeNo == 1 ? style.active : ""
+                activeSETNo === 1 ? style.active : ""
               }`}
             >
               <h3>25 km</h3>
             </div>
 
             <div
-              onClick={() => this.setState({ activeNo: 2 })}
+              onClick={() => this.setState({ activeSETNo: 2 })}
               className={`${style.buttonTabs} ${
-                activeNo == 2 ? style.active : ""
+                activeSETNo === 2 ? style.active : ""
               }`}
             >
-              <h3>53 km</h3>
+              <h3>32 km</h3>
+            </div>
+            <div
+              onClick={() => this.setState({ activeSETNo: 3 })}
+              className={`${style.buttonTabs} ${
+                activeSETNo === 3 ? style.active : ""
+              }`}
+            >
+              <h3>42 km</h3>
             </div>
           </div>
-          {this._renderActiveDiv()}
+          {this._renderActiveSETDiv()}
           {/* <SetSection></SetSection> */}
           <InfoDiagonalSection inverse={true} />
         </div>
 
-<ParallaxComponent bgImg={require("../images/bg_img3.jpg")} height="40vh"></ParallaxComponent>
+        <ParallaxComponent
+          bgImg={require("../images/bg_img3.jpg")}
+          height="40vh"
+        ></ParallaxComponent>
         <div className={style.heading}>
           {/* <h2 className={"m-0"}>SRT ULTRA EVENT</h2> */}
 
@@ -212,15 +316,46 @@ export default class Courses extends React.Component {
               </p>
               <p>You can participate in the following races:</p>
             </div>
+            <div style={{justifyContent: "flex-end"}} className={style.buttonTabsContainer}>
+            <div
+              onClick={() => this.setState({ activeSRTNo: 0 })}
+              className={`${style.buttonTabs} ${
+                activeSRTNo === 0 ? style.active : ""
+              }`}
+            >
+              <h3>11 km</h3>
+            </div>
+
+            <div
+              onClick={() => this.setState({ activeSRTNo: 1 })}
+              className={`${style.buttonTabs} ${
+                activeSRTNo === 1 ? style.active : ""
+              }`}
+            >
+              <h3>25 km</h3>
+            </div>
+
+            <div
+              onClick={() => this.setState({ activeSRTNo: 2 })}
+              className={`${style.buttonTabs} ${
+                activeSRTNo === 2 ? style.active : ""
+              }`}
+            >
+              <h3>53 km</h3>
+            </div>
           </div>
-          <SRTUltra
+         
+          </div>
+
+          {this._renderActiveSRTDiv()}
+          {/* <SRTUltra
             bgImage={require("../images/bg_img4.jpg")}
             title={RACES_DATA[2].title}
             data={RACES_DATA[2].data}
             map_link={RACES_DATA[2].map_link}
             post_notes={RACES_DATA[2].post_notes}
             overlayImage={require("../images/map_1.png")}
-          />
+          /> */}
           <InfoDiagonalSection inverse={false} />
         </div>
       </Layout>

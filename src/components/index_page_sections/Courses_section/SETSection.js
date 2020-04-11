@@ -6,7 +6,7 @@ import container from "../../../css/location.module.scss"
 import ParallaxComponent from "../../common_components/parallaxComponent/parallaxComponent"
 import { Overlay } from "react-bootstrap"
 
-const WGRFSection = ({
+const SETSection = ({
   title,
   bgImage,
   overlayImage,
@@ -81,4 +81,4 @@ const WGRFSection = ({
   </div>
 )
 
-export default WGRFSection
+export default SETSection

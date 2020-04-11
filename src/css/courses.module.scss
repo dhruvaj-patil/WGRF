@@ -484,8 +484,12 @@ section {
   .heading {
     .buttonTabsContainer {
       padding: 0 $padding-2;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
       .buttonTabs {
         padding: 1em 0.6rem;
+        margin-bottom: 25px;
       }
     }
   }
