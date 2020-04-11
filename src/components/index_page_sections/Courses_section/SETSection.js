@@ -5,6 +5,7 @@ import style from "../../../css//courses.module.scss"
 import container from "../../../css/location.module.scss"
 import ParallaxComponent from "../../common_components/parallaxComponent/parallaxComponent"
 import { Overlay } from "react-bootstrap"
+import LandingBackgroundButton from "../../common_components/landing_section/LandingBackgroundButton"
 
 const SETSection = ({
   title,
@@ -51,6 +52,13 @@ const SETSection = ({
               Get Map
             </a>
           </p>
+
+          <div style={{ display:"flex", justifyContent: "center"}}>
+              <LandingBackgroundButton
+                overText="Register"
+                underText="All the Best"
+              ></LandingBackgroundButton>
+            </div>
         </div>
       </div>
     </div>

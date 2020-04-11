@@ -1,14 +1,14 @@
 @import "./base.scss";
 
 //Courses Page Css
-.coursecontainer {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  min-height: 100vh;
-}
+// .courseContainer {
+//   width: 100%;
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: row;
+//   position: relative;
+//   min-height: 100vh;
+// }
 
 .containerLeft {
   flex: 1 1;
@@ -40,12 +40,12 @@
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
-.courseimage {
-  clip-path: polygon(6% 0, 89% 0%, 68% 119%, 0 100%);
-  position: relative;
-  left: -6%;
-  height: 100%;
-}
+// .courseimage {
+//   clip-path: polygon(6% 0, 89% 0%, 68% 119%, 0 100%);
+//   position: relative;
+//   left: -6%;
+//   height: 100%;
+// }
 
 .design {
   width: 298px;
@@ -146,54 +146,54 @@
 
 //InverseCourse Page
 
-.inversecourseimage {
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 35% 99%);
-}
+// .inversecourseimage {
+//   clip-path: polygon(10% 0, 100% 0, 100% 100%, 35% 99%);
+// }
 
-.inversedesign {
-  width: 298px;
-  height: 225px;
-  display: inline-flex;
-  position: relative;
-  top: -28%;
-  right: -15%;
-  background-color: $color-red;
-  clip-path: polygon(0 0, 73% 0, 100% 100%, 27% 100%);
-}
+// .inversedesign {
+//   width: 298px;
+//   height: 225px;
+//   display: inline-flex;
+//   position: relative;
+//   top: -28%;
+//   right: -15%;
+//   background-color: $color-red;
+//   clip-path: polygon(0 0, 73% 0, 100% 100%, 27% 100%);
+// }
 
-.inversecontentContainer {
-  width: auto;
-  height: 500px;
-  padding: 50px 25px;
-}
+// .inversecontentContainer {
+//   width: auto;
+//   height: 500px;
+//   padding: 50px 25px;
+// }
 
-.inversecontentHeading {
-  z-index: 73;
-  min-height: 41px;
-  background-color: transparent;
-  font-size: 36px;
-  color: $color-red;
-  text-indent: -2px;
-  text-transform: uppercase;
-  line-height: 36px;
-  font-family: "__Montserrat_5";
-  font-weight: 800;
-  margin-left: 1px;
-  position: relative;
-}
+// .inversecontentHeading {
+//   z-index: 73;
+//   min-height: 41px;
+//   background-color: transparent;
+//   font-size: 36px;
+//   color: $color-red;
+//   text-indent: -2px;
+//   text-transform: uppercase;
+//   line-height: 36px;
+//   font-family: "__Montserrat_5";
+//   font-weight: 800;
+//   margin-left: 1px;
+//   position: relative;
+// }
 
-.inversecontentDescription {
-  z-index: 77;
-  background-color: transparent;
-  font-size: 14px;
-  color: #242424;
-  line-height: 18px;
-  font-family: lato, sans-serif;
-  font-weight: 400;
-  margin-left: 1px;
-  margin-top: 53px;
-  position: relative;
-}
+// .inversecontentDescription {
+//   z-index: 77;
+//   background-color: transparent;
+//   font-size: 14px;
+//   color: #242424;
+//   line-height: 18px;
+//   font-family: lato, sans-serif;
+//   font-weight: 400;
+//   margin-left: 1px;
+//   margin-top: 53px;
+//   position: relative;
+// }
 
 //content
 section {
@@ -361,7 +361,7 @@ section {
     flex: 1 1;
     // padding: 50px;
     box-sizing: border-box;
-    -moz-animation-direction: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
+    // -moz-animation-direction: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
     -webkit-clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
     clip-path: polygon(80% 0%, 0% 0%, 0% 100%, 100% 100%);
 
@@ -437,6 +437,10 @@ section {
         margin: 0;
       }
 
+      .buttonTabsInverse{
+        justify-content: flex-end;
+      }
+
       &.active {
         background-color: $color-red;
 
@@ -491,6 +495,11 @@ section {
         padding: 1em 0.6rem;
         margin-bottom: 25px;
       }
+
+
+    }
+    .buttonTabsInverse{
+      justify-content: space-evenly;
     }
   }
 
@@ -539,6 +548,8 @@ section {
         left: 10vw;
       }
     }
+
+    
   }
 
   .rightContent {

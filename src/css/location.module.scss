@@ -93,7 +93,7 @@
     flex: 8;
     justify-content: space-evenly;
     flex-direction: column;
-    padding: 1rem;
+    padding: $padding-1;
 
     li {
       line-height: 25px;
@@ -262,6 +262,10 @@
       width: 15vh;
     }
   }
+}
+
+.dataContainer{
+  padding: $padding-2;
 }
 
 .inverseLeft {

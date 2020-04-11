@@ -5,6 +5,7 @@ import style from "../../../css//courses.module.scss"
 import container from "../../../css//location.module.scss"
 import { Row, Col } from "react-bootstrap"
 import ParallaxComponent from "../../common_components/parallaxComponent/parallaxComponent"
+import LandingBackgroundButton from "../../common_components/landing_section/LandingBackgroundButton"
 // import InfoDiagonalSection from "./InfoDiagonalSection"
 
 const SRTUltra = ({
@@ -16,9 +17,7 @@ const SRTUltra = ({
   map_link,
 }) => (
   <div className={style.srtContainer}>
-    <div
-      className={`${style.srtContainerLeft}`}
-    >
+    <div className={`${style.srtContainerLeft}`}>
       {/* <div className={container.imageContainer}>
         <img
           src={require("../../../images/bg_img4.jpg")}
@@ -27,9 +26,7 @@ const SRTUltra = ({
         ></img>
       </div> */}
       <ParallaxComponent bgImg={bgImage}>
-        <div
-          className={style.srtParallaxContainer}
-        >
+        <div className={style.srtParallaxContainer}>
           <img src={overlayImage} className={style.overlayImage}></img>
         </div>
       </ParallaxComponent>
@@ -78,6 +75,12 @@ const SRTUltra = ({
                 Get Map
               </a>
             </p>
+            <div style={{ display:"flex", justifyContent: "center"}}>
+              <LandingBackgroundButton
+                overText="Register"
+                underText="All the Best"
+              ></LandingBackgroundButton>
+            </div>
           </div>
         </div>
       </div>
@@ -87,4 +90,4 @@ const SRTUltra = ({
   </div>
 )
 
-export default  SRTUltra;
+export default SRTUltra

@@ -249,7 +249,7 @@ export default class Courses extends React.Component {
             </p>
             <p>You can participate in the following races:</p>
           </div>
-          <div className={style.buttonTabsContainer}>
+          <div className={`${style.buttonTabsContainer} ${style.buttonTabsInverse}`}>
             <div
               onClick={() => this.setState({ activeSETNo: 0 })}
               className={`${style.buttonTabs} ${
@@ -316,7 +316,7 @@ export default class Courses extends React.Component {
               </p>
               <p>You can participate in the following races:</p>
             </div>
-            <div style={{justifyContent: "flex-end"}} className={style.buttonTabsContainer}>
+            <div style={{}} className={style.buttonTabsContainer}>
             <div
               onClick={() => this.setState({ activeSRTNo: 0 })}
               className={`${style.buttonTabs} ${

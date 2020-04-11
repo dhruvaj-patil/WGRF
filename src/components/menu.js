@@ -8,7 +8,7 @@ const LINKS = {
     landing: "/",
     location: "/",
   },
-  courses: "courses",
+  marathon: "courses",
 }
 
 export default class Menu extends Component {
@@ -80,7 +80,7 @@ export default class Menu extends Component {
               <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Get In Touch</Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.courses}>Courses</Link>
+              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.courses}>Marathons</Link>
             </div>
 
           </div>
