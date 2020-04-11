@@ -75,6 +75,9 @@ const SRTUltra = ({
               <LandingBackgroundButton
                 overText="Register"
                 underText="All the Best"
+           
+
+                link="https://events.indiarunning.com/Event/Details/SRTULTRAMARATHON/3142"
               ></LandingBackgroundButton>
             </div>
           </div>

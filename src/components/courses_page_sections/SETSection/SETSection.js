@@ -127,7 +127,7 @@ export class SETSection extends Component {
 
     const { activeSETNo } = this.state
     return (
-      <div className={style.heading}>
+      <div className={style.heading} id="SET">
         <h2 className={"m-0"}>Sinhagad Epic Trail </h2>
         <div className={style.detailsContainer}>
           <h3>Marathon Details</h3>

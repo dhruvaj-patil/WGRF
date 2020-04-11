@@ -21,7 +21,7 @@ export default class LocationSection extends React.Component {
     return (
       <div className={style.locationContainer}>
         <div className={style.containerLeft}>
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: 1 }} id="location">
             <h2 style={{ textAlign: "center" }}>Location</h2>
           </div>
           <div

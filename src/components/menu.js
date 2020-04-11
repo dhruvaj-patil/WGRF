@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 
 import style from "../css/menu.module.scss"
-import { Link,  } from "gatsby"
+import { Link } from "gatsby"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const LINKS = {
   home: {
@@ -64,28 +65,69 @@ export default class Menu extends Component {
             onMouseLeave={() => this.setState({ openMenu: false })}
             className={style.menu}
           >
-            <div className={style.linkContainer} >
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Home</Link>
+            <div className={style.linkContainer}>
+              <Link
+                onClick={() => this.setState({ openMenu: false })}
+                to={LINKS.home.landing}
+              >
+                Home
+              </Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>SET Marathon</Link>
+              <Link
+                to={`${LINKS.home.landing}#SET`}
+                onClick={() => {
+                  console.log("clicked")
+                  // scrollTo("#SET")
+                  this.setState({ openMenu: false })
+                }}
+              >
+                SET Marathon
+              </Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>SRT Marathon</Link>
+              <Link
+                onClick={() => this.setState({ openMenu: false })}
+                to={`${LINKS.home.landing}#SRT`}
+              >
+                SRT Marathon
+              </Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>Location</Link>
+              <Link
+                onClick={() => this.setState({ openMenu: false })}
+                to={`${LINKS.home.landing}#location`}
+              >
+                Location
+              </Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.home.landing}>FAQ</Link>
+              <Link
+                onClick={() => this.setState({ openMenu: false })}
+                to={`${LINKS.home.landing}#FAQ`}
+              >
+                FAQ
+              </Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.marathons}>Gallery</Link>
+              <Link
+                onClick={() => this.setState({ openMenu: false })}
+                to={`${LINKS.marathons}#gallery`}
+              >
+                Gallery
+              </Link>
             </div>
             <div className={style.linkContainer}>
-              <Link onClick={() => this.setState({openMenu: false})} to={LINKS.marathons}>Contact Us</Link>
+              <Link
+                onClick={() => {
+              
+                  this.setState({ openMenu: false })
+                }}
+                to={`${LINKS.marathons}#contact-us`}
+              >
+                Contact Us
+              </Link>
             </div>
-
           </div>
         )}
       </>

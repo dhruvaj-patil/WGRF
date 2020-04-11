@@ -56,7 +56,8 @@ const SETComponent = ({
           <div style={{ display:"flex", justifyContent: "center"}}>
               <LandingBackgroundButton
                 overText="Register"
-                underText="All the Best"
+                underText="All the Best"     
+                link="https://events.indiarunning.com/Event/Details/SINHAGADEPICTRAIL/3771"
               ></LandingBackgroundButton>
             </div>
         </div>

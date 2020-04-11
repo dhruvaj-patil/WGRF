@@ -43,7 +43,7 @@ export class ContactSection extends Component {
       <>
         <div className={style.contact}>
           <div>
-            <h2 style={{ textAlign: "center" }}>Get In Touch</h2>
+            <h2 style={{ textAlign: "center" }} id="contact-us">Get In Touch</h2>
             <h4 style={{textAlign: 'center'}}>Email us at <a href="mailto:wgrf50@gmail.com" style={{color: "red"}}>wgrf50@gmail.com</a> or contact any of our members on Facebook</h4>
           </div>
 

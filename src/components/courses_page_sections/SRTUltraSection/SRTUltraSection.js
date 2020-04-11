@@ -103,7 +103,7 @@ export class SRTUltraSection extends Component {
   render() {
       const {activeSRTNo} = this.state
     return (
-        <div className={style.heading}>
+        <div className={style.heading} id="SRT">
         {/* <h2 className={"m-0"}>SRT ULTRA EVENT</h2> */}
 
         <div className={style.heading}>
