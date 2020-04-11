@@ -2,7 +2,6 @@ import React, { Component } from "react"
 
 import style from "../css/menu.module.scss"
 import { Link } from "gatsby"
-import scrollTo from "gatsby-plugin-smoothscroll"
 
 const LINKS = {
   home: {
