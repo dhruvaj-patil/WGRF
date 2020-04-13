@@ -22,6 +22,8 @@ const LANDING_BUTTON_DATA = [
   },
 ]
 
+
+
 const ACCORDION_DATA = [
   {
     title: "Why is the moon sometimes out during the day?",

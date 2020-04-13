@@ -228,6 +228,11 @@ section {
   height: 100vh;
   // box-shadow: 0 25px 30px rgba(0, 0, 0, 0.5);
   display: flex;
+
+
+  ul{
+    padding-right: 7rem;
+  }
 }
 
 .inverseleftContent {
@@ -523,6 +528,10 @@ section {
   .inverse {
     height: auto;
     flex-direction: column;
+
+    ul{
+      padding-right: unset;
+    }
 
     .inverseleftContent {
       flex: 1 1;
