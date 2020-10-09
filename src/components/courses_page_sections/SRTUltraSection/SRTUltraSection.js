@@ -4,7 +4,7 @@ import SRTUltra from "./SRTUltra"
 
 import style from "../../../css/courses.module.scss"
 
-
+const BG_IMG = require("../../../images/bg_img4.jpg")
 
 const WHAT_WE_GIVE_POINTS = [
   "Participants will get a T-Shirt",
@@ -17,7 +17,7 @@ const WHAT_WE_GIVE_POINTS = [
   "Aid stations will provide drinking water, electrolyte drink, sweet snacks, glucose biscuits, salted snacks, fruits and primary first aid.",
   "Please plan to run with at least half to 1 litre of water on you, and some food for self-support.",
   "Pay-n-Park facility available by Ghera Sinhagad Samiti. You will have to reach and park your vehicle on race day before 5 am in the designated parking space. Parking at owners risk!",
-  "Drop Bag facility available for runners of all the 3 racing categories at hotel Kondhana Guesthouse."
+  "Drop Bag facility available for runners of all the 3 racing categories at hotel Kondhana Guesthouse.",
 ]
 const WHAT_YOU_GET_POINTS = [
   "Trail running shoes, socks, Running T-shirt & shorts/pants **",
@@ -39,7 +39,6 @@ const WHAT_YOU_GET_POINTS = [
   "Portable USB Battery charger for watch/phone",
 ]
 
-
 const SRT_DATA = [
   {
     title: "11 K.M.",
@@ -51,6 +50,7 @@ const SRT_DATA = [
       total_distance: "11 Km",
       aid_stations: "1",
     },
+    map_photo: require("../../../images/11km.png"),
   },
   {
     title: "25 K.M.",
@@ -62,6 +62,7 @@ const SRT_DATA = [
       total_distance: "25 Km",
       aid_stations: "2",
     },
+    map_photo: require("../../../images/25kgpx_img_srt_ultra.png"),
   },
   {
     title: "53 K.M.",
@@ -73,6 +74,7 @@ const SRT_DATA = [
       total_distance: "11 Km",
       aid_stations: "5",
     },
+    map_photo: require("../../../images/53_srt_utla_gpx.png"),
     post_notes:
       "Intermediate Cut Off Time: (8 hours) At Km 34 - Aid Station no. 4",
     map_link: "",
@@ -87,11 +89,24 @@ export class SRTUltraSection extends Component {
     }
   }
 
-
   componentDidMount() {
     setInterval(() => {
-      this.setState({ activeSRTNo: (this.state.activeSRTNo + 1)%3 }, console.log(this.state))
+      this.setState({ activeSRTNo: (this.state.activeSRTNo + 1) % 3 })
     }, 8000)
+  }
+
+  _callNext = () => {
+    this.setState({ activeSRTNo: (this.state.activeSRTNo + 1) % 3 })
+  }
+
+  _callPrev = () => {
+    let activeDiv = (this.state.activeSRTNo - 1) % 3
+
+    if (activeDiv < 0) {
+      activeDiv = SRT_DATA.length - 1
+    }
+
+    this.setState({ activeSRTNo: activeDiv })
   }
 
   _renderActiveSRTDiv = () => {
@@ -100,34 +115,40 @@ export class SRTUltraSection extends Component {
       case 0:
         return (
           <SRTUltra
-            bgImage={require("../../../images/bg_img4.jpg")}
+            bgImage={BG_IMG}
             title={SRT_DATA[0].title}
             data={SRT_DATA[0].data}
             map_link={SRT_DATA[0].map_link}
-            overlayImage={require("../../../images/map_1.png")}
+            overlayImage={SRT_DATA[0].map_photo}
+            callNext={this._callNext}
+            callPrev={this._callPrev}
           />
         )
 
       case 1:
         return (
           <SRTUltra
-            bgImage={require("../../../images/bg_img4.jpg")}
+            bgImage={BG_IMG}
             title={SRT_DATA[1].title}
             data={SRT_DATA[1].data}
             map_link={SRT_DATA[1].map_link}
-            overlayImage={require("../../../images/map_1.png")}
+            overlayImage={SRT_DATA[1].map_photo}
+            callNext={this._callNext}
+            callPrev={this._callPrev}
           />
         )
 
       case 2:
         return (
           <SRTUltra
-            bgImage={require("../../../images/bg_img4.jpg")}
+            bgImage={BG_IMG}
             title={SRT_DATA[2].title}
             data={SRT_DATA[2].data}
             map_link={SRT_DATA[2].map_link}
             post_notes={SRT_DATA[2].post_notes}
-            overlayImage={require("../../../images/map_1.png")}
+            overlayImage={SRT_DATA[2].map_photo}
+            callNext={this._callNext}
+            callPrev={this._callPrev}
           />
         )
 
@@ -137,9 +158,9 @@ export class SRTUltraSection extends Component {
   }
 
   render() {
-      const {activeSRTNo} = this.state
+    const { activeSRTNo } = this.state
     return (
-        <div className={style.heading} id="SRT">
+      <div className={style.heading} id="SRT">
         {/* <h2 className={"m-0"}>SRT ULTRA EVENT</h2> */}
 
         <div className={style.heading}>
@@ -147,63 +168,61 @@ export class SRTUltraSection extends Component {
           <div className={style.detailsContainer}>
             <h3>Marathon Details</h3>
             <p>
-              The beautiful route of the Sinhagad Epic Trail race is a point
-              to point route, without any loops. Runners will experience new
-              surroundings and a variety of technical as well as normal
-              terrain in the course of the race. The race will be conducted
-              within the limits of Sinhagad Ghera.
+              The beautiful route of the Sinhagad Epic Trail race is a point to
+              point route, without any loops. Runners will experience new
+              surroundings and a variety of technical as well as normal terrain
+              in the course of the race. The race will be conducted within the
+              limits of Sinhagad Ghera.
             </p>
             <p>
               All the 3 categories is that all of the races will be held in
-              month of June, and that there will rain, and wind during the
-              race timings. So be prepared to get wet, muddy, and dirty in the
-              forest trails.
+              month of June, and that there will rain, and wind during the race
+              timings. So be prepared to get wet, muddy, and dirty in the forest
+              trails.
             </p>
-       
           </div>
           <div>
-          <h4 style={{textAlign: "center"}}>Below are the three Categories of Marathons that you can race in:</h4>
-          <div style={{}} className={style.buttonTabsContainer}>
-          <div
-            onClick={() => this.setState({ activeSRTNo: 0 })}
-            className={`${style.buttonTabs} ${
-              activeSRTNo === 0 ? style.active : ""
-            }`}
-          >
-            <h3>11 km</h3>
-          </div>
+            <h4 style={{ textAlign: "center" }}>
+              Below are the three Categories of Marathons that you can race in:
+            </h4>
+            <div style={{}} className={style.buttonTabsContainer}>
+              <div
+                onClick={() => this.setState({ activeSRTNo: 0 })}
+                className={`${style.buttonTabs} ${
+                  activeSRTNo === 0 ? style.active : ""
+                }`}
+              >
+                <h3>11 km</h3>
+              </div>
 
-          <div
-            onClick={() => this.setState({ activeSRTNo: 1 })}
-            className={`${style.buttonTabs} ${
-              activeSRTNo === 1 ? style.active : ""
-            }`}
-          >
-            <h3>25 km</h3>
-          </div>
+              <div
+                onClick={() => this.setState({ activeSRTNo: 1 })}
+                className={`${style.buttonTabs} ${
+                  activeSRTNo === 1 ? style.active : ""
+                }`}
+              >
+                <h3>25 km</h3>
+              </div>
 
-          <div
-            onClick={() => this.setState({ activeSRTNo: 2 })}
-            className={`${style.buttonTabs} ${
-              activeSRTNo === 2 ? style.active : ""
-            }`}
-          >
-            <h3>53 km</h3>
+              <div
+                onClick={() => this.setState({ activeSRTNo: 2 })}
+                className={`${style.buttonTabs} ${
+                  activeSRTNo === 2 ? style.active : ""
+                }`}
+              >
+                <h3>53 km</h3>
+              </div>
+            </div>
           </div>
-        </div>
-        </div>
         </div>
 
         {this._renderActiveSRTDiv()}
-        {/* <SRTUltra
-          bgImage={require("../../../images/bg_img4.jpg")}
-          title={RACES_DATA[2].title}
-          data={RACES_DATA[2].data}
-          map_link={RACES_DATA[2].map_link}
-          post_notes={RACES_DATA[2].post_notes}
-          overlayImage={require("../../../images/map_1.png")}
-        /> */}
-        <InfoDiagonalSection givePoints={WHAT_WE_GIVE_POINTS} getPoints={WHAT_YOU_GET_POINTS} inverse={false} />
+
+        <InfoDiagonalSection
+          givePoints={WHAT_WE_GIVE_POINTS}
+          getPoints={WHAT_YOU_GET_POINTS}
+          inverse={false}
+        />
       </div>
     )
   }

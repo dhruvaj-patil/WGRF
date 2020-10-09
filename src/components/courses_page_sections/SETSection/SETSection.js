@@ -4,6 +4,10 @@ import style from "../../../css/courses.module.scss"
 import InfoDiagonalSection from "../../index_page_sections/Courses_section/InfoDiagonalSection"
 import SETComponent from "./SETComponent"
 
+
+
+const BG_IMG = require("../../../images/bg_img4.jpg");
+
 const SET_DATA = [
   {
     title: "11 K.M.",
@@ -15,9 +19,10 @@ const SET_DATA = [
       total_distance: "11 Km",
       aid_stations: "1",
     },
+    map_img: require("../../../images/11km_set.png")
   },
   {
-    title: "25 K.M.",
+    title: "22 K.M.",
     data: {
       start_end_time: "6:10 am - 12:10 pm",
       max_time: "6 Hours",
@@ -28,6 +33,7 @@ const SET_DATA = [
 
       post_notes: "UTMB Points: 1",
     },
+    map_img:require("../../../images/22km_SET.png")
   },
   {
     title: "32 K.M.",
@@ -41,6 +47,7 @@ const SET_DATA = [
 
       post_notes: "UTMB Points: 2",
     },
+    map_img:require("../../../images/32km_SET.png")
   },
   {
     title: "42 K.M.",
@@ -53,6 +60,7 @@ const SET_DATA = [
       aid_stations: "4",
       post_notes: "UTMB Points: 2",
     },
+    map_img:require("../../../images/42km_SET.png")
   },
 ]
 
@@ -102,8 +110,24 @@ export class SETSection extends Component {
 
   componentDidMount() {
     setInterval(() => {
-      this.setState({ activeSETNo: (this.state.activeSETNo+1)%4 }, console.log(this.state))
+      this.setState({ activeSETNo: (this.state.activeSETNo+1)%4 })
     }, 8000)
+  }
+
+
+  _callNext = () => {
+    console.log("CALLLLLED")
+    this.setState({ activeSETNo: (this.state.activeSETNo + 1) % 4 })
+  }
+
+  _callPrev = () => {
+    let activeDiv = (this.state.activeSETNo - 1) % 4
+    console.log("CALLLLLED", this.state)
+    if (activeDiv < 0) {
+      activeDiv = SET_DATA.length - 1
+    }
+
+    this.setState({ activeSETNo: activeDiv })
   }
 
   _renderActiveSETDiv = () => {
@@ -112,45 +136,53 @@ export class SETSection extends Component {
       case 0:
         return (
           <SETComponent
-            bgImage={require("../../../images/bg_img4.jpg")}
+            bgImage={BG_IMG}
             title={SET_DATA[0].title}
             data={SET_DATA[0].data}
             map_link={SET_DATA[0].map_link}
-            overlayImage={require("../../../images/map_1.png")}
+            overlayImage={SET_DATA[0].map_img}
+            callNext={this._callNext}
+            callPrev={this._callPrev}
           />
         )
 
       case 1:
         return (
           <SETComponent
-            bgImage={require("../../../images/bg_img4.jpg")}
+            bgImage={BG_IMG}
             title={SET_DATA[1].title}
             data={SET_DATA[1].data}
             map_link={SET_DATA[1].map_link}
-            overlayImage={require("../../../images/map_1.png")}
+            overlayImage={SET_DATA[1].map_img}
+            callNext={this._callNext}
+            callPrev={this._callPrev}
           />
         )
 
       case 2:
         return (
           <SETComponent
-            bgImage={require("../../../images/bg_img4.jpg")}
+            bgImage={BG_IMG}
             title={SET_DATA[2].title}
             data={SET_DATA[2].data}
             map_link={SET_DATA[2].map_link}
             post_notes={SET_DATA[2].post_notes}
-            overlayImage={require("../../../images/map_1.png")}
+            overlayImage={SET_DATA[2].map_img}
+            callNext={this._callNext}
+            callPrev={this._callPrev}
           />
         )
       case 3:
         return (
           <SETComponent
-            bgImage={require("../../../images/bg_img4.jpg")}
+            bgImage={BG_IMG}
             title={SET_DATA[3].title}
             data={SET_DATA[3].data}
             map_link={SET_DATA[3].map_link}
             post_notes={SET_DATA[3].post_notes}
-            overlayImage={require("../../../images/map_1.png")}
+            overlayImage={SET_DATA[3].map_img}
+            callNext={this._callNext}
+            callPrev={this._callPrev}
           />
         )
 

@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import style from "../css/menu.module.scss"
 import { Link } from "gatsby"
 
+const CLOSE_IMG = require("../images/close.svg");
 const LINKS = {
   home: {
     landing: "/",
@@ -31,6 +32,8 @@ export default class Menu extends Component {
           <hr></hr>
           <hr></hr>
         </div>
+
+    
       </div>
     )
   }
@@ -64,6 +67,9 @@ export default class Menu extends Component {
             onMouseLeave={() => this.setState({ openMenu: false })}
             className={style.menu}
           >
+        <div className={style.closeContainer}>
+          <img className={style.closeButton} src={CLOSE_IMG} height={50} width={50}  onMouseDown={() => this.setState({ openMenu: false })}></img>
+        </div>
             <div className={style.linkContainer}>
               <Link
                 onClick={() => this.setState({ openMenu: false })}

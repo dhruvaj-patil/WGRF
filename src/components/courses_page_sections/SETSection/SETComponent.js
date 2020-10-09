@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import ImageGallery from "react-image-gallery"
 import "react-image-gallery/styles/scss/image-gallery.scss"
 import style from "../../../css//courses.module.scss"
@@ -7,6 +7,10 @@ import ParallaxComponent from "../../common_components/parallaxComponent/paralla
 import { Overlay } from "react-bootstrap"
 import LandingBackgroundButton from "../../common_components/landing_section/LandingBackgroundButton"
 
+
+const ARROW = require("../../../images/next.svg")
+const ARROW_RED = require("../../../images/next-red.svg")
+
 const SETComponent = ({
   title,
   bgImage,
@@ -14,7 +18,13 @@ const SETComponent = ({
   data,
   post_notes,
   map_link,
-}) => (
+  callNext,
+  callPrev
+}) => {
+  
+  const [arrow, setarrow] = useState(ARROW_RED)
+  
+  return(
   <div
     className={`${container.locationContainer}`}
   >
@@ -60,7 +70,31 @@ const SETComponent = ({
                 link="https://events.indiarunning.com/Event/Details/SINHAGADEPICTRAIL/3771"
               ></LandingBackgroundButton>
             </div>
+
+
+                          {/* NEXT AND PREVIOUS ARROWS */}
+
+                          <div
+            onMouseOver={() => setarrow(ARROW)}
+            onMouseLeave={() => setarrow(ARROW_RED)}
+            className={style.arrowContainerRightLeftContent}
+            onClick={callNext}
+          >
+            <img src={arrow} width={50} height={50}></img>
+          </div>
+
+          <div
+            onMouseOver={() => setarrow(ARROW)}
+            onMouseLeave={() => setarrow(ARROW_RED)}
+            className={style.arrowContainerLeft}
+            onClick={callPrev}
+          >
+            <img src={arrow} width={50} height={50}></img>
+          </div>
         </div>
+
+    
+
       </div>
     </div>
     
@@ -89,5 +123,5 @@ const SETComponent = ({
     </div>
   </div>
 )
-
+}
 export default SETComponent
