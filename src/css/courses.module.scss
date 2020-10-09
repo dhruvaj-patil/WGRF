@@ -121,8 +121,10 @@
 
 .arrow-container-right-leftContent{
   position: absolute;
-  bottom: 13%;
-  right: 5%;
+  
+  // For Desktop
+  left: 50%;
+  top: 30%;
 
 
   &:hover{
@@ -618,6 +620,16 @@ section {
     bottom: 13%;
     margin: 0;
     right: 0;
+  }
+
+  .arrow-container-right-leftContent{
+    position: absolute;
+    left: unset;
+    top: unset;
+    // for Mobile
+    bottom: 13%;
+    right: 5%;
+
   }
 
 }
