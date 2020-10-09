@@ -1,5 +1,17 @@
 import React, { Component } from "react"
 import style from "../css/footer.module.scss"
+import { Link } from "gatsby"
+
+
+const LINKS = {
+  home: {
+    landing: "/",
+    location: "/",
+    
+
+  },
+  marathons: "marathons",
+}
 
 export class FooterSection extends Component {
   render() {
@@ -35,31 +47,31 @@ export class FooterSection extends Component {
             <div style={{ flex: 1 }}>
               <h3>Categories</h3>
               <p className={style.alignContent}>
-                <a>SRT Ultra</a>
+                <Link href={`${LINKS.home.landing}#SRT`}>SRT Ultra</Link>
               </p>
               <p className={style.alignContent}>
-                <a>Sinhagad Epic Trail</a>
+                <Link href={`${LINKS.home.landing}#SET`}>Sinhagad Epic Trail</Link>
               </p>
             </div>
             <div style={{ flex: 1 }}>
               <h3>Quick Links</h3>
               <p className={style.alignContent}>
-                <a>Home</a>
+                <Link activeClassName={style.footerLink} to={LINKS.home.landing}>Home</Link>
               </p>
               <p className={style.alignContent}>
-                <a>Courses</a>
+                <Link activeClassName={style.footerLink} to={LINKS.home.marathons}>Courses</Link>
               </p>
               <p className={style.alignContent}>
-                <a>Location</a>
+                <Link to={`${LINKS.home.landing}#location`}>Location</Link>
               </p>
               <p className={style.alignContent}>
-                <a>Gallery</a>
+                <Link to={LINKS.home.landing}>Gallery</Link>
               </p>
               <p className={style.alignContent}>
-                <a>FAQ</a>
+                <Link to={`${LINKS.home.landing}#FAQ`}>FAQ</Link>
               </p>
               <p className={style.alignContent}>
-                <a>Get In Touch</a>
+              <Link to={`${LINKS.marathons}#contact-us`}>Get In Touch</Link>
               </p>
             </div>
           </div>
@@ -69,7 +81,7 @@ export class FooterSection extends Component {
           <div className={style.copyRightsContainer}>
             <p>
               Copyright &copy; 2019 All Rights Reserved by{" "}
-              <a href="http://exientmedia.com/">Exient Media</a>.
+              <Link href="http://exientmedia.com/">Exient Media</Link>.
             </p>
           </div>
           <div className={style.socialLinksContainer}>

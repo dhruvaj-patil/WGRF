@@ -9,8 +9,9 @@
   color: $color-white;
   margin-top: 50px;
 
-  a{
+  a {
     cursor: pointer;
+    color: $color-white;
   }
 
   h3 {
@@ -51,64 +52,65 @@
         color: $color-blue-gray;
       }
     }
-  }
 
-  .legalsContainer {
-    flex: 1;
-    flex-direction: row;
-    display: flex;
-
-    .copyRightsContainer {
+    .legalsContainer {
       flex: 1;
-
-      p {
-        text-align: center;
-      }
-      a {
-        text-transform: uppercase;
-        cursor: pointer;
-        color:$color-blue-gray;
-        font-weight: bold;
-    letter-spacing: 2px;
-      }
-
-      a:hover {
-        color: $color-red;
-      }
-    }
-
-    .socialLinksContainer {
-      flex: 1;
+      flex-direction: row;
       display: flex;
-    justify-content: center;
 
+      .copyRightsContainer {
+        flex: 1;
 
-    .iconContainer {
-      margin: 0 0.5rem;
+        p {
+          text-align: center;
+        }
+        a {
+          text-transform: uppercase;
+          cursor: pointer;
+          color: white !important;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
 
-      .icon-fb {
-        background: $color-white;
-        -webkit-mask-image: url(../images/facebook-f-brands.svg);
-        mask-image: url(../images/facebook-f-brands.svg);
-        height: 1.3rem;
-        width: 1.3rem;
+        a:hover {
+          color: $color-red;
+        }
       }
 
-      .icon-insta{
-        background: $color-white;
-        -webkit-mask-image: url(../images/instagram-brands.svg);
-        mask-image: url(../images/instagram-brands.svg);
-        height: 1.3rem;
-        width: 1.3rem;
-      }
-      i:hover {
-        background-color: $color-red;
-      }
+      .socialLinksContainer {
+        flex: 1;
+        display: flex;
+        justify-content: center;
 
-    }
-      
+        .iconContainer {
+          margin: 0 0.5rem;
+
+          .icon-fb {
+            background: $color-white;
+            -webkit-mask-image: url(../images/facebook-f-brands.svg);
+            mask-image: url(../images/facebook-f-brands.svg);
+            height: 1.3rem;
+            width: 1.3rem;
+          }
+
+          .icon-insta {
+            background: $color-white;
+            -webkit-mask-image: url(../images/instagram-brands.svg);
+            mask-image: url(../images/instagram-brands.svg);
+            height: 1.3rem;
+            width: 1.3rem;
+          }
+          i:hover {
+            background-color: $color-red;
+          }
+        }
+      }
     }
   }
+}
+
+.footerLink {
+  color: white;
 }
 
 @media (max-width: $md-devices) {
