@@ -2,47 +2,63 @@ import React, { Component } from "react"
 
 import { Parallax } from "react-parallax"
 import LandingBackground from "./LandingBackground"
-import LandingBackgroundButton from "./LandingBackgroundButton";
+import LandingBackgroundButton from "./LandingBackgroundButton"
 import style from "../../../css/landing.module.scss"
 
-
 export class LandingSection extends Component {
- 
-
   render() {
-
-    const {title, subtitle, buttonData, landingBackgroundHeight, titleStyle, ofCourses, link} = this.props;
+    const {
+      title,
+      subtitle,
+      buttonData,
+      landingBackgroundHeight,
+      titleStyle,
+      ofCourses,
+      link,
+    } = this.props
     console.log("subtitleStyle ==>", titleStyle)
     return (
       <>
-        <Parallax strength={500} style={{height: landingBackgroundHeight}}>
+        <Parallax strength={500} style={{ height: landingBackgroundHeight }}>
           <>
-            <div className={style.landingContainer}
-            >
+            <div className={style.landingContainer}>
               <div>
-                <h1  className={`${ofCourses ? style.courseTitle : style.landingTitle}`}>{title}</h1>
+                <h1
+                  className={`${
+                    ofCourses ? style.courseTitle : style.landingTitle
+                  }`}
+                >
+                  {title}
+                </h1>
               </div>
 
               <div>
-                <h4 className={`${ofCourses? style.courseSubTitle : style.landingSubTitle}`}>{subtitle}</h4>
+                <h4
+                  className={`${
+                    ofCourses ? style.courseSubTitle : style.landingSubTitle
+                  }`}
+                >
+                  {subtitle}
+                </h4>
               </div>
               <div className={style.buttonContainer}>
                 {buttonData &&
-                buttonData.map((data, index) => {
-                  return (
-                    <LandingBackgroundButton
-                      overText={data.overText}
-                      underText={data.underText}
-                      key={index}
-                      link={data.link}
-                    ></LandingBackgroundButton>
-                  )
-                })}
+                  buttonData.map((data, index) => {
+                    if (data.link) {
+                      return (
+                        <LandingBackgroundButton
+                          overText={data.overText}
+                          underText={data.underText}
+                          key={index}
+                          link={data.link}
+                        ></LandingBackgroundButton>
+                      )
+                    }
+                  })}
               </div>
             </div>
             <LandingBackground
-            landingBackgroundHeight={landingBackgroundHeight}
- 
+              landingBackgroundHeight={landingBackgroundHeight}
             ></LandingBackground>
           </>
         </Parallax>

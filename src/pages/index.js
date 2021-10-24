@@ -13,12 +13,12 @@ const LANDING_BUTTON_DATA = [
   {
     overText: "Epic Trails",
     underText: "Register",
-    link:"https://events.indiarunning.com/Event/Details/SINHAGADEPICTRAIL/3771"
+    link:""
   },
   {
     overText: "SRT Ultra",
     underText: "Register",
-    link:"https://events.indiarunning.com/Event/Details/SRTULTRAMARATHON/3142"
+    link:"https://www.townscript.com/e/srt-ultra-2021-341013"
   },
 ]
 
@@ -68,12 +68,18 @@ const IndexPage = () => (
     ></LandingSection>
 
     {/* get both race details section on main page */}
-    <SETSection></SETSection>
     <SRTUltraSection></SRTUltraSection>
     <ParallaxComponent
       height="400px"
       bgImg={require("../images/parallax/valley.jpg")}
     ></ParallaxComponent>
+
+    <SETSection></SETSection>
+    <ParallaxComponent
+      height="400px"
+      bgImg={require("../images/parallax/parallax_1.jpg")}
+    ></ParallaxComponent>
+
     <LocationSection></LocationSection>
     <FaqSection accordionData={ACCORDION_DATA}></FaqSection>
     {/* <Link to="/courses/">Go to page 2</Link> */}

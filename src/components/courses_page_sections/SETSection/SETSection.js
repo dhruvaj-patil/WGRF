@@ -4,9 +4,8 @@ import style from "../../../css/courses.module.scss"
 import InfoDiagonalSection from "../../index_page_sections/Courses_section/InfoDiagonalSection"
 import SETComponent from "./SETComponent"
 
-
-
-const BG_IMG = require("../../../images/bg_img4.jpg");
+const BG_IMG = require("../../../images/bg_img4.jpg")
+const SET_LOGO = require("../../../images/SET_LOGO.png")
 
 const SET_DATA = [
   {
@@ -19,7 +18,8 @@ const SET_DATA = [
       total_distance: "11 Km",
       aid_stations: "1",
     },
-    map_img: require("../../../images/11km_set.png")
+    // map_img: require("../../../images/11km.png"),
+    map_link: require("../../../images/11km.png"),
   },
   {
     title: "22 K.M.",
@@ -30,10 +30,9 @@ const SET_DATA = [
       high_low_point: "1296 metres - 739 metres",
       total_distance: "22 Km",
       aid_stations: "3",
-
-      post_notes: "UTMB Points: 1",
     },
-    map_img:require("../../../images/22km_SET.png")
+    post_notes: "UTMB Points: 1",
+    map_link: require("../../../images/22km_SET.png"),
   },
   {
     title: "32 K.M.",
@@ -44,10 +43,9 @@ const SET_DATA = [
       high_low_point: "1296 metres - 975 metres",
       total_distance: "32 Km",
       aid_stations: "4",
-
-      post_notes: "UTMB Points: 2",
     },
-    map_img:require("../../../images/32km_SET.png")
+    post_notes: "UTMB Points: 2",
+    map_link: require("../../../images/32km_SET.png"),
   },
   {
     title: "42 K.M.",
@@ -58,13 +56,11 @@ const SET_DATA = [
       high_low_point: "1296 metres - 674 metres",
       total_distance: "42 Km",
       aid_stations: "4",
-      post_notes: "UTMB Points: 2",
     },
-    map_img:require("../../../images/42km_SET.png")
+    post_notes: "UTMB Points: 2",
+    map_link: require("../../../images/42km_SET.png"),
   },
 ]
-
-
 
 const WHAT_WE_GIVE_POINTS = [
   "Participants will get a T-Shirt",
@@ -77,7 +73,7 @@ const WHAT_WE_GIVE_POINTS = [
   "Aid stations will provide drinking water, electrolyte drink, sweet snacks, glucose biscuits, salted snacks, fruits and primary first aid.",
   "Please plan to run with at least half to 1 litre of water on you, and some food for self-support.",
   "Pay-n-Park facility available by Ghera Sinhagad Samiti. You will have to reach and park your vehicle on race day before 5 am in the designated parking space. Parking at owners risk!",
-  "Drop Bag facility available for runners of all the 3 racing categories at hotel Kondhana Guesthouse."
+  "Drop Bag facility available for runners of all the 3 racing categories at hotel Kondhana Guesthouse.",
 ]
 
 const WHAT_YOU_GET_POINTS = [
@@ -110,10 +106,9 @@ export class SETSection extends Component {
 
   componentDidMount() {
     setInterval(() => {
-      this.setState({ activeSETNo: (this.state.activeSETNo+1)%4 })
+      this.setState({ activeSETNo: (this.state.activeSETNo + 1) % 4 })
     }, 8000)
   }
-
 
   _callNext = () => {
     console.log("CALLLLLED")
@@ -134,6 +129,7 @@ export class SETSection extends Component {
     const { activeSETNo } = this.state
     switch (activeSETNo) {
       case 0:
+        console.log("Map Link SETSection ===>", SET_DATA[0].map_link)
         return (
           <SETComponent
             bgImage={BG_IMG}
@@ -192,11 +188,43 @@ export class SETSection extends Component {
   }
 
   render() {
-
     const { activeSETNo } = this.state
     return (
       <div className={style.heading} id="SET">
-        <h2 className={"m-0"}>Sinhagad Epic Trail </h2>
+        <div className={style.detailsContainer}>
+          <img src={SET_LOGO} height="150px"></img>
+          <h2 className={"m-0"}>Sinhagad Epic Trail </h2>
+          <p>
+            Sinhagad Epic Trail is a technical sky race for those with the heart
+            of a lion taking place during the arrival of monsoon in the Sahyadri
+            ranges. Of all the mountain forts in Maharashtra, Sinhagad,
+            originally known as Kondhana, has been the most sought after fort
+            for the rulers of the Sahyadri ranges. Since the past 2000 years,
+            Sinhagad is witness to enough bloodshed between different kings
+            owing to its heavily garrisoned fortifications, strategic importance
+            and proximity to Pune. “The one who controls Sinhagad, controls
+            Pune” was the mantra of the past.
+            <br></br>
+            The Koli tribe who are the oldest known settlers of the fort still
+            live around the fort’s 3 major valleys namely Atkarwadi, Kalyan Gaon
+            and Amruteshwar Met.
+            <br></br>
+            The famous battle of 1670 where Maratha warrior Tanaji Malusare
+            fought for his life for recapturing the fort into Chhatrapati
+            Shivaji’s kingdom is the most told story in every household of
+            Maharashtra. Chhatrapati Shivaji Maharaj expressed the loss of his
+            trusted general and friend by eulogising the words “Gad ala, pan
+            Sinha gela” which translates to “we have won the fort, but lost the
+            lion”. He renamed the fort from its old name Kondhana to Sinhagad
+            (Lion’s Fort) in memory of this braveheart.
+            <br></br>
+            Today Sinhagad is a place for multiple outdoor sports activities;
+            right from hikers, mountaineers, runners, rock climbers, adventure
+            enthusiasts, campers, and the usual tourists visiting everyday.
+            Owing to its near proximity to the people of Kolhapur, Satara,
+            Mumbai, and Pune, Sinhagad is the most visited fort in Maharashtra.
+          </p>
+        </div>
         <div className={style.detailsContainer}>
           <h3>Marathon Details</h3>
           <p>
@@ -211,53 +239,58 @@ export class SETSection extends Component {
             of June, and that there will rain, and wind during the race timings.
             So be prepared to get wet, muddy, and dirty in the forest trails.
           </p>
-
         </div>
 
-        <div>
-        <h4 style={{textAlign: "center"}}>Below are the four Categories of Marathons that you can race in:</h4>
-        <div
-          className={`${style.buttonTabsContainer} ${style.buttonTabsInverse}`}
-        >
+        <div style={{marginTop: "50px"}}>
+          <h4 style={{ textAlign: "center" }}>
+            Below are the four Categories of Marathons that you can race in:
+          </h4>
           <div
-            onClick={() => this.setState({ activeSETNo: 0 })}
-            className={`${style.buttonTabs} ${
-              activeSETNo === 0 ? style.active : ""
-            }`}
+            className={`${style.buttonTabsContainer} ${style.buttonTabsInverse}`}
           >
-            <h3>11 km</h3>
-          </div>
+            <div
+              onClick={() => this.setState({ activeSETNo: 0 })}
+              className={`${style.buttonTabs} ${
+                activeSETNo === 0 ? style.active : ""
+              }`}
+            >
+              <h3>11 km</h3>
+            </div>
 
-          <div
-            onClick={() => this.setState({ activeSETNo: 1 })}
-            className={`${style.buttonTabs} ${
-              activeSETNo === 1 ? style.active : ""
-            }`}
-          >
-            <h3>25 km</h3>
-          </div>
+            <div
+              onClick={() => this.setState({ activeSETNo: 1 })}
+              className={`${style.buttonTabs} ${
+                activeSETNo === 1 ? style.active : ""
+              }`}
+            >
+              <h3>22 km</h3>
+            </div>
 
-          <div
-            onClick={() => this.setState({ activeSETNo: 2 })}
-            className={`${style.buttonTabs} ${
-              activeSETNo === 2 ? style.active : ""
-            }`}
-          >
-            <h3>32 km</h3>
+            <div
+              onClick={() => this.setState({ activeSETNo: 2 })}
+              className={`${style.buttonTabs} ${
+                activeSETNo === 2 ? style.active : ""
+              }`}
+            >
+              <h3>32 km</h3>
+            </div>
+            <div
+              onClick={() => this.setState({ activeSETNo: 3 })}
+              className={`${style.buttonTabs} ${
+                activeSETNo === 3 ? style.active : ""
+              }`}
+            >
+              <h3>42 km</h3>
+            </div>
           </div>
-          <div
-            onClick={() => this.setState({ activeSETNo: 3 })}
-            className={`${style.buttonTabs} ${
-              activeSETNo === 3 ? style.active : ""
-            }`}
-          >
-            <h3>42 km</h3>
-          </div>
-        </div>
         </div>
         {this._renderActiveSETDiv()}
         {/* <SETComponent></SETComponent> */}
-        <InfoDiagonalSection givePoints={WHAT_WE_GIVE_POINTS} getPoints={WHAT_YOU_GET_POINTS} inverse={true} />
+        <InfoDiagonalSection
+          givePoints={WHAT_WE_GIVE_POINTS}
+          getPoints={WHAT_YOU_GET_POINTS}
+          inverse={true}
+        />
       </div>
     )
   }

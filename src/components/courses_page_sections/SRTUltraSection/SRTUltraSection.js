@@ -4,7 +4,8 @@ import SRTUltra from "./SRTUltra"
 
 import style from "../../../css/courses.module.scss"
 
-const BG_IMG = require("../../../images/bg_img4.jpg")
+const BG_IMG = require("../../../images/SRT_BG.jpg")
+const SRT_LOGO =  require("../../../images/srt_logo.png")
 
 const WHAT_WE_GIVE_POINTS = [
   "Participants will get a T-Shirt",
@@ -50,7 +51,8 @@ const SRT_DATA = [
       total_distance: "11 Km",
       aid_stations: "1",
     },
-    map_photo: require("../../../images/11km.png"),
+    // map_photo: require("../../../images/53k_SRT_ultra_full_map.jpg"),
+    map_link: require("../../../images/11km.png"),
   },
   {
     title: "25 K.M.",
@@ -62,7 +64,8 @@ const SRT_DATA = [
       total_distance: "25 Km",
       aid_stations: "2",
     },
-    map_photo: require("../../../images/25kgpx_img_srt_ultra.png"),
+    // map_photo: require("../../../images/53k_SRT_ultra_full_map.jpg"),
+    map_link:require("../../../images/25kgpx_img_srt_ultra.png"),
   },
   {
     title: "53 K.M.",
@@ -74,10 +77,9 @@ const SRT_DATA = [
       total_distance: "11 Km",
       aid_stations: "5",
     },
-    map_photo: require("../../../images/53_srt_utla_gpx.png"),
-    post_notes:
-      "Intermediate Cut Off Time: (8 hours) At Km 34 - Aid Station no. 4",
-    map_link: "",
+    // map_photo: require("../../../images/53k_SRT_ultra_full_map.jpg"),
+    post_notes: "Intermediate Cut Off Time: (8 hours) At Km 34 - Aid Station no. 4",
+    map_link: require("../../../images/53_srt_utla_gpx.png"),
   },
 ]
 
@@ -92,7 +94,7 @@ export class SRTUltraSection extends Component {
   componentDidMount() {
     setInterval(() => {
       this.setState({ activeSRTNo: (this.state.activeSRTNo + 1) % 3 })
-    }, 8000)
+    }, 12000)
   }
 
   _callNext = () => {
@@ -164,24 +166,52 @@ export class SRTUltraSection extends Component {
         {/* <h2 className={"m-0"}>SRT ULTRA EVENT</h2> */}
 
         <div className={style.heading}>
-          <h2 className={"m-0"}>SRT ULTRA </h2>
+          <div className={style.detailsContainer}>
+            <img src={SRT_LOGO} height="150px"></img>
+
+            <h2 className={"m-0"}>SRT ULTRA MARATHON</h2>
+            <p>
+              SRT stands for Sinhagad Rajgad Torna!
+              <br></br>
+              Introducing an Ultra Marathon on the ancient route which connects
+              the Sinhagad-Rajgad-Torna forts, more popularly known today as
+              “SRT”. This legendary route is the magnum opus of trail and
+              mountain running marathon routes of Pune's Sahyadri ranges. The
+              SRT route has been used in the past as a catalyst in commuting,
+              trading, and farming apart from being the battleground for many
+              kings who ruled these mountains.
+            </p>
+         
+            <p>
+              The SRT is a now a heritage walk, with the magnificent Sinhagad,
+              Rajgad and Torna forts that stand tall in between this route,
+              telling the stories of the rich and glorious past of Pune.
+              <br></br>
+              In this day and age, a new stage is set - a battle to conquer
+              these monumental Sinhagad-Rajgad-Torna forts in the form of an
+              endurance filled Pune's first mountain running marathon!
+            </p>
+          </div>
           <div className={style.detailsContainer}>
             <h3>Marathon Details</h3>
             <p>
-              The beautiful route of the Sinhagad Epic Trail race is a point to
-              point route, without any loops. Runners will experience new
-              surroundings and a variety of technical as well as normal terrain
-              in the course of the race. The race will be conducted within the
-              limits of Sinhagad Ghera.
+              The beauty of the SRT Ultra Marathon course is that it is a
+              point-to-point route, without any loops. So every moment will be a
+              new experience in the heart of the Sahyadri mountains. Runners
+              will pass through evergreen mountains, dense forests with
+              abundance of flora and fauna.
             </p>
             <p>
-              All the 3 categories is that all of the races will be held in
-              month of June, and that there will rain, and wind during the race
-              timings. So be prepared to get wet, muddy, and dirty in the forest
-              trails.
+              SRT Ultra is highly challenging in the sense that almost 70% of
+              the marathon route comprises of technical trails, rocks, mud,
+              scree, grass & roots, at an average altitude of 1000 metres. The
+              SRT Ultra not just involves mountain running, but also
+              considerable amount of climbing, which is encountered while
+              ascending as well as descending one of the most pristine locations
+              in Pune.
             </p>
           </div>
-          <div>
+          <div style={{marginTop: "50px"}}>
             <h4 style={{ textAlign: "center" }}>
               Below are the three Categories of Marathons that you can race in:
             </h4>

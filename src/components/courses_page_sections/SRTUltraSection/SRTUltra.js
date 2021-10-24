@@ -19,6 +19,7 @@ const SRTUltra = ({
 }) => {
   const [arrow, setarrow] = useState(ARROW_RED)
 
+  console.log("Map Link ===>" + map_link)
   return (
     <div className={style.srtContainer}>
       <div className={`${style.srtContainerLeft}`}>
@@ -71,21 +72,30 @@ const SRTUltra = ({
               {post_notes && (
                 <p style={{ textAlign: "center" }}>{post_notes}</p>
               )}
-
+              {title === "53 K.M." ? (
+                <p>
+                  <b>UTMB Points </b>: 5 | Mountain Level: 5 | Finisher Points: 320
+                  <br></br>
+                  <b>ITRA Points</b>: 3 | Mountain Level: 5 | Finisher Points: 320
+                </p>
+              ) : null}
+              {title === "25 K.M." ? (
+                <p><b>ITRA Point</b>: 1 | Mountain Level: 5 | Finisher Points: 280</p>
+              ) : null}
               <p style={{ textAlign: "center" }}>
                 <a
-                  style={{ color: "red", fontWeight: 900 }}
+                  style={{ color: "#ff7917", fontWeight: 900 }}
                   href={map_link}
                   download
                 >
-                  Get Map
+                  Get GPX Map
                 </a>
               </p>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <LandingBackgroundButton
                   overText="Register"
                   underText="All the Best"
-                  link="https://events.indiarunning.com/Event/Details/SRTULTRAMARATHON/3142"
+                  link="https://www.townscript.com/e/srt-ultra-2021-341013"
                 ></LandingBackgroundButton>
               </div>
             </div>
