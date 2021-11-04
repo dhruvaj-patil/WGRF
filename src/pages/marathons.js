@@ -154,7 +154,7 @@ export default class Courses extends React.Component {
           races={RACE_DATA[0].races}
           sectionLink={RACE_DATA[0].id}
         ></RaceSection>
-        <GallerySection></GallerySection>
+        <GallerySection race_name="SRT"></GallerySection>
         <ParallaxComponent
           bgImg={require("../images/parallax/fort.jpg")}
           height="40vh"
@@ -169,12 +169,12 @@ export default class Courses extends React.Component {
           races={RACE_DATA[1].races}
           sectionLink={RACE_DATA[1].id}
         ></RaceSection>
-        <GallerySection></GallerySection>
+        <GallerySection race_name="SET"></GallerySection>
         <ParallaxComponent
           bgImg={require("../images/parallax/fort.jpg")}
           height="40vh"
         ></ParallaxComponent>
-        <ContactSection></ContactSection> {/* Put on next page */}
+        <ContactSection></ContactSection>
       </Layout>
     )
   }
