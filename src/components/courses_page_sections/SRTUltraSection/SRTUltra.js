@@ -3,23 +3,12 @@ import style from "../../../css/courses.module.scss"
 import ParallaxComponent from "../../common_components/parallaxComponent/parallaxComponent"
 import LandingBackgroundButton from "../../common_components/landing_section/LandingBackgroundButton"
 // import InfoDiagonalSection from "./InfoDiagonalSection"
-
-const ARROW = require("../../../images/next.svg")
-const ARROW_RED = require("../../../images/next-red.svg")
+const SRT_LOGO = require("../../../images/srt_logo.png")
 
 const SRTUltra = ({
-  title,
   bgImage,
   overlayImage,
-  data,
-  post_notes,
-  map_link,
-  callNext,
-  callPrev,
 }) => {
-  const [arrow, setarrow] = useState(ARROW_RED)
-
-  console.log("Map Link ===>" + map_link)
   return (
     <div className={style.srtContainer}>
       <div className={`${style.srtContainerLeft}`}>
@@ -37,89 +26,52 @@ const SRTUltra = ({
         </ParallaxComponent>
       </div>
 
+      {/* TODO: 
+      1. Remove from below div and add that into Marathons Details Page.  
+      2. Change Below Div and Write Marathon Content in it. 
+      */}
+
       <div className={style.srtContainerRight}>
-        <div style={{ flex: 1 }}>
-          <h2 style={{ textAlign: "center" }}>{title}</h2>
+        <div className={style.heading}>
+          <div className={style.detailsContainer}>
+            <img src={SRT_LOGO} height="150px"></img>
+
+            <h2 className={"m-0"}>SRT ULTRA MARATHON</h2>
+
+            {/* TODO: 
+                1. Remove from below div and add that into SRTUltra.js component Details Page.
+                2. Change Active Div Content into Marathon's Page Cards.
+            */}
+            <p>
+              SRT stands for Sinhagad Rajgad Torna!
+              <br></br>
+              Introducing an Ultra Marathon on the ancient route which connects
+              the Sinhagad-Rajgad-Torna forts, more popularly known today as
+              “SRT”. This legendary route is the magnum opus of trail and
+              mountain running marathon routes of Pune's Sahyadri ranges. The
+              SRT route has been used in the past as a catalyst in commuting,
+              trading, and farming apart from being the battleground for many
+              kings who ruled these mountains.
+            </p>
+
+            <p>
+              The SRT is a now a heritage walk, with the magnificent Sinhagad,
+              Rajgad and Torna forts that stand tall in between this route,
+              telling the stories of the rich and glorious past of Pune.
+              <br></br>
+              In this day and age, a new stage is set - a battle to conquer
+              these monumental Sinhagad-Rajgad-Torna forts in the form of an
+              endurance filled Pune's first mountain running marathon!
+            </p>
+          </div>
         </div>
-        <div style={{ flex: 1, flexDirection: "row" }}>
-          <div
-            style={{ flex: 9, justifyContent: "center", alignItems: "center" }}
-          >
-            <div
-              className={`${style.dataContainer} ${style.effectFadeIn} ${style.paddingContainer}`}
-            >
-              <h3>Details</h3>
-              <ul>
-                <li>
-                  <b>Starts & End at</b>: {data.start_end_time}
-                </li>
-                <li>
-                  <b>Maximum Time</b>: {data.max_time}
-                </li>
-                <li>
-                  <b>Ascent & Descent</b>: {data.ascent_descent}
-                </li>
-                <li>
-                  <b>Highest & Lowest Point</b>: {data.high_low_point}
-                </li>
-                <li>
-                  <b>Total distance</b>: {data.total_distance}
-                </li>
-                <li>
-                  <b>Aid Station</b>: {data.aid_stations}
-                </li>
-              </ul>
-              {post_notes && (
-                <p style={{ textAlign: "center" }}>{post_notes}</p>
-              )}
-              {title === "53 K.M." ? (
-                <p>
-                  <b>UTMB Points </b>: 5 | Mountain Level: 5 | Finisher Points: 320
-                  <br></br>
-                  <b>ITRA Points</b>: 3 | Mountain Level: 5 | Finisher Points: 320
-                </p>
-              ) : null}
-              {title === "25 K.M." ? (
-                <p><b>ITRA Point</b>: 1 | Mountain Level: 5 | Finisher Points: 280</p>
-              ) : null}
-              <p style={{ textAlign: "center" }}>
-                <a
-                  style={{ color: "#ff7917", fontWeight: 900 }}
-                  href={map_link}
-                  download
-                >
-                  Get GPX Map
-                </a>
-              </p>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <LandingBackgroundButton
-                  overText="Register"
-                  underText="All the Best"
-                  link="https://www.townscript.com/e/srt-ultra-2021-341013"
-                ></LandingBackgroundButton>
-              </div>
-            </div>
-          </div>
 
-          {/* NEXT AND PREVIOUS ARROWS */}
-
-          <div
-            onMouseOver={() => setarrow(ARROW)}
-            onMouseLeave={() => setarrow(ARROW_RED)}
-            className={style.arrowContainerRight}
-            onClick={callNext}
-          >
-            <img src={arrow} width={50} height={50}></img>
-          </div>
-
-          <div
-            onMouseOver={() => setarrow(ARROW)}
-            onMouseLeave={() => setarrow(ARROW_RED)}
-            className={style.arrowContainerLeft}
-            onClick={callPrev}
-          >
-            <img src={arrow} width={50} height={50}></img>
-          </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <LandingBackgroundButton
+            overText="Course Details"
+            underText="Course Details"
+            link="/marathons#SRT"
+          ></LandingBackgroundButton>
         </div>
       </div>
     </div>

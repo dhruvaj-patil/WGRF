@@ -10,6 +10,8 @@ import LandingBackgroundButton from "../../common_components/landing_section/Lan
 const ARROW = require("../../../images/next.svg")
 const ARROW_RED = require("../../../images/next-red.svg")
 
+const SET_LOGO = require("../../../images/SET_LOGO.png")
+
 const SETComponent = ({
   title,
   bgImage,
@@ -25,76 +27,55 @@ const SETComponent = ({
   return (
     <div className={`${container.locationContainer}`}>
       <div className={container.containerLeft}>
-        <div style={{ flex: 1 }}>
-          <h2 style={{ textAlign: "center" }}>{title}</h2>
-        </div>
-        <div
-          style={{ flex: 9, justifyContent: "center", alignItems: "center" }}
-        >
-          <div
-            className={`${container.dataContainer} ${container.effectFadeIn} ${style.paddingContainer}`}
-          >
-            <h3>Details</h3>
-            <ul>
-              <li>
-                <b>Starts & End at</b>: {data.start_end_time}
-              </li>
-              <li>
-                <b>Maximum Time</b>: {data.max_time}
-              </li>
-              <li>
-                <b>Ascent & Descent</b>: {data.ascent_descent}
-              </li>
-              <li>
-                <b>Highest & Lowest Point</b>: {data.high_low_point}
-              </li>
-              <li>
-                <b>Total distance</b>: {data.total_distance}
-              </li>
-              <li>
-                <b>Aid Station</b>: {data.aid_stations}
-              </li>
-            </ul>
-            {post_notes && <p style={{ textAlign: "center" }}>{post_notes}</p>}
+        <div className={style.heading}>
+          <div className={style.detailsContainer}>
+            <img src={SET_LOGO} height="150px"></img>
 
-            <p style={{ textAlign: "center" }}>
-              <a
-                style={{ color: "#ff7917", fontWeight: 900 }}
-                href={map_link}
-                download
-              >
-                Get Map
-              </a>
+            <h2 className={"m-0"}>Sinhagad Epic Trail </h2>
+            {/*
+                1. Remove from below div and add that into SETComponent.js component Details Page.
+                2. Change Active Div Content into Marathon's Page Cards.
+          */}
+            <p>
+              Sinhagad Epic Trail is a technical sky race for those with the
+              heart of a lion taking place during the arrival of monsoon in the
+              Sahyadri ranges. Of all the mountain forts in Maharashtra,
+              Sinhagad, originally known as Kondhana, has been the most sought
+              after fort for the rulers of the Sahyadri ranges. Since the past
+              2000 years, Sinhagad is witness to enough bloodshed between
+              different kings owing to its heavily garrisoned fortifications,
+              strategic importance and proximity to Pune. “The one who controls
+              Sinhagad, controls Pune” was the mantra of the past.
+              <br></br>
+              The Koli tribe who are the oldest known settlers of the fort still
+              live around the fort’s 3 major valleys namely Atkarwadi, Kalyan
+              Gaon and Amruteshwar Met.
+              <br></br>
+              The famous battle of 1670 where Maratha warrior Tanaji Malusare
+              fought for his life for recapturing the fort into Chhatrapati
+              Shivaji’s kingdom is the most told story in every household of
+              Maharashtra. Chhatrapati Shivaji Maharaj expressed the loss of his
+              trusted general and friend by eulogising the words “Gad ala, pan
+              Sinha gela” which translates to “we have won the fort, but lost
+              the lion”. He renamed the fort from its old name Kondhana to
+              Sinhagad (Lion’s Fort) in memory of this braveheart.
+              <br></br>
+              Today Sinhagad is a place for multiple outdoor sports activities;
+              right from hikers, mountaineers, runners, rock climbers, adventure
+              enthusiasts, campers, and the usual tourists visiting everyday.
+              Owing to its near proximity to the people of Kolhapur, Satara,
+              Mumbai, and Pune, Sinhagad is the most visited fort in
+              Maharashtra.
             </p>
-
-            {/* <div style={{ display:"flex", justifyContent: "center"}}>
-              <LandingBackgroundButton
-                overText="Register"
-                underText="All the Best"     
-                link="https://events.indiarunning.com/Event/Details/SINHAGADEPICTRAIL/3771"
-              ></LandingBackgroundButton>
-            </div> */}
-
-            {/* NEXT AND PREVIOUS ARROWS */}
-
-            <div
-              onMouseOver={() => setarrow(ARROW)}
-              onMouseLeave={() => setarrow(ARROW_RED)}
-              className={style.arrowContainerRightLeftContent}
-              onClick={callNext}
-            >
-              <img src={arrow} width={50} height={50}></img>
-            </div>
-
-            <div
-              onMouseOver={() => setarrow(ARROW)}
-              onMouseLeave={() => setarrow(ARROW_RED)}
-              className={style.arrowContainerLeft}
-              onClick={callPrev}
-            >
-              <img src={arrow} width={50} height={50}></img>
-            </div>
           </div>
+        </div>
+
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <LandingBackgroundButton
+            overText="Course Details"
+            underText="Course Details"
+            link="/marathons#SET"
+          ></LandingBackgroundButton>
         </div>
       </div>
 

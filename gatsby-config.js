@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Western Ghat Running Foundation`,
@@ -6,7 +10,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`, 
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,8 +33,8 @@ module.exports = {
         name: `Western Ghat Running Foundation`,
         short_name: `WGRF Website`,
         start_url: `/`,
-        background_color: `#ff1744`,
-        theme_color: `#ff1744`,
+        background_color: `#ff7917`,
+        theme_color: `#ff7917`,
         display: `minimal-ui`,
         icon: `src/images/wgrf-icon.png`, // This path is relative to the root of the site.
       },
