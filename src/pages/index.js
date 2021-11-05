@@ -13,16 +13,14 @@ const LANDING_BUTTON_DATA = [
   {
     overText: "Epic Trails",
     underText: "Register",
-    link:""
+    link: "",
   },
   {
     overText: "SRT Ultra",
     underText: "Register",
-    link:"https://www.townscript.com/e/srt-ultra-2021-341013"
+    link: "https://www.townscript.com/e/srt-ultra-2021-341013",
   },
 ]
-
-
 
 const ACCORDION_DATA = [
   {
@@ -68,13 +66,15 @@ const IndexPage = () => (
     ></LandingSection>
 
     {/* get both race details section on main page */}
-    <SRTUltraSection></SRTUltraSection>
-    <ParallaxComponent
-      height="400px"
-      bgImg={require("../images/parallax/valley.jpg")}
-    ></ParallaxComponent>
+    <div id="About-WGRF">
+      <SRTUltraSection></SRTUltraSection>
+      <ParallaxComponent
+        height="400px"
+        bgImg={require("../images/parallax/valley.jpg")}
+      ></ParallaxComponent>
 
-    <SETSection></SETSection>
+      <SETSection></SETSection>
+    </div>
     <ParallaxComponent
       height="400px"
       bgImg={require("../images/parallax/parallax_1.jpg")}
@@ -83,7 +83,6 @@ const IndexPage = () => (
     <LocationSection></LocationSection>
     <FaqSection accordionData={ACCORDION_DATA}></FaqSection>
     {/* <Link to="/courses/">Go to page 2</Link> */}
-   
   </Layout>
 )
 

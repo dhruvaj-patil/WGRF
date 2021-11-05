@@ -12,8 +12,8 @@ export default class LocationSection extends React.Component {
 
   componentDidMount() {
     setInterval(() => {
-        this.setState({ showTravel: !this.state.showTravel })
-      }, 8000)
+      this.setState({ showTravel: !this.state.showTravel })
+    }, 8000)
   }
 
   render() {
@@ -21,7 +21,7 @@ export default class LocationSection extends React.Component {
     return (
       <div className={style.locationContainer}>
         <div className={style.containerLeft}>
-          <div style={{ flex: 1 }} id="location">
+          <div style={{ flex: 1 }} id="WGRF-location">
             <h2 style={{ textAlign: "center" }}>Location</h2>
           </div>
           <div
@@ -114,7 +114,9 @@ export default class LocationSection extends React.Component {
                       </li>
                     </ol>
 
-                    <a href="">Head Over to Rules and Regulations for our camping rules</a>
+                    <a href="">
+                      Head Over to Rules and Regulations for our camping rules
+                    </a>
                   </div>
                 </div>
               </div>

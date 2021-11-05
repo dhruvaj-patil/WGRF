@@ -7,8 +7,7 @@ const teamData = [
     id: 1,
     name: "Dighvijay Jedhe",
     skills: ["Mountain runner", "Trail runner"],
-    desc:
-      "Loves to do heavy workout & power lifting.",
+    desc: "Loves to do heavy workout & power lifting.",
     fbLink: "https://www.facebook.com/amar.dhumal.50",
     img: require("../../../images/team/Digvijay_Jhede_1.jpg"),
   },
@@ -16,8 +15,7 @@ const teamData = [
     id: 2,
     name: "Amar Dhumal",
     skills: ["Trail runner", "trekking expert"],
-    desc:
-      "Works in Information Technology sector.",
+    desc: "Works in Information Technology sector.",
     fbLink: "https://www.facebook.com/amar.dhumal.50",
     img: require("../../../images/team/amar_dhumal_1.jpg"),
   },
@@ -25,8 +23,7 @@ const teamData = [
     id: 3,
     name: "Shripal Oswal",
     skills: ["Trail runner", "climbing", "trekking"],
-    desc:
-      "Expert in glass related business.",
+    desc: "Expert in glass related business.",
     fbLink: "https://www.facebook.com/amar.dhumal.50",
     img: require("../../../images/team/Shripad_1.jpg"),
   },
@@ -42,7 +39,7 @@ const teamData = [
   {
     id: 5,
     name: "Anil Pawar",
-    skills: ["Farmer" ,"Social engineering"],
+    skills: ["Farmer", "Social engineering"],
     desc:
       "Expert knowhow of Pune's Sahyadri Mountains, & surrounding villages. Explorer of historical architecture.",
     fbLink: "https://www.facebook.com/amar.dhumal.50",
@@ -51,7 +48,7 @@ const teamData = [
   {
     id: 6,
     name: "Kunal Bedarkar",
-    skills: [ "Mountaineering", "Triathlons"],
+    skills: ["Mountaineering", "Triathlons"],
     desc:
       "Specialist in the sport of alpine climbing, un-supported climbing, slack-lining, etc.",
     fbLink: "https://www.facebook.com/amar.dhumal.50",
@@ -70,8 +67,7 @@ const teamData = [
     id: 8,
     name: "Sujeet Takawane",
     skills: ["Photography", "Videography"],
-    desc:
-      "Specialist in the field of Event videography.",
+    desc: "Specialist in the field of Event videography.",
     fbLink: "https://www.facebook.com/amar.dhumal.50",
     img: require("../../../images/team/sujeet_takawane_1.jpg"),
   },
@@ -111,8 +107,6 @@ const teamData = [
     fbLink: "https://www.facebook.com/amar.dhumal.50",
     img: require("../../../images/team/aditya_shinde_1.jpg"),
   },
-
-
 ]
 
 export class ContactSection extends Component {
@@ -121,8 +115,8 @@ export class ContactSection extends Component {
       <>
         <div className={style.contact}>
           <div>
-            <h2 style={{ textAlign: "center" }} id="contact-us">
-              Get In Touch
+            <h2 style={{ textAlign: "center" }} id="WGRF-Team">
+              Our Team
             </h2>
             <h4 style={{ textAlign: "center" }}>
               Email us at{" "}

@@ -22,6 +22,7 @@ const RACE_DATA = [
       {
         id: "SET11km",
         title: "11 K.M.",
+        bg_img: require("../images/gallery/race_types.jpg"),
         data: {
           start_end_time: "6:15 am - 9:15 am",
           max_time: "3 Hours",
@@ -36,6 +37,7 @@ const RACE_DATA = [
       {
         id: "SET22km",
         title: "22 K.M.",
+        bg_img: require("../images/gallery/race_types.jpg"),
         data: {
           start_end_time: "6:10 am - 12:10 pm",
           max_time: "6 Hours",
@@ -50,6 +52,7 @@ const RACE_DATA = [
       {
         id: "SET32km",
         title: "32 K.M.",
+        bg_img: require("../images/gallery/race_types_3.jpg"),
         data: {
           start_end_time: "6:05 am -2:05 pm",
           max_time: "8 Hours",
@@ -64,6 +67,7 @@ const RACE_DATA = [
       {
         id: "SET42km",
         title: "42 K.M.",
+        bg_img: require("../images/gallery/race_types_3.jpg"),
         data: {
           start_end_time: "6:00 am - 5:00 pm",
           max_time: "11 Hours",
@@ -88,6 +92,7 @@ const RACE_DATA = [
       {
         id: "SRT11km",
         title: "11 K.M.",
+        bg_img: require("../images/gallery/race_types_2.jpg"),
         data: {
           start_end_time: "6:10 am - 9:10 am",
           max_time: "3 Hours",
@@ -102,6 +107,7 @@ const RACE_DATA = [
       {
         id: "SRT25km",
         title: "25 K.M.",
+        bg_img: require("../images/gallery/race_types_2.jpg"),
         data: {
           start_end_time: "6:05 am - 12:05 am",
           max_time: "6 Hours",
@@ -116,6 +122,7 @@ const RACE_DATA = [
       {
         id: "SRT53km",
         title: "53 K.M.",
+        bg_img: require("../images/gallery/race_types_2.jpg"),
         data: {
           start_end_time: "6:00 am - 6:00 pm",
           max_time: "12 Hours",
@@ -156,7 +163,7 @@ export default class Courses extends React.Component {
         ></RaceSection>
         <GallerySection race_name="SRT"></GallerySection>
         <ParallaxComponent
-          bgImg={require("../images/parallax/fort.jpg")}
+          bgImg={require("../images/parallax/parallax_bg.jpg")}
           height="40vh"
         ></ParallaxComponent>
         {/*TODO: 
@@ -171,7 +178,7 @@ export default class Courses extends React.Component {
         ></RaceSection>
         <GallerySection race_name="SET"></GallerySection>
         <ParallaxComponent
-          bgImg={require("../images/parallax/fort.jpg")}
+          bgImg={require("../images/parallax/parallax_bg_2.jpg")}
           height="40vh"
         ></ParallaxComponent>
         <ContactSection></ContactSection>

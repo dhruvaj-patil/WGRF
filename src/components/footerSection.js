@@ -47,10 +47,10 @@ export class FooterSection extends Component {
             <div style={{ flex: 1 }}>
               <h3>Categories</h3>
               <p className={style.alignContent}>
-                <Link href={`${LINKS.home.landing}#SRT`}>SRT Ultra</Link>
+                <Link to={`${LINKS.home.landing}#SRT`}>SRT Ultra</Link>
               </p>
               <p className={style.alignContent}>
-                <Link href={`${LINKS.home.landing}#SET`}>Sinhagad Epic Trail</Link>
+                <Link to={`${LINKS.home.landing}#SET`}>Sinhagad Epic Trail</Link>
               </p>
             </div>
             <div style={{ flex: 1 }}>

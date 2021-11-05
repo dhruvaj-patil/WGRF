@@ -24,7 +24,11 @@ export default function RaceComponent({
   linkId,
 }) {
   return (
-    <div className={`${racesStyle.container} ${!inverted ? racesStyle.colRev : ""}`} id={linkId}>
+    <div
+      className={`${racesStyle.container} ${
+        !inverted ? racesStyle.colRev : ""
+      }`}
+    >
       {inverted ? (
         <div className={racesStyle.containerRight}>
           <ParallaxComponent
@@ -35,7 +39,7 @@ export default function RaceComponent({
         </div>
       ) : null}
 
-      <div className={racesStyle.containerLeft}>
+      <div className={racesStyle.containerLeft} id={linkId} key={linkId}>
         <div style={{ flex: 1 }}>
           <h2 style={{ textAlign: "center" }}>{title}</h2>
         </div>

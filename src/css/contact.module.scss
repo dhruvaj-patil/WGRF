@@ -552,7 +552,7 @@ $tile-button-height-md: $tile-img-size-total-md / 4;
         height: 0;
         border-style: solid;
         border-width: 2.59099rem 1.59099rem 2.59099rem 0;
-        border-color: transparent #ff1744 transparent transparent;
+        border-color: transparent $color-primary transparent transparent;
       }
 
       &::after {
@@ -563,7 +563,7 @@ $tile-button-height-md: $tile-img-size-total-md / 4;
         height: 0;
         border-style: solid;
         border-width: 5.18198rem 3.18198rem 0 0;
-        border-color: #ff1744 transparent transparent transparent;
+        border-color: $color-primary transparent transparent transparent;
       }
     }
 
