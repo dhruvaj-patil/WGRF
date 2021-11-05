@@ -2,18 +2,48 @@ import React, { Component } from "react"
 import style from "../css/footer.module.scss"
 import { Link } from "gatsby"
 
-
-const LINKS = {
-  home: {
-    landing: "/",
-    location: "/",
-    
-
+const MENU_ITEMS = [
+  {
+    url: "/",
+    title: "HOME",
   },
-  marathons: "marathons",
-}
+  {
+    url: "/#About-WGRF",
+    title: "About MARATHONS",
+  },
+  {
+    url: "/marathons#SRT",
+    title: "SRT MARATHON",
+  },
+  {
+    url: "/marathons#SET",
+    title: "SET MARATHON",
+  },
+
+  {
+    url: "/#WGRF-location",
+    title: "How to reach",
+  },
+  {
+    url: "#FAQ",
+    title: "F.A.Q.",
+  },
+  {
+    url: "/marathons#WGRF-Team",
+    title: "Our Team",
+  },
+]
 
 export class FooterSection extends Component {
+  _renderFooterContent(title, url) {
+    console.log("title => ", title)
+    return (
+      <p className={style.alignContent}>
+        <Link to={`${url}`}>{title}</Link>
+      </p>
+    )
+  }
+
   render() {
     return (
       <footer className={style.siteFooter}>
@@ -44,35 +74,25 @@ export class FooterSection extends Component {
           </div>
           {/* style row for big screens coloum for small screens */}
           <div className={style.linkContianer}>
-            <div style={{ flex: 1 }}>
+            {/* <div style={{ flex: 1 }}>
               <h3>Categories</h3>
               <p className={style.alignContent}>
                 <Link to={`${LINKS.home.landing}#SRT`}>SRT Ultra</Link>
               </p>
               <p className={style.alignContent}>
-                <Link to={`${LINKS.home.landing}#SET`}>Sinhagad Epic Trail</Link>
+                <Link to={`${LINKS.home.landing}#SET`}>
+                  Sinhagad Epic Trail
+                </Link>
               </p>
-            </div>
+            </div> */}
             <div style={{ flex: 1 }}>
               <h3>Quick Links</h3>
-              <p className={style.alignContent}>
-                <Link activeClassName={style.footerLink} to={LINKS.home.landing}>Home</Link>
-              </p>
-              <p className={style.alignContent}>
-                <Link activeClassName={style.footerLink} to={LINKS.home.marathons}>Courses</Link>
-              </p>
-              <p className={style.alignContent}>
-                <Link to={`${LINKS.home.landing}#location`}>Location</Link>
-              </p>
-              <p className={style.alignContent}>
-                <Link to={LINKS.home.landing}>Gallery</Link>
-              </p>
-              <p className={style.alignContent}>
-                <Link to={`${LINKS.home.landing}#FAQ`}>FAQ</Link>
-              </p>
-              <p className={style.alignContent}>
-              <Link to={`${LINKS.marathons}#contact-us`}>Get In Touch</Link>
-              </p>
+
+              <div>
+                {MENU_ITEMS.map(item => {
+                  return this._renderFooterContent(item.title, item.url)
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -85,16 +105,16 @@ export class FooterSection extends Component {
             </p>
           </div>
           <div className={style.socialLinksContainer}>
-          <div className={style.iconContainer}>
-            <a>            
-              <i className={`icon ${style.iconFb}`}></i>
-            </a>
-          </div>
-          <div className={style.iconContainer}>
-            <a>            
-              <i className={`icon ${style.iconInsta}`}></i>
-            </a>
-          </div>
+            <div className={style.iconContainer}>
+              <a>
+                <i className={`icon ${style.iconFb}`}></i>
+              </a>
+            </div>
+            <div className={style.iconContainer}>
+              <a>
+                <i className={`icon ${style.iconInsta}`}></i>
+              </a>
+            </div>
           </div>
         </div>
       </footer>

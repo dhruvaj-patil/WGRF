@@ -80,7 +80,7 @@ const SETComponent = ({
       </div>
 
       <div className={container.containerRight}>
-        <ParallaxComponent height="100vh" bgImg={bgImage}>
+        <ParallaxComponent height="100%" bgImg={bgImage}>
           <div className={style.srtParallaxContainer}>
             <img src={overlayImage} className={style.overlayImage}></img>
           </div>

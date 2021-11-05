@@ -34,7 +34,7 @@ const MENU_ITEMS = [
     title: "How to reach",
   },
   {
-    url: "#FAQ",
+    url: "/#FAQ",
     title: "F.A.Q.",
   },
   {
