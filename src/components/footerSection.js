@@ -91,12 +91,16 @@ export class FooterSection extends Component {
               <div>
                 <ul>
                   <li>
-                    <Link href="#">
+                    <Link
+                      to="https://www.facebook.com/westernghatsrunning"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <i className={`${style.icon} ${style.facebook}`}></i>
                     </Link>
                   </li>
                   <li>
-                  <Link href="#">
+                    <Link href="#">
                       <i className={`${style.icon} ${style.insta}`}></i>
                     </Link>
                   </li>
