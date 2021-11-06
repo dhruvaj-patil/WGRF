@@ -38,7 +38,7 @@ export class FooterSection extends Component {
   _renderFooterContent(title, url) {
     console.log("title => ", title)
     return (
-      <p className={style.alignContent}>
+      <p>
         <Link to={`${url}`}>{title}</Link>
       </p>
     )
@@ -85,6 +85,34 @@ export class FooterSection extends Component {
                 </Link>
               </p>
             </div> */}
+            <div className={style.socialContainer}>
+              <h3>Social Links</h3>
+
+              <div>
+                <ul>
+                  <li>
+                    <Link href="#">
+                      <i className={`${style.icon} ${style.facebook}`}></i>
+                    </Link>
+                  </li>
+                  <li>
+                  <Link href="#">
+                      <i className={`${style.icon} ${style.insta}`}></i>
+                    </Link>
+                  </li>
+                  {/* <li>
+                    <a href="#">
+                      <i class="fab fa-linkedin-in icon"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fab fa-google-plus-g icon"></i>
+                    </a>
+                  </li> */}
+                </ul>
+              </div>
+            </div>
             <div style={{ flex: 1 }}>
               <h3>Quick Links</h3>
 
@@ -101,20 +129,8 @@ export class FooterSection extends Component {
           <div className={style.copyRightsContainer}>
             <p>
               Copyright &copy; 2019 All Rights Reserved by{" "}
-              <Link href="http://exientmedia.com/">Exient Media</Link>.
+              <Link href="http://exient.media/">Exient Media</Link>.
             </p>
-          </div>
-          <div className={style.socialLinksContainer}>
-            <div className={style.iconContainer}>
-              <a>
-                <i className={`icon ${style.iconFb}`}></i>
-              </a>
-            </div>
-            <div className={style.iconContainer}>
-              <a>
-                <i className={`icon ${style.iconInsta}`}></i>
-              </a>
-            </div>
           </div>
         </div>
       </footer>

@@ -7,6 +7,7 @@
   flex-direction: column;
   background-color: $color-black;
   color: $color-white;
+  text-align: center;
   margin-top: 50px;
 
   a {
@@ -28,9 +29,6 @@
     display: flex;
     flex-direction: row;
 
-    .alignContent {
-      text-align: left;
-    }
 
     .aboutContainer {
       flex: 1;
@@ -76,34 +74,105 @@
           color: $color-red;
         }
       }
+    }
 
-      .socialLinksContainer {
-        flex: 1;
+    .socialContainer {
+      flex: 1;
+      text-align: center;
+
+      ul {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+      }
 
-        .iconContainer {
-          margin: 0 0.5rem;
+      ul li {
+        list-style: none;
 
-          .icon-fb {
-            background: $color-white;
-            -webkit-mask-image: url(../images/facebook-f-brands.svg);
-            mask-image: url(../images/facebook-f-brands.svg);
-            height: 1.3rem;
-            width: 1.3rem;
+        .icon {
+          background-repeat: no-repeat !important;
+          background-size: cover !important; /* stretch the background to cover the whole element */
+
+          /* 
+             still inline, but has block features
+             meaning height and width can be set
+          */
+          display: inline-block;
+          height: 30px;
+          width: 20px;
+          z-index: 99;
+          &.facebook {
+            background: url("../images/icons/facebook.svg");
           }
 
-          .icon-insta {
-            background: $color-white;
-            -webkit-mask-image: url(../images/instagram-brands.svg);
-            mask-image: url(../images/instagram-brands.svg);
-            height: 1.3rem;
-            width: 1.3rem;
-          }
-          i:hover {
-            background-color: $color-red;
+          &.insta {
+            width: 28px;  
+            background: url("../images/icons/insta.svg");
           }
         }
+      }
+
+      ul li a {
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        text-align: center;
+        line-height: 80px;
+        font-size: 35px;
+        margin: 0 10px;
+        display: block;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        border: 3px solid #fff;
+        z-index: 1;
+      }
+
+      ul li a .icon {
+        position: relative;
+        color: #262626;
+        transition: 0.5s;
+        z-index: 3;
+      }
+
+      ul li a:hover .icon {
+        color: #fff;
+        transform: rotateY(360deg);
+      }
+
+      ul li a:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f00;
+        transition: 0.5s;
+        z-index: -1;
+      }
+
+      ul li a:hover:before {
+        top: 0;
+      }
+
+      ul li:nth-child(1) a:before {
+        background: #3b5999;
+      }
+
+      ul li:nth-child(2) a:before {
+        background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      }
+
+      ul li:nth-child(3) a:before {
+        background: #0077b5;
+      }
+
+      ul li:nth-child(4) a:before {
+        background: #dd4b39;
       }
     }
   }
