@@ -11,7 +11,9 @@ export class FaqSection extends Component {
     return (
       <div className={style.faqContainer}>
         <div>
-          <h2 className={style.faqTitle} id="FAQ">Frequently Asked Questions</h2>
+          <h2 className={style.faqTitle} id="FAQ">
+            Frequently Asked Questions
+          </h2>
         </div>
 
         {accordionData.map((data, i) => {
@@ -55,7 +57,9 @@ export class FaqSection extends Component {
           </div>
           {data.opened && (
             <div className={`${style.content} ${style.active}`}>
-              <p>{data.description}</p>
+              {data.description.map((para, index) => {
+                return <p key={index}>{para}</p>
+              })}
             </div>
           )}
         </div>
